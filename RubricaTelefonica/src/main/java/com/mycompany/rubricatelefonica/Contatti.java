@@ -22,4 +22,8 @@ public class Contatti {
 
     }
 
+    public String getNome() {
+        return nome;
+    }
+
 }
