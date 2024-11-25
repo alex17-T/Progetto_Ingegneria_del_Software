@@ -9,8 +9,17 @@ package com.mycompany.rubricatelefonica;
  * @author Giovanni
  */
 public class Contatti {
+
     private String nome;
     private String cognome;
     private String numTelefono;
-    
+
+    public Contatti(String nome, String cognome, String numTelefono) {
+
+        this.nome = nome;
+        this.cognome = cognome;
+        this.numTelefono = numTelefono;
+
+    }
+
 }
