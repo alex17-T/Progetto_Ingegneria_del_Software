@@ -26,4 +26,16 @@ public class Contatti {
         return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public void setNumTelefono(String numTelefono) {
+        this.numTelefono = numTelefono;
+    }
+ 
 }
