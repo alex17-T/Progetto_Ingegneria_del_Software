@@ -37,7 +37,7 @@
       <Button layoutX="780.0" layoutY="650.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="expButton" stylesheets="@edit.css" />
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
-      <HBox alignment="CENTER" layoutX="33.0" layoutY="65.0" mouseTransparent="true" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css">
+      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" mouseTransparent="true" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
          <children>
             <CheckBox alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                <cursor>
@@ -50,7 +50,7 @@
             <TextField editable="false" prefHeight="25.0" prefWidth="29.0" />
          </children>
       </HBox>
-      <HBox alignment="CENTER" layoutX="35.0" layoutY="22.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0">
+      <HBox fx:id="SerchBar" alignment="CENTER" layoutX="35.0" layoutY="22.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0">
          <children>
             <TextField prefHeight="31.0" prefWidth="392.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" />
             <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="30.0" prefWidth="34.0" styleClass="srcButton" stylesheets="@edit.css" />

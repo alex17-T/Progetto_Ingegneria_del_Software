@@ -11,6 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.HBox;
 
 /**
  * FXML Controller class
@@ -18,6 +19,11 @@ import javafx.fxml.Initializable;
  * @author alessandro
  */
 public class PrimaryController implements Initializable {
+
+    @FXML
+    private HBox ToolBar;
+    @FXML
+    private HBox SerchBar;
 
     /**
      * Initializes the controller class.
@@ -37,6 +43,7 @@ public class PrimaryController implements Initializable {
 
     @FXML
     private void ModificaContatto(ActionEvent event) {
+        
     }
 
     @FXML
@@ -54,9 +61,9 @@ public class PrimaryController implements Initializable {
     @FXML
     private void ModificaListaContatti(ActionEvent event) {
         
-        
-        
-        
+      ToolBar.visibleProperty().set(true);
+      SerchBar.visibleProperty().set(false);
+           
     }
 
     @FXML
