@@ -68,7 +68,8 @@ public class SecondaryController {
     }
 
     @FXML
-    private void creaContatto(ActionEvent event) {
+    private void creaContatto(ActionEvent event) throws IOException {
+        App.setRoot("primary");
     }
 
     @FXML
