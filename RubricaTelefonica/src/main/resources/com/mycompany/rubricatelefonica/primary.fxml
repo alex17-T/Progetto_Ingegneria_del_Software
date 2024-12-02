@@ -10,10 +10,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.rubricatelefonica.PrimaryController">
    <children>
       <TreeView layoutX="35.0" layoutY="158.0" prefHeight="1007.0" prefWidth="465.0" />
-      <Button layoutX="364.0" layoutY="1075.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="84.0" text="aggiungi" />
+      <Button layoutX="364.0" layoutY="1075.0" mnemonicParsing="false" onAction="#AggiungiContatto" prefHeight="39.0" prefWidth="84.0" text="aggiungi" />
       <Pane layoutX="540.0" layoutY="160.0" prefHeight="830.0" prefWidth="426.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
@@ -21,21 +21,27 @@
                   <Image url="@../../../../../../../../../../../Pictures/Screenshots/Screenshot%202024-11-25%20113741.png" />
                </image>
             </ImageView>
-            <Button layoutX="228.0" layoutY="148.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="56.0" text="edit" />
+            <Button layoutX="228.0" layoutY="148.0" mnemonicParsing="false" onAction="#ModificaFotoContatto" prefHeight="31.0" prefWidth="56.0" text="edit" />
             <Text layoutX="42.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qui appaiono tutte le informazioni una volta selezionato un conttatto dalla lista  e premendo sul pulstante edit si possono modificare i valori " wrappingWidth="342.884765625" />
-            <Button layoutX="302.0" layoutY="701.0" mnemonicParsing="false" text="edit contact" />
-            <Button layoutX="139.0" layoutY="148.0" mnemonicParsing="false" text="remove" />
+            <Button layoutX="302.0" layoutY="701.0" mnemonicParsing="false" onAction="#ModificaContatto" text="edit contact" />
+            <Button layoutX="139.0" layoutY="148.0" mnemonicParsing="false" onAction="#RimuoviFotoProfilo" text="remove" />
          </children>
       </Pane>
-      <Button layoutX="540.0" layoutY="1122.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="157.0" text="import " />
-      <Button layoutX="799.0" layoutY="1122.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="157.0" text="esporta" />
+      <Button layoutX="540.0" layoutY="1122.0" mnemonicParsing="false" onAction="#ImportaLista" prefHeight="31.0" prefWidth="157.0" text="import " />
+      <Button layoutX="799.0" layoutY="1122.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" text="esporta" />
       <ScrollBar layoutX="482.0" layoutY="181.0" orientation="VERTICAL" prefHeight="985.0" prefWidth="18.0" />
-      <Button layoutX="374.0" layoutY="1016.0" mnemonicParsing="false" text="edit" />
-      <HBox alignment="CENTER" layoutX="29.0" layoutY="104.0" mouseTransparent="true" prefHeight="39.0" prefWidth="925.0" spacing="100.0">
+      <Button layoutX="374.0" layoutY="1016.0" mnemonicParsing="false" onAction="#ModificaListaContatti" text="edit" />
+      <HBox alignment="CENTER" layoutX="29.0" layoutY="104.0" mouseTransparent="true" prefHeight="39.0" prefWidth="925.0" spacing="100.0" visible="false">
          <children>
-            <CheckBox mnemonicParsing="false" prefHeight="21.0" prefWidth="151.0" text="Seleziona tutto  " />
-            <Button mnemonicParsing="false" text="Rimovi selezionati" />
+            <CheckBox mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" text="Seleziona tutto  " />
+            <Button mnemonicParsing="false" onAction="#RimoviContattiSelezionati" text="Rimovi selezionati" />
             <TextField text="elementi selezionati" />
+         </children>
+      </HBox>
+      <HBox layoutX="35.0" layoutY="115.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0">
+         <children>
+            <TextField prefHeight="31.0" prefWidth="392.0" text="ricerca contatto" />
+            <Button mnemonicParsing="false" onAction="#CercaElemento" text="cerca" />
          </children>
       </HBox>
    </children>
