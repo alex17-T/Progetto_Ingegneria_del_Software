@@ -93,7 +93,7 @@
         -fx-background-image: url("editIcon.png");
         -fx-background-size: 30px;
         -fx-background-repeat: no-repeat;
-        -fx-left: 10px;
+        /*-fx-left: 10px;*/
         -fx-background-position: 5px;
         -fx-background-radius: 5px;
 	-fx-border: none;

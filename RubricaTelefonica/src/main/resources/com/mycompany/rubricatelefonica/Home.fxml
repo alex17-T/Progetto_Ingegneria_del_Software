@@ -37,7 +37,7 @@
       <Button layoutX="780.0" layoutY="650.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="expButton" stylesheets="@edit.css" />
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
-      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" mouseTransparent="true" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
+      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" mouseTransparent="true" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css">
          <children>
             <CheckBox alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                <cursor>
