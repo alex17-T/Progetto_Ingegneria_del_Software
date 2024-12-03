@@ -96,7 +96,7 @@
       </GridPane>
       <AnchorPane prefHeight="47.0" prefWidth="536.0">
          <children>
-            <Button fx:id="esciButton" layoutX="129.0" layoutY="11.0" mnemonicParsing="false" onAction="#uscita" prefHeight="25.0" prefWidth="42.0" text="Esci" />
+            <Button fx:id="esciButton" layoutX="129.0" layoutY="11.0" mnemonicParsing="false" onAction="#tornaHome" prefHeight="25.0" prefWidth="42.0" text="Esci" />
             <Button fx:id="creaButton" layoutX="314.0" layoutY="11.0" mnemonicParsing="false" onAction="#creaContatto" text="Crea contatto" />
          </children>
       </AnchorPane>

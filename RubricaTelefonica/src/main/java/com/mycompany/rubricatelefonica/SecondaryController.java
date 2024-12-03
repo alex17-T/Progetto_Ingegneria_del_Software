@@ -21,15 +21,11 @@ public class SecondaryController {
     @FXML
     private TextField cognomeField;
     @FXML
-    private VBox datiObbligatori1;
-    @FXML
     private TextField t1Field;
     @FXML
     private TextField t2Field;
     @FXML
     private TextField t3Field;
-    @FXML
-    private VBox datiObbligatori11;
     @FXML
     private TextField m1Field;
     @FXML
@@ -69,11 +65,12 @@ public class SecondaryController {
 
     @FXML
     private void creaContatto(ActionEvent event) throws IOException {
-        App.setRoot("primary");
+        App.setRoot("Home");
     }
 
     @FXML
-    private void uscita(ActionEvent event){
+    private void tornaHome(ActionEvent event) throws IOException{
         
+          App.setRoot("Home");
     }
 }

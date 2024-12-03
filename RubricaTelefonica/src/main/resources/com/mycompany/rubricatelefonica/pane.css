@@ -1,7 +1,11 @@
 .mainPane{
-    -fx-background-color: #009999;
+    -fx-background-color: #FFFFFF;
+    -fx-position: absolute;
+    -fx-align-content: center;
+    -fx-background-radius: 15px;
 }
 
 .detailPane{
-    -fx-background-color: #006666;
+    -fx-background-color: #cccccc;
+   -fx-background-radius: 15px;
 }

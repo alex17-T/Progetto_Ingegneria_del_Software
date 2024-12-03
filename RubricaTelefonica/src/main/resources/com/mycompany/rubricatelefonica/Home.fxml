@@ -13,7 +13,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="mainPane" stylesheets="@pane.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.rubricatelefonica.PrimaryController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="mainPane" stylesheets="@pane.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.rubricatelefonica.HomeController">
    <children>
       <TreeView layoutX="35.0" layoutY="110.0" prefHeight="567.0" prefWidth="465.0" />
       <Button layoutX="398.0" layoutY="604.0" mnemonicParsing="false" onAction="#AggiungiContatto" prefHeight="39.0" prefWidth="56.0" styleClass="addButton" stylesheets="@edit.css" />
@@ -48,6 +48,7 @@
                </padding></CheckBox>
             <Button mnemonicParsing="false" onAction="#RimoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
             <TextField editable="false" prefHeight="25.0" prefWidth="29.0" />
+            <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />
          </children>
       </HBox>
       <HBox fx:id="SerchBar" alignment="CENTER" layoutX="35.0" layoutY="22.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0">
