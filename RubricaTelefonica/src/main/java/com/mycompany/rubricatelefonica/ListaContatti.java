@@ -7,6 +7,7 @@ package com.mycompany.rubricatelefonica;
 
 import java.util.LinkedList;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -16,6 +17,7 @@ public class ListaContatti {
     
     
     private List <Contatto>listaContatti;
+    public ObservableList<Contatto> listaOsservabile;
     
     public ListaContatti(){
     
@@ -27,7 +29,9 @@ public class ListaContatti {
         return listaContatti;
     }
     
-    
+    public void addOsservabile(Contatto c){
+        listaOsservabile.add(c);
+    }
     
     
 }
