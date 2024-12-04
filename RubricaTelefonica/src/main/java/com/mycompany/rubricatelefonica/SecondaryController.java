@@ -1,6 +1,8 @@
 
 package com.mycompany.rubricatelefonica;
 
+import static com.mycompany.rubricatelefonica.HomeController.c;
+import static com.mycompany.rubricatelefonica.HomeController.listaOsservabile;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -65,6 +67,8 @@ public class SecondaryController {
 
     @FXML
     private void creaContatto(ActionEvent event) throws IOException {
+        listaOsservabile.add(new Contatto(
+                nomeField.getText(),cognomeField.getText()));
         App.setRoot("Home");
     }
 
