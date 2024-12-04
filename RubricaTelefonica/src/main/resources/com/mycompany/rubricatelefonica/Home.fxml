@@ -19,7 +19,7 @@
       <Button layoutX="398.0" layoutY="604.0" mnemonicParsing="false" onAction="#AggiungiContatto" prefHeight="39.0" prefWidth="56.0" styleClass="addButton" stylesheets="@edit.css" />
       <Pane layoutX="551.0" layoutY="110.0" prefHeight="519.0" prefWidth="426.0" styleClass="detailPane" stylesheets="@pane.css">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="contactImage" fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@FotoProfiloDefault.png" />
                </image>
@@ -37,7 +37,7 @@
       <Button layoutX="780.0" layoutY="650.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="expButton" stylesheets="@edit.css" />
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
-      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" mouseTransparent="true" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css">
+      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
          <children>
             <CheckBox alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                <cursor>
@@ -45,7 +45,8 @@
                </cursor>
                <padding>
                   <Insets left="5.0" top="10.0" />
-               </padding></CheckBox>
+               </padding>
+            </CheckBox>
             <Button mnemonicParsing="false" onAction="#RimoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
             <TextField editable="false" prefHeight="25.0" prefWidth="29.0" />
             <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />

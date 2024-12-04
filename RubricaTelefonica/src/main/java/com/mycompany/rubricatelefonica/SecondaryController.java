@@ -33,7 +33,7 @@ public class SecondaryController {
     @FXML
     private TextField m3Field;
     
-    private String defaultImagePath = "https://static.vecteezy.com/system/resources/previews/014/300/061/original/man-profile-glyph-icon-anonymous-photo-for-documents-illustration-vector.jpg";
+    //private String defaultImagePath = "https://static.vecteezy.com/system/resources/previews/014/300/061/original/man-profile-glyph-icon-anonymous-photo-for-documents-illustration-vector.jpg";
     
     @FXML
     private ImageView immagine;
@@ -45,15 +45,15 @@ public class SecondaryController {
     private Button creaButton;
     
     public void initialize(){
-        checkImage();
+        //checkImage();
     }
     
-    private void checkImage(){
+    /*private void checkImage(){
         if(immagine.getImage() == null){
             Image defaultImage = new Image(defaultImagePath);
             immagine.setImage(defaultImage);
         }
-    }
+    }*/
 
     @FXML
     private void verificaObblighi(ActionEvent event) {
