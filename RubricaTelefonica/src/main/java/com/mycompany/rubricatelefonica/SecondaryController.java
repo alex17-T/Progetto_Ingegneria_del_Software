@@ -53,7 +53,7 @@ public class SecondaryController {
     private TableView<Contatto> tabSec = SuperController.tab;
     private TableColumn<Contatto, String> colNSec = SuperController.colNome;
     private TableColumn<Contatto, String> colCnSec = SuperController.colCognome;
-    private ObservableList<Contatto> listaSec = SuperController.lista;
+    //private ObservableList<Contatto> listaSec = SuperController.lista;
 
     
     
@@ -86,8 +86,8 @@ public class SecondaryController {
                 nomeField.getText(),cognomeField.getText()));
         App.setRoot("Home");*/
         
-        listaSec.add(new Contatto("prova", "prova"));
-        //tabSec.refresh();
+        SuperController.lista.add(new Contatto("prova", "prova"));
+        SuperController.tab.setItems(SuperController.lista);
         App.setRoot("Home");
         
     }
