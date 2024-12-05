@@ -17,8 +17,10 @@ import javafx.scene.image.Image;
  */
 public class Contatto {
 
-    private StringProperty nome;
-    private StringProperty cognome;
+    private SimpleStringProperty name;
+    private SimpleStringProperty surname;
+    private String nome;
+    private String cognome;
     private String numTelefono1;     
     private String numTelefono2;
     private String numTelefono3;
@@ -31,27 +33,33 @@ public class Contatto {
     
     public Contatto(String nome, String cognome) {
 
-        this.nome = new SimpleStringProperty(nome);
-        this.cognome = new SimpleStringProperty(cognome);
+        this.name = new SimpleStringProperty(nome);
+        this.surname = new SimpleStringProperty(cognome);
+        /*this.nome = nome;
+        this.cognome = cognome;*/
         
 
     }
 
     public String getNome() {
-        return nome.get();
+        //return nome.get();
+        return this.nome;
     }
 
     public void setNome(String nome) {
-        this.nome.set(nome);
+        //this.nome.set(nome);
+        this.nome = nome;
     }
 
     public String getCognome() {
-        return cognome.get();
+        //return cognome.get();
+        return this.cognome;
     }
 
     
     public void setCognome(String cognome) {
-        this.cognome.set(cognome);
+        //this.cognome.set(cognome);
+        this.cognome = cognome;
     }
 
     public void setNumTelefono(String numTelefono) {

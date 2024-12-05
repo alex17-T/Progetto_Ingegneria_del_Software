@@ -1,9 +1,10 @@
 
 package com.mycompany.rubricatelefonica;
 
-import static com.mycompany.rubricatelefonica.HomeController.c;
-import static com.mycompany.rubricatelefonica.HomeController.listaOsservabile;
+
 import java.io.IOException;
+import java.util.ArrayList;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -13,6 +14,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 public class SecondaryController {
 
@@ -46,8 +49,20 @@ public class SecondaryController {
     @FXML
     private Button creaButton;
     
+    @FXML
+    private TableView<Contatto> tabSec = SuperController.tab;
+    private TableColumn<Contatto, String> colNSec = SuperController.colNome;
+    private TableColumn<Contatto, String> colCnSec = SuperController.colCognome;
+    private ObservableList<Contatto> listaSec = SuperController.lista;
+
+    
+    
     public void initialize(){
         //checkImage();
+        /*tabSec = SuperController.tab;
+        colNSec = SuperController.colNome;
+        colCnSec = SuperController.colCognome;
+        listaSec  = SuperController.lista;*/
     }
     
     /*private void checkImage(){
@@ -67,9 +82,14 @@ public class SecondaryController {
 
     @FXML
     private void creaContatto(ActionEvent event) throws IOException {
-        listaOsservabile.add(new Contatto(
+        /*listaOsservabile.add(new Contatto(
                 nomeField.getText(),cognomeField.getText()));
+        App.setRoot("Home");*/
+        
+        listaSec.add(new Contatto("prova", "prova"));
+        //tabSec.refresh();
         App.setRoot("Home");
+        
     }
 
     @FXML
