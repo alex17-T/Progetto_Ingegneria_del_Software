@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -45,7 +46,7 @@ public class HomeController implements Initializable {
     private HBox SearchBar;
     
 
-    private ObservableList<Contatto> listaHome = SuperController.lista;
+    //private ObservableList<Contatto> listaHome = SuperController.lista;
 
     /**
      * Initializes the controller class.
@@ -54,13 +55,16 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         //HomeController hm  = new HomeController(Tabella_contatti, Colonna_nome, Colonna_cognome,listaHome);
+        //Colonna_nome.setCellValueFactory(new PropertyValueFactory<>("Colonna_nome"));
+        //Colonna_cognome.setCellValueFactory(new PropertyValueFactory<>("Colonna_cognome"));
+        Tabella_contatti.setItems(SuperController.lista);
     }    
 
     @FXML
     private void AggiungiContatto(ActionEvent event) throws IOException {
         App.setRoot("secondary");
-        Tabella_contatti.setItems(listaHome);
-        Tabella_contatti.refresh();
+        //Tabella_contatti.setItems(SuperController.lista);
+        //Tabella_contatti.refresh();
     }
 
     @FXML
