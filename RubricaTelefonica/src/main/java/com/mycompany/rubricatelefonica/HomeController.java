@@ -12,9 +12,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -31,9 +34,18 @@ public class HomeController implements Initializable {
     @FXML
     private HBox ToolBar;
     @FXML
-    private HBox SerchBar;
-    @FXML
     private ImageView contactImage;
+    @FXML
+    private TableView<Contatto> Tabella_contatti = SuperController.tab;
+    @FXML
+    private TableColumn<Contatto, String> Colonna_nome = SuperController.colNome;
+    @FXML
+    private TableColumn<Contatto, String> Colonna_cognome = SuperController.colCognome;
+    @FXML
+    private HBox SearchBar;
+    
+
+    private ObservableList<Contatto> listaHome = SuperController.lista;
 
     /**
      * Initializes the controller class.
@@ -41,11 +53,14 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        //HomeController hm  = new HomeController(Tabella_contatti, Colonna_nome, Colonna_cognome,listaHome);
     }    
 
     @FXML
     private void AggiungiContatto(ActionEvent event) throws IOException {
         App.setRoot("secondary");
+        Tabella_contatti.setItems(listaHome);
+        Tabella_contatti.refresh();
     }
 
     @FXML
@@ -64,8 +79,8 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    private void RimuoviFotoProfilo(ActionEvent event) {
-        /*Image defImg = new Image("@FotoProfiloDefault.png");
+    private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
+        /*Image defImg = new Image(new FileInputStream("FotoProfiloDefault.png"));
         contactImage.setImage(defImg);*/
     }
 
