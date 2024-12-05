@@ -1,0 +1,12 @@
+.inputPane{
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-border-color: #66ccff;
+    -fx-border-radius: 20px;
+}
+
+.myText{
+    -fx-background: none;
+    -fx-border-radius: 10px;
+    -fx-border-style: solid;
+}

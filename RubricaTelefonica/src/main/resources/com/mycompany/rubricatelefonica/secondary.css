@@ -1,0 +1,18 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 dic 2024, 16:51:18
+    Author     : Antonio
+*/
+.LightBlueRound{
+    -fx-background-color: #D0E8F2;
+    -fx-background-radius: 15px;
+}
+
+.LightBlue{
+    -fx-background-color: #D0E8F2;
+}
+    
+
