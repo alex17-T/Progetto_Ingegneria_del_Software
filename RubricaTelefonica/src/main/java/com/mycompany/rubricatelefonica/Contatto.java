@@ -17,8 +17,8 @@ import javafx.scene.image.Image;
  */
 public class Contatto {
 
-    private SimpleStringProperty name;
-    private SimpleStringProperty surname;
+    /*private SimpleStringProperty name;
+    private SimpleStringProperty surname;*/
     private String nome;
     private String cognome;
     private String numTelefono1;     
@@ -33,10 +33,10 @@ public class Contatto {
     
     public Contatto(String nome, String cognome) {
 
-        this.name = new SimpleStringProperty(nome);
-        this.surname = new SimpleStringProperty(cognome);
-        /*this.nome = nome;
-        this.cognome = cognome;*/
+        /*this.name = new SimpleStringProperty(nome);
+        this.surname = new SimpleStringProperty(cognome);*/
+        this.nome = nome;
+        this.cognome = cognome;
         
 
     }

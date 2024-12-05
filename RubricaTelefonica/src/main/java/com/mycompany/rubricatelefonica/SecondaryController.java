@@ -50,9 +50,9 @@ public class SecondaryController {
     private Button creaButton;
     
     @FXML
-    private TableView<Contatto> tabSec = SuperController.tab;
+    /*private TableView<Contatto> tabSec = SuperController.tab;
     private TableColumn<Contatto, String> colNSec = SuperController.colNome;
-    private TableColumn<Contatto, String> colCnSec = SuperController.colCognome;
+    private TableColumn<Contatto, String> colCnSec = SuperController.colCognome;*/
     //private ObservableList<Contatto> listaSec = SuperController.lista;
 
     
@@ -86,8 +86,8 @@ public class SecondaryController {
                 nomeField.getText(),cognomeField.getText()));
         App.setRoot("Home");*/
         
-        SuperController.lista.add(new Contatto("prova", "prova"));
-        SuperController.tab.setItems(SuperController.lista);
+        SuperController.lista.add(new Contatto(nomeField.getText(), cognomeField.getText()));
+        //SuperController.tab.setItems(SuperController.lista);
         App.setRoot("Home");
         
     }
