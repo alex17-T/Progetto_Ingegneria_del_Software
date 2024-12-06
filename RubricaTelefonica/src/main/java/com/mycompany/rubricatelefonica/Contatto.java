@@ -3,6 +3,7 @@ package com.mycompany.rubricatelefonica;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -18,14 +19,14 @@ public class Contatto {
     private StringProperty email1;
     private StringProperty email2;
     private StringProperty email3;
-    private Image fotoprofilo;
+    private ImageView fotoprofilo;
 
     /**
  * Restituisce l'immagine di profilo della persona.
  *
  * @return l'immagine di profilo come oggetto Image
  */
-    public Image getFotoprofilo() {
+    public ImageView getFotoprofilo() {
         return fotoprofilo;
     }
 /**
@@ -33,7 +34,7 @@ public class Contatto {
  *
  * @param fotoprofilo la nuova immagine di profilo
  */
-    public void setFotoprofilo(Image fotoprofilo) {
+    public void setFotoprofilo(ImageView fotoprofilo) {
         this.fotoprofilo = fotoprofilo;
     }
     

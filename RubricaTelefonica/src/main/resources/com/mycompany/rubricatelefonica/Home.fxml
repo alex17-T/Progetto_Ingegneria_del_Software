@@ -35,7 +35,7 @@
          <children>
             <ImageView fx:id="contactImage" fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@FotoProfiloDefault.png" />
+                  <Image url="@iconaSecondary.jpg" />
                </image>
             </ImageView>
             <Button layoutX="228.0" layoutY="148.0" mnemonicParsing="false" onAction="#ModificaFotoContatto" prefHeight="31.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" />
