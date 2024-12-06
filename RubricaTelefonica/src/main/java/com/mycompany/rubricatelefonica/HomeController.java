@@ -42,9 +42,9 @@ public class HomeController implements Initializable {
     @FXML
     private TableView<Contatto> Tabella_contatti;
     @FXML
-    private TableColumn<Contatto, String> Colonna_nome = SuperController.colNome;
+    private TableColumn<Contatto, String> Colonna_nome;
     @FXML
-    private TableColumn<Contatto, String> Colonna_cognome = SuperController.colCognome;
+    private TableColumn<Contatto, String> Colonna_cognome;
     @FXML
     private HBox SearchBar;
     
