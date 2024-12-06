@@ -15,6 +15,7 @@ import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,13 +44,13 @@ public class HomeController implements Initializable {
     @FXML
     private TableView<Contatto> Tabella_contatti;
     @FXML
-    private TableColumn<Contatto, String> Colonna_nome;
+    private TableColumn<Contatto, StringProperty> Colonna_nome;
     @FXML
-    private TableColumn<Contatto, String> Colonna_cognome;
+    private TableColumn<Contatto, StringProperty> Colonna_cognome;
     @FXML
-    private TableColumn<Contatto, String> Colonna_telefono;
+    private TableColumn<Contatto, StringProperty> Colonna_telefono;
     @FXML
-    private TableColumn<Contatto, String> Colonna_email;
+    private TableColumn<Contatto, StringProperty> Colonna_email;
     @FXML
     private HBox SearchBar;
     @FXML
@@ -64,7 +65,7 @@ public class HomeController implements Initializable {
    
         Colonna_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         Colonna_cognome.setCellValueFactory(new PropertyValueFactory<>("cognome"));
-        Colonna_telefono.setCellValueFactory(new PropertyValueFactory<>("numTelefono1"));
+        Colonna_telefono.setCellValueFactory(new PropertyValueFactory<>("numTel1"));
         Colonna_email.setCellValueFactory(new PropertyValueFactory<>("email1"));
         Tabella_contatti.setItems(SuperController.lista);
     }    
