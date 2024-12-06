@@ -44,9 +44,9 @@
                   <Font name="Calibri Bold" size="12.0" />
                </font></Button>
             <Button layoutX="139.0" layoutY="148.0" mnemonicParsing="false" onAction="#RimuoviFotoProfilo" prefHeight="31.0" prefWidth="56.0" styleClass="remButton" stylesheets="@edit.css" />
-            <VBox layoutX="116.0" layoutY="191.0" prefHeight="282.0" prefWidth="186.0" spacing="2.0">
+            <VBox fx:id="DettagliContatto" layoutX="116.0" layoutY="191.0" mouseTransparent="true" prefHeight="282.0" prefWidth="186.0" spacing="2.0">
                <children>
-                  <TextField fx:id="nomeInfo" alignment="CENTER" promptText="nome" />
+                  <TextField fx:id="nomeInfo" alignment="CENTER" onAction="#DettagliContatto" promptText="nome" />
                   <TextField fx:id="cognomeInfo" alignment="CENTER" promptText="cognome" />
                   <TextField fx:id="numInfo1" alignment="CENTER" promptText="numero telefono 1" />
                   <TextField fx:id="numInfo2" alignment="CENTER" promptText="numero telefono 2" />
