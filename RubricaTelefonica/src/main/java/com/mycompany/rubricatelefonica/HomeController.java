@@ -81,11 +81,11 @@ public class HomeController implements Initializable {
     @FXML
     private TextField emailInfo3;
     @FXML
-    private Button SalvaModificeContatto;
-    @FXML
     private VBox DettagliContatto;
     @FXML
     private Button ModificaLista;
+    @FXML
+    private Button SalvaModificheContatto;
 
     /**
      * Initializes the controller class.
@@ -101,18 +101,18 @@ public class HomeController implements Initializable {
         Tabella_contatti.setItems(SuperController.lista);
         
         showContattiDetails(null);
+        
+        
        
          // Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(
         //     observable, oldValue, newValu) -> {showContattiDetails( (Contatto) newValue);
          // }
-         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
+    Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
     @Override
     public void changed(ObservableValue<? extends Contatto> observable, Contatto oldValue, Contatto newValue) {
         showContattiDetails(newValue);
-       // SalvaModificheContatto(newValue);
-        
-    }
-});
+       }
+    });
 
     }    
 
@@ -123,13 +123,13 @@ public class HomeController implements Initializable {
     
     @FXML
     private void ModificaFotoContatto(ActionEvent event) throws FileNotFoundException {
-   
+        
     }
 
     @FXML
     private void ModificaContatto(ActionEvent event) {
         
-        SalvaModificeContatto.visibleProperty().set(!SalvaModificeContatto.visibleProperty().get());
+        SalvaModificheContatto.visibleProperty().set(!SalvaModificheContatto.visibleProperty().get());
         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
         
         
@@ -137,7 +137,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
-     
+        
     }
 
     @FXML
@@ -158,7 +158,7 @@ public class HomeController implements Initializable {
     }
 
     @FXML
-    private void RimoviContattiSelezionati(ActionEvent event) {
+    private void RimuoviContattiSelezionati(ActionEvent event) {
     }
 
     @FXML
@@ -204,6 +204,18 @@ public class HomeController implements Initializable {
     @FXML
     private void SalvaModificheContatto(ActionEvent event) {
      // c.setNome(nomeInfo.getText());  nomeInfo.getText();
-        
+     
+        Tabella_contatti.getSelectionModel().getSelectedItem().setNome(nomeInfo.getText());
+        Tabella_contatti.getSelectionModel().getSelectedItem().setCognome(cognomeInfo.getText());
+        Tabella_contatti.getSelectionModel().getSelectedItem().setNumTel1(numInfo1.getText());
+        Tabella_contatti.getSelectionModel().getSelectedItem().setNumTel2(numInfo2.getText());
+        Tabella_contatti.getSelectionModel().getSelectedItem().setNumTel3(numInfo3.getText());
+        Tabella_contatti.getSelectionModel().getSelectedItem().setEmail1(emailInfo1.getText());
+        Tabella_contatti.getSelectionModel().getSelectedItem().setEmail2(emailInfo2.getText());
+        Tabella_contatti.getSelectionModel().getSelectedItem().setEmail3(emailInfo3.getText());
+        Tabella_contatti.refresh();
     }
+    
+    
+    
 }
