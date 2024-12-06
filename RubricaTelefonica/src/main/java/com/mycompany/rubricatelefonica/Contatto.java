@@ -18,6 +18,16 @@ public class Contatto {
     private StringProperty email1;
     private StringProperty email2;
     private StringProperty email3;
+    private Image fotoprofilo;
+
+    
+    public Image getFotoprofilo() {
+        return fotoprofilo;
+    }
+
+    public void setFotoprofilo(Image fotoprofilo) {
+        this.fotoprofilo = fotoprofilo;
+    }
 
     public Contatto(StringProperty nome, StringProperty cognome, StringProperty numTel1, StringProperty numTel2, StringProperty numTel3, StringProperty email1, StringProperty email2, StringProperty email3) {
         this.nome = nome;
@@ -28,6 +38,7 @@ public class Contatto {
         this.email1 = email1;
         this.email2 = email2;
         this.email3 = email3;
+      //  this.fotoprofilo = new Image("C:\\Users\\alessandro\\Documents\\NetBeansProjects\\RubricaTelefonica\\Progetto_Ingegneria_del_Software\\RubricaTelefonica\\src\\main\\resources\\com\\mycompany\\rubricatelefonica");
     }
 
     public String getNome() {
