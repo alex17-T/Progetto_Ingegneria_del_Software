@@ -62,7 +62,7 @@ public class SecondaryController {
         colNSec = SuperController.colNome;
         colCnSec = SuperController.colCognome;
         listaSec  = SuperController.lista;*/
-        
+        creaButton.disableProperty().bind(nomeField.textProperty().isEmpty().and(cognomeField.textProperty().isEmpty()));
     }
     
     /*private void checkImage(){
