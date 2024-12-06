@@ -19,6 +19,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -46,7 +47,13 @@ public class HomeController implements Initializable {
     @FXML
     private TableColumn<Contatto, String> Colonna_cognome;
     @FXML
+    private TableColumn<Contatto, String> Colonna_telefono;
+    @FXML
+    private TableColumn<Contatto, String> Colonna_email;
+    @FXML
     private HBox SearchBar;
+    @FXML
+    private Button modificaButton;
     
 
     //private ObservableList<Contatto> listaHome = SuperController.lista;
@@ -61,6 +68,8 @@ public class HomeController implements Initializable {
    
         Colonna_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         Colonna_cognome.setCellValueFactory(new PropertyValueFactory<>("cognome"));
+        Colonna_telefono.setCellValueFactory(new PropertyValueFactory<>("numTelefono1"));
+        Colonna_email.setCellValueFactory(new PropertyValueFactory<>("email1"));
         Tabella_contatti.setItems(SuperController.lista);
     }    
 
