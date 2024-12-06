@@ -20,7 +20,7 @@
               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
           </padding>
          <children>
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="719.0" styleClass="LightBlueRound" stylesheets="@secondary.css" text="Inserire i dati del nuovo contatto (Nome e/o cognome obbligatori)" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="719.0" styleClass="LightBlueRound" stylesheets="@secondary.css" text="Inserire i dati del nuovo contatto (Nome o cognome obbligatori)" />
             <AnchorPane prefHeight="101.0" prefWidth="210.0" stylesheets="@secondary.css">
                <children>
                   <StackPane prefHeight="114.0" prefWidth="114.0" stylesheets="@secondary.css">
@@ -33,12 +33,13 @@
                      </children>
                   </StackPane>
                   <Button fx:id="fotoButton" layoutX="145.0" layoutY="88.0" mnemonicParsing="false" onAction="#cambiaImage" stylesheets="@secondary.css" text="Cambia foto" />
-                  <VBox fx:id="datiObbligatori" layoutX="293.0" layoutY="21.0" prefHeight="80.0" prefWidth="237.0" styleClass="LightBlue" stylesheets="@secondary.css">
+                  <VBox fx:id="datiObbligatori" layoutX="293.0" layoutY="1.0" prefHeight="115.0" prefWidth="237.0" spacing="7.0" styleClass="LightBlue" stylesheets="@secondary.css">
                      <children>
+                        <Label prefHeight="17.0" prefWidth="260.0" text="E'obbligatorio inserire almeno 1 dei 2 campi" />
                         <HBox prefHeight="40.0" prefWidth="197.0" stylesheets="@secondary.css">
                            <children>
                               <Label text="Nome : " />
-                              <TextField fx:id="nomeField" onAction="#verificaObblighi" promptText="Obbligatorio" />
+                              <TextField fx:id="nomeField" onAction="#verificaObblighi" />
                            </children>
                            <padding>
                               <Insets left="10.0" top="5.0" />
@@ -47,7 +48,7 @@
                         <HBox prefHeight="39.0" prefWidth="197.0" stylesheets="@secondary.css">
                            <children>
                               <Label prefHeight="17.0" prefWidth="67.0" text="Cognome : " />
-                              <TextField fx:id="cognomeField" onAction="#verificaObblighi" promptText="Obbligatorio" />
+                              <TextField fx:id="cognomeField" onAction="#verificaObblighi" />
                            </children>
                            <padding>
                               <Insets left="10.0" top="8.0" />

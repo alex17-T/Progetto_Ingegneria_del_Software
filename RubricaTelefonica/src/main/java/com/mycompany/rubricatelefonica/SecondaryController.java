@@ -49,7 +49,6 @@ public class SecondaryController {
     @FXML
     private Button creaButton;
     
-    @FXML
     /*private TableView<Contatto> tabSec = SuperController.tab;
     private TableColumn<Contatto, String> colNSec = SuperController.colNome;
     private TableColumn<Contatto, String> colCnSec = SuperController.colCognome;*/
