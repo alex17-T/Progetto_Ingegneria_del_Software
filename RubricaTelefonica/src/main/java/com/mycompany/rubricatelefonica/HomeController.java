@@ -63,7 +63,7 @@ public class HomeController implements Initializable {
     @FXML
     private TableColumn<Contatto, CheckBox> Colonna_Spunta;
     @FXML
-    private TableColumn<Contatto, Image> Colonna_fotoProfilo;
+    private TableColumn<Contatto, ImageView> Colonna_fotoProfilo;
     @FXML
     private TextField nomeInfo;
     @FXML
@@ -113,7 +113,7 @@ public class HomeController implements Initializable {
         showContattiDetails(newValue);
        }
     });
-
+ 
     }    
 
     @FXML
@@ -137,6 +137,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
+       // Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(new Image("C:\\Users\\alessandro\\Documents\\NetBeansProjects\\RubricaTelefonica\\Progetto_Ingegneria_del_Software\\RubricaTelefonica\\src\\main\\resources\\com\\mycompany\\rubricatelefonica"));
         
     }
 
@@ -200,11 +201,24 @@ public class HomeController implements Initializable {
     @FXML
     private void DettagliContatto(ActionEvent event) {
     }
-
+/**
+ * Salva le modifiche apportate alle informazioni di un contatto selezionato nella tabella.
+ *
+ * Questo metodo viene invocato al clic sul pulsante "Salva Modifiche". Aggiorna il contatto
+ * attualmente selezionato nella tabella con i dati inseriti nei campi di input relativi al nome,
+ * cognome, numeri di telefono ed email. Dopo l'aggiornamento:
+ * - Viene ricaricata la tabella per riflettere le modifiche.
+ * - Viene abilitata/disabilitata la proprietà `mouseTransparent` del pannello `DettagliContatto`.
+ *
+ * @param event l'evento che rappresenta l'azione del clic sul pulsante
+ *              (tipicamente generato dall'utente tramite interazione con l'interfaccia grafica).
+ *
+ * 
+ */
     @FXML
     private void SalvaModificheContatto(ActionEvent event) {
-     // c.setNome(nomeInfo.getText());  nomeInfo.getText();
      
+      // Seleziona il contatto corrente dalla tabella e aggiorna i suoi dati
         Tabella_contatti.getSelectionModel().getSelectedItem().setNome(nomeInfo.getText());
         Tabella_contatti.getSelectionModel().getSelectedItem().setCognome(cognomeInfo.getText());
         Tabella_contatti.getSelectionModel().getSelectedItem().setNumTel1(numInfo1.getText());
@@ -213,8 +227,10 @@ public class HomeController implements Initializable {
         Tabella_contatti.getSelectionModel().getSelectedItem().setEmail1(emailInfo1.getText());
         Tabella_contatti.getSelectionModel().getSelectedItem().setEmail2(emailInfo2.getText());
         Tabella_contatti.getSelectionModel().getSelectedItem().setEmail3(emailInfo3.getText());
+        // Aggiorna la visualizzazione della tabella
         Tabella_contatti.refresh();
-         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
+         // Inverte la proprietà `mouseTransparent` del pannello dei dettagli per renderli non selezionabili
+        DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
     }
     
     
