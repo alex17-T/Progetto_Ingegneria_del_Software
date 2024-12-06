@@ -22,6 +22,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
@@ -34,6 +35,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -123,7 +125,14 @@ public class HomeController implements Initializable {
     
     @FXML
     private void ModificaFotoContatto(ActionEvent event) throws FileNotFoundException {
-        
+        FileChooser fileChooser = new FileChooser();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        File file = fileChooser.showOpenDialog(stage);
+         Image image = new Image(new FileInputStream(file));// Leggi l'immagine
+          ImageView FotoSel = new ImageView(image);// Creazione di un ImageView
+      //    Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoSel);
+          contactImage.setImage(image);
+          
     }
 
     @FXML
@@ -137,8 +146,9 @@ public class HomeController implements Initializable {
 
     @FXML
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
-       // Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(new Image("C:\\Users\\alessandro\\Documents\\NetBeansProjects\\RubricaTelefonica\\Progetto_Ingegneria_del_Software\\RubricaTelefonica\\src\\main\\resources\\com\\mycompany\\rubricatelefonica"));
-        
+       //mageView FotoDefault = new ImageView(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
+      //  Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoDefault)   ;    
+     contactImage.setImage(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
     }
 
     @FXML
