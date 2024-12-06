@@ -90,6 +90,7 @@ public class HomeController implements Initializable {
     /**
      * Il metodo configura le colonne della tabella, imposta a null i dettagli
      * iniziali dei contatti
+     * 
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
