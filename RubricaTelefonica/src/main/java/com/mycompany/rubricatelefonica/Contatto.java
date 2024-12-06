@@ -34,64 +34,64 @@ public class Contatto {
         return nome.getValue();
     }
 
-    public void setNome(StringProperty nome) {
-        this.nome = nome;
+    public void setNome(String nome) {
+        this.nome.setValue(nome);
     }
 
     public String getCognome() {
         return cognome.getValue();
     }
 
-    public void setCognome(StringProperty cognome) {
-        this.cognome = cognome;
+    public void setCognome(String cognome) {
+        this.cognome.setValue(cognome);
     }
 
     public String getNumTel1() {
         return numTel1.getValue();
     }
 
-    public void setNumTel1(StringProperty numTel1) {
-        this.numTel1 = numTel1;
+    public void setNumTel1(String numTel1) {
+        this.numTel1.setValue(numTel1);
     }
 
     public String getNumTel2() {
         return numTel2.getValue();
     }
 
-    public void setNumTel2(StringProperty numTel2) {
-        this.numTel2 = numTel2;
+    public void setNumTel2(String numTel2) {
+        this.numTel2.setValue(numTel2);
     }
 
     public String getNumTel3() {
         return numTel3.getValue();
     }
 
-    public void setNumTel3(StringProperty numTel3) {
-        this.numTel3 = numTel3;
+    public void setNumTel3(String numTel3) {
+        this.numTel3.setValue(numTel3);
     }
 
     public String getEmail1() {
         return email1.getValue();
     }
 
-    public void setEmail1(StringProperty email1) {
-        this.email1 = email1;
+    public void setEmail1(String email1) {
+        this.email1.setValue(email1);
     }
 
     public String getEmail2() {
         return email2.getValue();
     }
 
-    public void setEmail2(StringProperty email2) {
-        this.email2 = email2;
+    public void setEmail2(String email2) {
+        this.email2.setValue(email2);
     }
 
     public String getEmail3() {
         return email3.getValue();
     }
 
-    public void setEmail3(StringProperty email3) {
-        this.email3 = email3;
+    public void setEmail3(String email3) {
+        this.email3.setValue(email3);
     }
     
     
