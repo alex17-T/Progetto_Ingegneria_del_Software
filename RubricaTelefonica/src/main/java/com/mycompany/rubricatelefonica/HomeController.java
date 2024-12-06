@@ -54,9 +54,6 @@ public class HomeController implements Initializable {
     private HBox SearchBar;
     @FXML
     private Button modificaButton;
-    
-
-    //private ObservableList<Contatto> listaHome = SuperController.lista;
 
     /**
      * Initializes the controller class.
@@ -64,7 +61,6 @@ public class HomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        //HomeController hm  = new HomeController(Tabella_contatti, Colonna_nome, Colonna_cognome,listaHome);
    
         Colonna_nome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         Colonna_cognome.setCellValueFactory(new PropertyValueFactory<>("cognome"));
@@ -76,18 +72,11 @@ public class HomeController implements Initializable {
     @FXML
     private void AggiungiContatto(ActionEvent event) throws IOException {
         App.setRoot("secondary");
-        //Tabella_contatti.setItems(SuperController.lista);
-        //Tabella_contatti.refresh();
     }
     
     @FXML
     private void ModificaFotoContatto(ActionEvent event) throws FileNotFoundException {
-        /*FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().addAll(
-        new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-        File file = fc.showOpenDialog(null);
-        Image img = new Image(new FileInputStream(file));
-        contactImage.imageProperty().set(img);*/
+    
     }
 
     @FXML
@@ -97,8 +86,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
-        /*Image defImg = new Image(new FileInputStream("FotoProfiloDefault.png"));
-        contactImage.setImage(defImg);*/
+     
     }
 
     @FXML
@@ -111,12 +99,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private void ModificaListaContatti(ActionEvent event) {
-        
-      //if(ToolBar.visibleProperty().get() == false)
       ToolBar.visibleProperty().set(!(ToolBar.visibleProperty().get()));
-      
-      //SerchBar.visibleProperty().set(false);
-           
     }
 
     @FXML
