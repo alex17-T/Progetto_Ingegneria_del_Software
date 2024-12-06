@@ -173,7 +173,9 @@ public class HomeController implements Initializable {
      * profilo, quest'ultima viene rimossa. 
      * 
      * @param event l'evento è generato dall'utente tramite l'interazione con 
-     * l'interfaccia grafica. 
+     * l'interfaccia grafica.
+     * 
+     * @throws FileNotFoundException se il file specificato non viene trovato
      */
     @FXML
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
