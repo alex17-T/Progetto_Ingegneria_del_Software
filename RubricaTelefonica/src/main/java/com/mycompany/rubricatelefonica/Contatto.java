@@ -1,10 +1,3 @@
-
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.rubricatelefonica;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -17,8 +10,6 @@ import javafx.scene.image.Image;
  */
 public class Contatto {
 
-    /*private SimpleStringProperty name;
-    private SimpleStringProperty surname;*/
     private String nome;
     private String cognome;
     private String numTelefono1;     
@@ -32,9 +23,6 @@ public class Contatto {
     private Image fotoProfilo;
     
     public Contatto(String nome, String cognome, String numTelefono1, String numTelefono2, String numTelefono3, String email1, String email2, String email3) {
-
-        /*this.name = new SimpleStringProperty(nome);
-        this.surname = new SimpleStringProperty(cognome);*/
         this.nome = nome;
         this.cognome = cognome;
         this.numTelefono1 = numTelefono1;
@@ -95,23 +83,19 @@ public class Contatto {
     
 
     public String getNome() {
-        //return nome.get();
         return this.nome;
     }
 
     public void setNome(String nome) {
-        //this.nome.set(nome);
         this.nome = nome;
     }
 
     public String getCognome() {
-        //return cognome.get();
         return this.cognome;
     }
 
     
     public void setCognome(String cognome) {
-        //this.cognome.set(cognome);
         this.cognome = cognome;
     }
 

@@ -38,8 +38,6 @@ public class SecondaryController {
     @FXML
     private TextField m3Field;
     
-    //private String defaultImagePath = "https://static.vecteezy.com/system/resources/previews/014/300/061/original/man-profile-glyph-icon-anonymous-photo-for-documents-illustration-vector.jpg";
-    
     @FXML
     private ImageView immagine;
     @FXML
@@ -49,28 +47,10 @@ public class SecondaryController {
     @FXML
     private Button creaButton;
     
-    /*private TableView<Contatto> tabSec = SuperController.tab;
-    private TableColumn<Contatto, String> colNSec = SuperController.colNome;
-    private TableColumn<Contatto, String> colCnSec = SuperController.colCognome;*/
-    //private ObservableList<Contatto> listaSec = SuperController.lista;
-
-    
     
     public void initialize(){
-        //checkImage();
-        /*tabSec = SuperController.tab;
-        colNSec = SuperController.colNome;
-        colCnSec = SuperController.colCognome;
-        listaSec  = SuperController.lista;*/
         creaButton.disableProperty().bind(nomeField.textProperty().isEmpty().and(cognomeField.textProperty().isEmpty()));
     }
-    
-    /*private void checkImage(){
-        if(immagine.getImage() == null){
-            Image defaultImage = new Image(defaultImagePath);
-            immagine.setImage(defaultImage);
-        }
-    }*/
 
     @FXML
     private void verificaObblighi(ActionEvent event) {
@@ -82,12 +62,8 @@ public class SecondaryController {
 
     @FXML
     private void creaContatto(ActionEvent event) throws IOException {
-        /*listaOsservabile.add(new Contatto(
-                nomeField.getText(),cognomeField.getText()));
-        App.setRoot("Home");*/
         
         SuperController.lista.add(new Contatto(nomeField.getText(), cognomeField.getText(), t1Field.getText(), t2Field.getText(), t3Field.getText(), m1Field.getText(), m2Field.getText(), m3Field.getText()));
-        //SuperController.tab.setItems(SuperController.lista);
         App.setRoot("Home");
         
     }
