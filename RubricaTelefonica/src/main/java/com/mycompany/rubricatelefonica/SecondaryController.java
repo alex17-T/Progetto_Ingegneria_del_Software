@@ -86,7 +86,7 @@ public class SecondaryController {
                 nomeField.getText(),cognomeField.getText()));
         App.setRoot("Home");*/
         
-        SuperController.lista.add(new Contatto(nomeField.getText(), cognomeField.getText()));
+        SuperController.lista.add(new Contatto(nomeField.getText(), cognomeField.getText(), t1Field.getText(), t2Field.getText(), t3Field.getText(), m1Field.getText(), m2Field.getText(), m3Field.getText()));
         //SuperController.tab.setItems(SuperController.lista);
         App.setRoot("Home");
         
