@@ -35,7 +35,7 @@
          <children>
             <ImageView fx:id="contactImage" fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@FotoProfiloDefault.png" />
+                  <Image url="@iconaSecondary.jpg" />
                </image>
             </ImageView>
             <Button layoutX="228.0" layoutY="148.0" mnemonicParsing="false" onAction="#ModificaFotoContatto" prefHeight="31.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" />
@@ -44,9 +44,9 @@
                   <Font name="Calibri Bold" size="12.0" />
                </font></Button>
             <Button layoutX="139.0" layoutY="148.0" mnemonicParsing="false" onAction="#RimuoviFotoProfilo" prefHeight="31.0" prefWidth="56.0" styleClass="remButton" stylesheets="@edit.css" />
-            <VBox layoutX="116.0" layoutY="191.0" prefHeight="282.0" prefWidth="186.0" spacing="2.0">
+            <VBox fx:id="DettagliContatto" layoutX="116.0" layoutY="191.0" mouseTransparent="true" prefHeight="282.0" prefWidth="186.0" spacing="2.0">
                <children>
-                  <TextField fx:id="nomeInfo" alignment="CENTER" promptText="nome" />
+                  <TextField fx:id="nomeInfo" alignment="CENTER" onAction="#DettagliContatto" promptText="nome" />
                   <TextField fx:id="cognomeInfo" alignment="CENTER" promptText="cognome" />
                   <TextField fx:id="numInfo1" alignment="CENTER" promptText="numero telefono 1" />
                   <TextField fx:id="numInfo2" alignment="CENTER" promptText="numero telefono 2" />
@@ -56,7 +56,7 @@
                   <TextField fx:id="emailInfo3" alignment="CENTER" promptText="email3" />
                </children>
             </VBox>
-            <Button fx:id="SalvaModificeContatto" alignment="CENTER" contentDisplay="RIGHT" layoutX="47.0" layoutY="466.0" mnemonicParsing="false" onAction="#ModificaContatto" prefHeight="39.0" prefWidth="139.0" styleClass="ModConButton" stylesheets="@edit.css" text="Salva" textOverrun="CLIP" visible="false">
+            <Button fx:id="SalvaModificheContatto" alignment="CENTER" contentDisplay="RIGHT" layoutX="47.0" layoutY="466.0" mnemonicParsing="false" onAction="#SalvaModificheContatto" prefHeight="39.0" prefWidth="139.0" styleClass="ModConButton" stylesheets="@edit.css" text="Salva" textOverrun="CLIP" visible="false">
                <font>
                   <Font name="Calibri Bold" size="12.0" />
                </font>
@@ -66,7 +66,7 @@
       <Button layoutX="574.0" layoutY="650.0" mnemonicParsing="false" onAction="#ImportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="impButton" stylesheets="@edit.css" />
       <Button layoutX="780.0" layoutY="650.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="expButton" stylesheets="@edit.css" />
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
-      <Button layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
+      <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
       <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
          <children>
             <CheckBox alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
@@ -77,7 +77,7 @@
                   <Insets left="5.0" top="10.0" />
                </padding>
             </CheckBox>
-            <Button mnemonicParsing="false" onAction="#RimoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
+            <Button mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
             <TextField editable="false" prefHeight="25.0" prefWidth="29.0" />
             <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />
          </children>
@@ -88,7 +88,6 @@
             <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="30.0" prefWidth="34.0" styleClass="srcButton" stylesheets="@edit.css" />
          </children>
       </HBox>
-      <TextFlow prefHeight="200.0" prefWidth="200.0" />
       <Text layoutX="587.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qui appaiono tutte le informazioni una volta selezionato un conttatto dalla lista  e premendo sul pulstante edit si possono modificare i valori " wrappingWidth="342.884765625" />
    </children>
 </Pane>
