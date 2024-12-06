@@ -16,11 +16,11 @@ import javafx.scene.control.TableView;
  * @author Giovanni
  */
 public class SuperController {
-    public static TableView<Contatto> tab;
+    /*public static TableView<Contatto> tab;
     public static TableColumn<Contatto, String> colNome;
     public static TableColumn<Contatto, String> colCognome;
     public static TableColumn<Contatto, String> colNumTel;
-    public static TableColumn<Contatto, String> colEmail;
+    public static TableColumn<Contatto, String> colEmail;*/
     public static ObservableList<Contatto> lista = FXCollections.observableArrayList();
     
     
