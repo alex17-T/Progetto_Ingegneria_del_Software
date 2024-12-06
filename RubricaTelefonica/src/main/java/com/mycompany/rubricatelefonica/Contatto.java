@@ -9,98 +9,91 @@ import javafx.scene.image.Image;
  * @author Giovanni
  */
 public class Contatto {
+  
+    private StringProperty nome;
+    private StringProperty cognome;
+    private StringProperty numTel1;
+    private StringProperty numTel2;
+    private StringProperty numTel3;
+    private StringProperty email1;
+    private StringProperty email2;
+    private StringProperty email3;
 
-    private String nome;
-    private String cognome;
-    private String numTelefono1;     
-    private String numTelefono2;
-    private String numTelefono3;
-
-    private String email1;     
-    private String email2;
-    private String email3;
-    
-    private Image fotoProfilo;
-    
-    public Contatto(String nome, String cognome, String numTelefono1, String numTelefono2, String numTelefono3, String email1, String email2, String email3) {
+    public Contatto(StringProperty nome, StringProperty cognome, StringProperty numTel1, StringProperty numTel2, StringProperty numTel3, StringProperty email1, StringProperty email2, StringProperty email3) {
         this.nome = nome;
         this.cognome = cognome;
-        this.numTelefono1 = numTelefono1;
-        this.numTelefono2 = numTelefono2;
-        this.numTelefono3 = numTelefono3;
+        this.numTel1 = numTel1;
+        this.numTel2 = numTel2;
+        this.numTel3 = numTel3;
         this.email1 = email1;
         this.email2 = email2;
         this.email3 = email3;
     }
-
-    public String getNumTelefono1() {
-        return numTelefono1;
-    }
-
-    public void setNumTelefono1(String numTelefono1) {
-        this.numTelefono1 = numTelefono1;
-    }
-
-    public String getNumTelefono2() {
-        return numTelefono2;
-    }
-
-    public void setNumTelefono2(String numTelefono2) {
-        this.numTelefono2 = numTelefono2;
-    }
-
-    public String getNumTelefono3() {
-        return numTelefono3;
-    }
-
-    public void setNumTelefono3(String numTelefono3) {
-        this.numTelefono3 = numTelefono3;
-    }
-
-    public String getEmail1() {
-        return email1;
-    }
-
-    public void setEmail1(String email1) {
-        this.email1 = email1;
-    }
-
-    public String getEmail2() {
-        return email2;
-    }
-
-    public void setEmail2(String email2) {
-        this.email2 = email2;
-    }
-
-    public String getEmail3() {
-        return email3;
-    }
-
-    public void setEmail3(String email3) {
-        this.email3 = email3;
-    }
-    
 
     public String getNome() {
-        return this.nome;
+        return nome.getValue();
     }
 
-    public void setNome(String nome) {
+    public void setNome(StringProperty nome) {
         this.nome = nome;
     }
 
     public String getCognome() {
-        return this.cognome;
+        return cognome.getValue();
     }
 
-    
-    public void setCognome(String cognome) {
+    public void setCognome(StringProperty cognome) {
         this.cognome = cognome;
     }
 
-    public void setNumTelefono(String numTelefono) {
-        this.numTelefono1 = numTelefono;
+    public String getNumTel1() {
+        return numTel1.getValue();
     }
+
+    public void setNumTel1(StringProperty numTel1) {
+        this.numTel1 = numTel1;
+    }
+
+    public String getNumTel2() {
+        return numTel2.getValue();
+    }
+
+    public void setNumTel2(StringProperty numTel2) {
+        this.numTel2 = numTel2;
+    }
+
+    public String getNumTel3() {
+        return numTel3.getValue();
+    }
+
+    public void setNumTel3(StringProperty numTel3) {
+        this.numTel3 = numTel3;
+    }
+
+    public String getEmail1() {
+        return email1.getValue();
+    }
+
+    public void setEmail1(StringProperty email1) {
+        this.email1 = email1;
+    }
+
+    public String getEmail2() {
+        return email2.getValue();
+    }
+
+    public void setEmail2(StringProperty email2) {
+        this.email2 = email2;
+    }
+
+    public String getEmail3() {
+        return email3.getValue();
+    }
+
+    public void setEmail3(StringProperty email3) {
+        this.email3 = email3;
+    }
+    
+    
  
 }

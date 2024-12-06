@@ -63,7 +63,10 @@ public class SecondaryController {
     @FXML
     private void creaContatto(ActionEvent event) throws IOException {
         
-        SuperController.lista.add(new Contatto(nomeField.getText(), cognomeField.getText(), t1Field.getText(), t2Field.getText(), t3Field.getText(), m1Field.getText(), m2Field.getText(), m3Field.getText()));
+        Contatto c = new Contatto(nomeField.textProperty(), cognomeField.textProperty(), t1Field.textProperty(), t2Field.textProperty(), t3Field.textProperty(), m1Field.textProperty(), m2Field.textProperty(), m3Field.textProperty());
+        //SuperController.lista.add(new Contatto(nomeField.getText(), cognomeField.getText(), t1Field.getText(), t2Field.getText(), t3Field.getText(), m1Field.getText(), m2Field.getText(), m3Field.getText()));
+        SuperController.lista.add(c);
+        
         App.setRoot("Home");
         
     }
