@@ -214,6 +214,7 @@ public class HomeController implements Initializable {
         Tabella_contatti.getSelectionModel().getSelectedItem().setEmail2(emailInfo2.getText());
         Tabella_contatti.getSelectionModel().getSelectedItem().setEmail3(emailInfo3.getText());
         Tabella_contatti.refresh();
+         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
     }
     
     
