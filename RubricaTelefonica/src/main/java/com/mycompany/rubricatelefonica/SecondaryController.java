@@ -62,6 +62,7 @@ public class SecondaryController {
         colNSec = SuperController.colNome;
         colCnSec = SuperController.colCognome;
         listaSec  = SuperController.lista;*/
+        
     }
     
     /*private void checkImage(){

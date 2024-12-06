@@ -39,7 +39,7 @@
             </ImageView>
             <Button layoutX="228.0" layoutY="148.0" mnemonicParsing="false" onAction="#ModificaFotoContatto" prefHeight="31.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" />
             <Text layoutX="42.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qui appaiono tutte le informazioni una volta selezionato un conttatto dalla lista  e premendo sul pulstante edit si possono modificare i valori " wrappingWidth="342.884765625" />
-            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="256.0" layoutY="466.0" mnemonicParsing="false" onAction="#ModificaContatto" prefHeight="39.0" prefWidth="139.0" styleClass="ModConButton" stylesheets="@edit.css" text="Modifica Contatto" textOverrun="CLIP">
+            <Button fx:id="modificaButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="256.0" layoutY="466.0" mnemonicParsing="false" onAction="#ModificaContatto" prefHeight="39.0" prefWidth="139.0" styleClass="ModConButton" stylesheets="@edit.css" text="Modifica Contatto" textOverrun="CLIP">
                <font>
                   <Font name="Calibri Bold" size="12.0" />
                </font></Button>
