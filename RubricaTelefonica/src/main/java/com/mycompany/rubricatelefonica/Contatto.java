@@ -1,3 +1,8 @@
+/**
+ * @file Contatto.java
+ * @brief Questo file contiene gli attributi di un contatto e i suoi getter e setter.
+ */
+
 package com.mycompany.rubricatelefonica;
 
 import javafx.beans.property.SimpleStringProperty;
@@ -66,10 +71,6 @@ public class Contatto {
       //  this.fotoprofilo = new Image("C:\\Users\\alessandro\\Documents\\NetBeansProjects\\RubricaTelefonica\\Progetto_Ingegneria_del_Software\\RubricaTelefonica\\src\\main\\resources\\com\\mycompany\\rubricatelefonica");
     }
 /**
- * Restituisce il nome della persona.
- *
- * @return il nome della persona come StringProperty
- *//**
  * Restituisce il nome della persona.
  *
  * @return il nome della persona come StringProperty
