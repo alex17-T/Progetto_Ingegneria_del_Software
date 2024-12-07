@@ -14,7 +14,7 @@ import javafx.scene.image.ImageView;
  *
  * @author Giovanni
  */
-public class Contatto {
+public class Contatto implements Comparable<Contatto>{
   
     private StringProperty nome;
     private StringProperty cognome;
@@ -25,8 +25,48 @@ public class Contatto {
     private StringProperty email2;
     private StringProperty email3;
     private ImageView fotoprofilo;
-
+    
+    
     /**
+     * 
+     * @return 
+     */
+    @Override
+    public int compareTo(Contatto altroContatto){
+        if(this.getNome() == null && altroContatto.getNome() == null){
+            return 0;
+        }
+        
+        if(this.getNome() == null && altroContatto.getNome() != null){
+            return 1;
+        }
+        
+        if(this.getNome() != null && altroContatto.getNome() == null){
+            return -1;
+        }
+        
+        int comparazione = this.getNome().compareTo(altroContatto.getNome());
+        
+        if(comparazione == 0){
+            if(this.getCognome() == null && altroContatto.getCognome() == null){
+                return 0;
+            }
+        
+            if(this.getCognome() == null && altroContatto.getCognome() != null){
+                return 1;
+            }
+        
+            if(this.getCognome() != null && altroContatto.getCognome() == null){
+                return -1;
+            }
+            
+            comparazione = this.getCognome().compareTo(altroContatto.getCognome());
+        }
+        
+        return comparazione;
+    }
+
+ /**
  * Restituisce l'immagine di profilo della persona.
  *
  * @return l'immagine di profilo come oggetto Image
