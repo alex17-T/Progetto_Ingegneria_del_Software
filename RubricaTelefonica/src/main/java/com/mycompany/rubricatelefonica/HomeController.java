@@ -1,3 +1,12 @@
+/**
+ * @file HomeController.java
+ * @brief Questo file contiene la logica dell'interfaccia principale.
+ * 
+ * Questo file implementa i metodi che rendono interattiva e
+ * correttamente funzionante l'interfaccia grafica
+ * codificata nel file Home.fxml.
+ */
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -90,9 +99,15 @@ public class HomeController implements Initializable {
     private Button SalvaModificheContatto;
 
     /**
-     * Il metodo configura le colonne della tabella, imposta a null i dettagli
-     * iniziali dei contatti
+     * @brief Il metodo configura la tabella e le sue colonne.
      * 
+     * Questo metodo inizializza le colonne della tabella riferendole agli
+     * attributi nome, cognome, numTel1 e email1 di Contatto.
+     * La tabella viene anche settata come "senza elementi selezionati" e
+     * gli viene associato un ChangeListener per attivarsi se il contatto
+     * selezionato cambia.
+     * 
+     * @see showContattiDetails()
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -109,6 +124,18 @@ public class HomeController implements Initializable {
         //     observable, oldValue, newValu) -> {showContattiDetails( (Contatto) newValue);
         // }
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
+            /**
+             * @brief Visualizza i dettagli di un contatto se selezionato.
+             * 
+             * Quando cambia il contatto selezionato nella tabella (anche nessuno),
+             * questo metodo si attiva e mostra i dati del contatto selezionato
+             * (tali dati sono tutte stringhe vuote se non è selezionato nessun contatto).
+             * 
+             * @invariant oldValue e newValue hanno valori differenti.
+             * @param observable La proprietà osservata, in questo caso il cambio del contatto selezionato.
+             * @param oldValue Il contatto precedentemente selezionato (anche nessuno).
+             * @param newValue Il nuovo contatto selezionato (anche nessuno).
+             */
             @Override
             public void changed(ObservableValue<? extends Contatto> observable, Contatto oldValue, Contatto newValue) {
                 showContattiDetails(newValue);
