@@ -25,6 +25,4 @@ import javafx.scene.control.TableView;
  */
 public class SuperController {
     public static ObservableList<Contatto> lista = FXCollections.observableArrayList();
-    
-
 }

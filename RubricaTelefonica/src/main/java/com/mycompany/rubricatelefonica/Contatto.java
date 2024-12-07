@@ -28,8 +28,19 @@ public class Contatto implements Comparable<Contatto>{
     
     
     /**
+     * @brief Compara i contatti prima per nome e, in caso di pareggio, per cognome.
      * 
-     * @return 
+     * Questo metodo compara i contatti secondo questa logica:
+     *    -se il nome è null il relativo contatto viene per primo;
+     *    -poi i contatti sono ordinati in ordine lessicografico per nome;
+     *    -eventuali pareggi per il nome sono risolti applicando la stessa logica per il cognome.
+     * 
+     * @invariant I due contatti comparati non hanno sia nome che cognome uguali.
+     * 
+     * @param[in] altroContatto il contatto con cui comparare quello che ha chiamato questo metodo.
+     * @return 0 se i due contatti sono in pareggio nell'ordine lessicografico,
+     *         un intero negativo se il contatto chiamante viene prima del contatto parametro,
+     *         un intero positivo se il contatto chiamante viene prima del contatto parametro.
      */
     @Override
     public int compareTo(Contatto altroContatto){
