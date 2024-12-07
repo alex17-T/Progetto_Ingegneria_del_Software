@@ -33,34 +33,40 @@ public class Contatto implements Comparable<Contatto>{
      */
     @Override
     public int compareTo(Contatto altroContatto){
-        if(this.getNome() == null && altroContatto.getNome() == null){
+        String nome1 = nome.getValue();
+        String nome2 = altroContatto.nome.getValue();
+        
+        if(nome1 == null && nome2 == null){
             return 0;
         }
         
-        if(this.getNome() == null && altroContatto.getNome() != null){
-            return 1;
-        }
-        
-        if(this.getNome() != null && altroContatto.getNome() == null){
+        if(nome1 == null && nome2 != null){
             return -1;
         }
         
-        int comparazione = this.getNome().compareTo(altroContatto.getNome());
+        if(nome1 != null && nome2 == null){
+            return 1;
+        }
+        
+        int comparazione = nome1.compareTo(nome2);
         
         if(comparazione == 0){
-            if(this.getCognome() == null && altroContatto.getCognome() == null){
+            String cognome1 = cognome.getValue();
+            String cognome2 = altroContatto.cognome.getValue();
+            
+            if(cognome1 == null && cognome2 == null){
                 return 0;
             }
         
-            if(this.getCognome() == null && altroContatto.getCognome() != null){
-                return 1;
-            }
-        
-            if(this.getCognome() != null && altroContatto.getCognome() == null){
+            if(cognome1 == null && cognome2 != null){
                 return -1;
             }
+        
+            if(cognome1 != null && cognome2 == null){
+                return 1;
+            }
             
-            comparazione = this.getCognome().compareTo(altroContatto.getCognome());
+            comparazione = cognome1.compareTo(cognome2);
         }
         
         return comparazione;

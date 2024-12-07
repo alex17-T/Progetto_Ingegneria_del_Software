@@ -4,6 +4,7 @@ package com.mycompany.rubricatelefonica;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -161,6 +162,7 @@ public class SecondaryController {
         
         Contatto c = new Contatto(nomeField.textProperty(), cognomeField.textProperty(), t1Field.textProperty(), t2Field.textProperty(), t3Field.textProperty(), m1Field.textProperty(), m2Field.textProperty(), m3Field.textProperty());
         SuperController.lista.add(c);
+        FXCollections.sort(SuperController.lista);
         
         App.setRoot("Home");
         
