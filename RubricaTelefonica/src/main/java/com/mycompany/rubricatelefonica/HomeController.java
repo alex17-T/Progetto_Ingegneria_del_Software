@@ -47,6 +47,8 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 /**
+ * @brief Questa classe gestisce l'interfaccia principale della rubrica telefonica.
+ * 
  * FXML Controller class
  *
  * @author alessandro
@@ -106,6 +108,9 @@ public class HomeController implements Initializable {
      * La tabella viene anche settata come "senza elementi selezionati" e
      * gli viene associato un ChangeListener per attivarsi se il contatto
      * selezionato cambia.
+     * 
+     * @pre La lista dei contatti (cioè SuperController.lista) è inizializzata.
+     * @post La tabella contiene i contatti della lista osservabile.
      * 
      * @see showContattiDetails()
      */
