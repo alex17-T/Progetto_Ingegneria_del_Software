@@ -27,6 +27,7 @@ public class App extends Application {
      * viene poi mostrato a schermo come interfaccia grafica.
      * 
      * @param stage L'oggetto che conterrà la scena e quindi il nodo radice del file Home.fxml.
+     * @pre Il parametro stage deve essere non nullo.
      * @throws IOException se il file fxml non può essere caricato.
      */
     @Override
@@ -43,6 +44,7 @@ public class App extends Application {
      * il cui nome è presente nella stringa fxml.
      * 
      * @param[in] fxml Il file .fxml che viene usato per mostrare a schermo la relativa interfaccia grafica.
+     * @pre Il file FXML deve esistere nel percorso definito dal parametro fxml.
      * @throws IOException se il file fxml non può essere caricato.
      */
     static void setRoot(String fxml) throws IOException {
@@ -53,6 +55,7 @@ public class App extends Application {
      * @brief Carica un file fxml e ritorna il suo nodo radice.
      * 
      * @param[in] fxml Il nome senza estensione del file fxml da caricare.
+     * @pre Il parametro fxml deve essere una stringa non vuota.
      * @return Il nodo radice del file fxml caricato, sotto forma di oggetto Parent.
      * @throws IOException se il file non può essere caricato.
      */

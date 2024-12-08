@@ -20,9 +20,22 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 /**
- *
+ * @brief Gestisce centralmente una lista di contatti visibili in una tabella.
+ * 
+ * Questa classe contiene una lista di contatti (`ObservableList<Contatto>`) che può essere condivisa
+ * tra altre classi per visualizzare, aggiungere o modificare contatti nella rubrica.
+ * L'invariante della classe è che `lista` non può mai essere null, e deve contenere oggetti di tipo `Contatto`.
+ * 
  * @author Giovanni
  */
 public class SuperController {
+    /**
+     * @brief Lista centralizzata di contatti da visualizzare in una tabella.
+     * 
+     * Questa lista è una `ObservableList<Contatto>` che viene utilizzata per 
+     * gestire i contatti.
+     * 
+     * @invariant La lista non può mai essere null e deve contenere oggetti di tipo `Contatto`.
+     */
     public static ObservableList<Contatto> lista = FXCollections.observableArrayList();
 }

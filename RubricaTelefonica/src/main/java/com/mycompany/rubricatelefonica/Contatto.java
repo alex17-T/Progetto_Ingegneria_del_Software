@@ -1,6 +1,10 @@
 /**
  * @file Contatto.java
  * @brief Questo file contiene gli attributi di un contatto e i suoi getter e setter.
+ * 
+ * La classe `Contatto` rappresenta un contatto nella rubrica, 
+ * includendo attributi come nome, cognome, numeri di telefono, email e immagine di profilo.
+ * Ogni contatto ha una serie di getter e setter per gestire questi attributi.
  */
 
 package com.mycompany.rubricatelefonica;
@@ -11,7 +15,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
- *
+ * @brief Rappresenta un contatto nella rubrica telefonica.
+ * 
+ * Questa classe contiene le informazioni di un contatto, tra cui nome, cognome,
+ * numeri di telefono, email e immagine di profilo. I contatti sono comparabili
+ * in base al nome e al cognome, e le informazioni sono memorizzate come `StringProperty`
+ * per la compatibilità con JavaFX.
+ * 
  * @author Giovanni
  */
 public class Contatto implements Comparable<Contatto>{
