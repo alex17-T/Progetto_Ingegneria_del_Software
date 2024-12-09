@@ -63,8 +63,14 @@
             </Button>
          </children>
       </Pane>
-      <Button layoutX="574.0" layoutY="650.0" mnemonicParsing="false" onAction="#ImportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="impButton" stylesheets="@edit.css" />
-      <Button layoutX="780.0" layoutY="650.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="expButton" stylesheets="@edit.css" />
+      <Button layoutX="574.0" layoutY="650.0" mnemonicParsing="false" onAction="#ImportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="impButton" stylesheets="@edit.css" text="Importa">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font></Button>
+      <Button layoutX="778.0" layoutY="650.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="expButton" stylesheets="@edit.css" text="Esporta">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font></Button>
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
       <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
