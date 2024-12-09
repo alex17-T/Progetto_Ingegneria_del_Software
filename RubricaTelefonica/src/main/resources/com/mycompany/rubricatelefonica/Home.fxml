@@ -31,7 +31,7 @@
          </children>
       </StackPane>
       <Button layoutX="398.0" layoutY="604.0" mnemonicParsing="false" onAction="#AggiungiContatto" prefHeight="39.0" prefWidth="56.0" styleClass="addButton" stylesheets="@edit.css" />
-      <Pane layoutX="545.0" layoutY="91.0" prefHeight="519.0" prefWidth="426.0" styleClass="detailPane" stylesheets="@pane.css">
+      <Pane fx:id="detailPane" layoutX="545.0" layoutY="91.0" prefHeight="519.0" prefWidth="426.0" styleClass="detailPane" stylesheets="@pane.css">
          <children>
             <ImageView fx:id="contactImage" fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
