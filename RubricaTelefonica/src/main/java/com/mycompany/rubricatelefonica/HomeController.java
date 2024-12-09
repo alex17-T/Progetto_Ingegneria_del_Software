@@ -222,7 +222,7 @@ public class HomeController implements Initializable {
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
        //mageView FotoDefault = new ImageView(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
       //  Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoDefault)   ;    
-     contactImage.setImage(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
+     contactImage.setImage(new Image(this.getClass().getResourceAsStream("iconaSecondary.jpg")));
     }
 
     /**
