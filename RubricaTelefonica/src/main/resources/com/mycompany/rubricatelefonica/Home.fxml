@@ -88,6 +88,5 @@
             <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="30.0" prefWidth="34.0" styleClass="srcButton" stylesheets="@edit.css" />
          </children>
       </HBox>
-      <Text layoutX="587.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="qui appaiono tutte le informazioni una volta selezionato un conttatto dalla lista  e premendo sul pulstante edit si possono modificare i valori " wrappingWidth="342.884765625" />
    </children>
 </Pane>
