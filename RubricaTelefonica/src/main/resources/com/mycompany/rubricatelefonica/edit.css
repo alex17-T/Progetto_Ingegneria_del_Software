@@ -63,7 +63,7 @@
         -fx-background-image: url("file_open_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
-        -fx-background-position: center;
+        -fx-background-position: 15px;
         -fx-background-radius: 5px;
 	-fx-border: none;
         -fx-cursor: hand;
@@ -78,7 +78,7 @@
         -fx-background-image: url("file_export_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
-        -fx-background-position: center;
+        -fx-background-position: 15px;
         -fx-background-radius: 5px;
 	-fx-border: none;
         -fx-cursor: hand;
