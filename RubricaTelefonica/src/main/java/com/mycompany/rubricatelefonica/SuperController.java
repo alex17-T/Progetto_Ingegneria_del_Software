@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -38,4 +39,5 @@ public class SuperController {
      * @invariant La lista non può mai essere null e deve contenere oggetti di tipo `Contatto`.
      */
     public static ObservableList<Contatto> lista = FXCollections.observableArrayList();
+    public static FilteredList<Contatto> listaFiltrata = new FilteredList<>(lista, b->true);
 }

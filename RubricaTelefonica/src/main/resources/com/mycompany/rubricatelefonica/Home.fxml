@@ -88,9 +88,9 @@
             <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />
          </children>
       </HBox>
-      <HBox fx:id="SearchBar" alignment="CENTER" layoutX="35.0" layoutY="22.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0">
+      <HBox fx:id="SearchBox" alignment="CENTER" layoutX="35.0" layoutY="22.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0">
          <children>
-            <TextField prefHeight="31.0" prefWidth="392.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" />
+            <TextField fx:id="serchBar" prefHeight="31.0" prefWidth="392.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" />
             <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="30.0" prefWidth="34.0" styleClass="srcButton" stylesheets="@edit.css" />
          </children>
       </HBox>
