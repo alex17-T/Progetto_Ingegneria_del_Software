@@ -9,6 +9,7 @@
 
 package com.mycompany.rubricatelefonica;
 
+import java.io.Serializable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
@@ -24,18 +25,26 @@ import javafx.scene.image.ImageView;
  * 
  * @author Giovanni
  */
-public class Contatto implements Comparable<Contatto>{
+public class Contatto implements Comparable<Contatto>, Serializable{
   
-    private StringProperty nome;
-    private StringProperty cognome;
-    private StringProperty numTel1;
-    private StringProperty numTel2;
-    private StringProperty numTel3;
-    private StringProperty email1;
-    private StringProperty email2;
-    private StringProperty email3;
-    private ImageView fotoprofilo;
-    
+    private transient StringProperty nome;
+    private transient StringProperty cognome;
+    private transient StringProperty numTel1;
+    private transient StringProperty numTel2;
+    private transient StringProperty numTel3;
+    private transient StringProperty email1;
+    private transient StringProperty email2;
+    private transient StringProperty email3;
+    private transient ImageView fotoprofilo; //Non viene serializzato
+    private String path;
+    private String nomeString;
+    private String cognomeString;
+    private String numTel1String;
+    private String numTel2String;
+    private String numTel3String;
+    private String email1String;
+    private String email2String;
+    private String email3String;
     
     /**
      * @brief Compara i contatti prima per nome e, in caso di pareggio, per cognome.
@@ -135,15 +144,25 @@ public class Contatto implements Comparable<Contatto>{
         this.email1 = email1;
         this.email2 = email2;
         this.email3 = email3;
+        this.path = getClass().getResource("/com/mycompany/rubricatelefonica/iconaSecondary.jpg").toString();
+        this.fotoprofilo = new ImageView(new Image(path));
       //  this.fotoprofilo = new Image("C:\\Users\\alessandro\\Documents\\NetBeansProjects\\RubricaTelefonica\\Progetto_Ingegneria_del_Software\\RubricaTelefonica\\src\\main\\resources\\com\\mycompany\\rubricatelefonica");
+        this.nomeString = nome.get();
+        this.cognomeString = cognome.get();
+        this.numTel1String = numTel1.get();
+        this.numTel2String = numTel2.get();
+        this.numTel3String = numTel3.get();
+        this.email1String = email1.get();
+        this.email2String = email2.get();
+        this.email3String = email3.get();
     }
 /**
- * Restituisce il nome della persona.
+ * Restituisce il nome della persona come String.
  *
- * @return il nome della persona come StringProperty
+ * @return il nome della persona come String
  */
     public String getNome() {
-        return nome.getValue();
+        return nomeString;
     }
 /**
  * Imposta il nome della persona.
@@ -152,15 +171,16 @@ public class Contatto implements Comparable<Contatto>{
  *
  */
     public void setNome(String nome) {
-        this.nome.setValue(nome);
+        this.nomeString = nome;
+        this.nome.set(nomeString);
     }
 /**
- * Restituisce il cognome della persona.
+ * Restituisce il cognome della persona come String.
  *
  * @return il cognome della persona come StringProperty
  */
     public String getCognome() {
-        return cognome.getValue();
+        return cognomeString;
     }
 
     /**
@@ -170,15 +190,16 @@ public class Contatto implements Comparable<Contatto>{
  * @throws IllegalArgumentException se il cognome è null o vuoto
  */
     public void setCognome(String cognome) {
-        this.cognome.setValue(cognome);
+        this.cognomeString = cognome;
+        this.cognome.set(cognomeString);
     }
 /**
- * Restituisce il primo numero di telefono della persona.
+ * Restituisce il primo numero di telefono della persona come String.
  *
  * @return il primo numero di telefono come StringProperty
  */
     public String getNumTel1() {
-        return numTel1.getValue();
+        return numTel1String;
     }
 /**
  * Imposta il primo numero di telefono della persona.
@@ -186,15 +207,16 @@ public class Contatto implements Comparable<Contatto>{
  * @param numTel1 il nuovo primo numero di telefono
  */
     public void setNumTel1(String numTel1) {
-        this.numTel1.setValue(numTel1);
+        this.numTel1String = numTel1;
+        this.numTel1.set(numTel1String);
     }
 /**
- * Restituisce il secondo numero di telefono della persona.
+ * Restituisce il secondo numero di telefono della persona come String.
  *
  * @return il secondo numero di telefono come StringProperty
  */
     public String getNumTel2() {
-        return numTel2.getValue();
+        return numTel2String;
     }
 /**
  * Imposta il secondo numero di telefono della persona.
@@ -202,15 +224,16 @@ public class Contatto implements Comparable<Contatto>{
  * @param numTel2 il nuovo secondo numero di telefono
  */
     public void setNumTel2(String numTel2) {
-        this.numTel2.setValue(numTel2);
+        this.numTel2String = numTel2;
+        this.numTel2.set(numTel2String);
     }
 /**
- * Restituisce il terzo numero di telefono della persona.
+ * Restituisce il terzo numero di telefono della persona come String.
  *
  * @return il terzo numero di telefono come StringProperty
  */
     public String getNumTel3() {
-        return numTel3.getValue();
+        return numTel3String;
     }
 /**
  * Imposta il terzo numero di telefono della persona.
@@ -218,15 +241,16 @@ public class Contatto implements Comparable<Contatto>{
  * @param numTel3 il nuovo terzo numero di telefono
  */
     public void setNumTel3(String numTel3) {
-        this.numTel3.setValue(numTel3);
+        this.numTel3String = numTel3;
+        this.numTel3.set(numTel3String);
     }
 /**
- * Restituisce la prima email della persona.
+ * Restituisce la prima email della persona come String.
  *
  * @return la prima email come StringProperty
  */
     public String getEmail1() {
-        return email1.getValue();
+        return email1String;
     }
 /**
  * Imposta la prima email della persona.
@@ -234,15 +258,16 @@ public class Contatto implements Comparable<Contatto>{
  * @param email1 la nuova prima email
  */
     public void setEmail1(String email1) {
-        this.email1.setValue(email1);
+        this.email1String = email1;
+        this.email1.set(email1String);
     }
 /**
- * Restituisce la seconda email della persona.
+ * Restituisce la seconda email della persona come String.
  *
  * @return la seconda email come StringProperty
  */
     public String getEmail2() {
-        return email2.getValue();
+        return email2String;
     }
 /**
  * Imposta la seconda email della persona.
@@ -250,15 +275,16 @@ public class Contatto implements Comparable<Contatto>{
  * @param email2 la nuova seconda email
  */
     public void setEmail2(String email2) {
-        this.email2.setValue(email2);
+        this.email2String = email2;
+        this.email2.set(email2String);
     }
 /**
- * Restituisce la terza email della persona.
+ * Restituisce la terza email della persona come String.
  *
  * @return la terza email come StringProperty
  */
     public String getEmail3() {
-        return email3.getValue();
+        return email3String;
     }
 /**
  * Imposta la terza email della persona.
@@ -266,9 +292,25 @@ public class Contatto implements Comparable<Contatto>{
  * @param email3 la nuova terza email
  */
     public void setEmail3(String email3) {
-        this.email3.setValue(email3);
+        this.email3String = email3;
+        this.email3.set(email3String);
     }
-    
-    
- 
+
+    /**
+ * restituisce il path della foto profilo come String.
+ *
+ * @return Il path della foto profilo come String
+ */
+    public String getPath() {
+        return path;
+    }
+
+    /**
+ * Imposta il path della foto profilo.
+ *
+ * @param path il nuovo path della foto profilo
+ */
+    public void setPath(String path) {
+        this.path = path;
+    }
 }
