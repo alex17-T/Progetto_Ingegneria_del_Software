@@ -41,6 +41,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -178,6 +179,8 @@ public class HomeController implements Initializable {
  */ 
     @FXML
     private Button SalvaModificheContatto;
+    @FXML
+    private Pane detailPane;
 
     /**
      * @brief Il metodo configura la tabella e le sue colonne.
@@ -453,18 +456,22 @@ public class HomeController implements Initializable {
     private void SalvaModificheContatto(ActionEvent event) {
 
         // Seleziona il contatto corrente dalla tabella e aggiorna i suoi dati
-        Tabella_contatti.getSelectionModel().getSelectedItem().setNome(nomeInfo.getText());
-        Tabella_contatti.getSelectionModel().getSelectedItem().setCognome(cognomeInfo.getText());
-        Tabella_contatti.getSelectionModel().getSelectedItem().setNumTel1(numInfo1.getText());
-        Tabella_contatti.getSelectionModel().getSelectedItem().setNumTel2(numInfo2.getText());
-        Tabella_contatti.getSelectionModel().getSelectedItem().setNumTel3(numInfo3.getText());
-        Tabella_contatti.getSelectionModel().getSelectedItem().setEmail1(emailInfo1.getText());
-        Tabella_contatti.getSelectionModel().getSelectedItem().setEmail2(emailInfo2.getText());
-        Tabella_contatti.getSelectionModel().getSelectedItem().setEmail3(emailInfo3.getText());
+        int index = SuperController.lista.indexOf(Tabella_contatti.getSelectionModel().getSelectedItem());
+        Contatto contatto = SuperController.lista.get(index);
+        contatto.setNome(nomeInfo.getText());
+        contatto.setCognome(cognomeInfo.getText());
+        contatto.setNumTel1(numInfo1.getText());
+        contatto.setNumTel2(numInfo2.getText());
+        contatto.setNumTel3(numInfo3.getText());
+        contatto.setEmail1(emailInfo1.getText());
+        contatto.setEmail2(emailInfo2.getText());
+        contatto.setEmail3(emailInfo3.getText());
+        SuperController.lista.set(index, contatto);
         // Aggiorna la visualizzazione della tabella
         Tabella_contatti.refresh();
         // Inverte la proprietà `mouseTransparent` del pannello dei dettagli per renderli non selezionabili
         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
+        SalvaModificheContatto.visibleProperty().set(false);
     }
 
 }
