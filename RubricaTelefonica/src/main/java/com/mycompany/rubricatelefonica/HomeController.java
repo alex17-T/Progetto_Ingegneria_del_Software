@@ -17,8 +17,13 @@ import com.mycompany.rubricatelefonica.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.Property;
@@ -26,12 +31,15 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -54,7 +62,7 @@ import javafx.stage.Stage;
  *
  * @author alessandro
  */
-public class HomeController implements Initializable {
+public class HomeController implements Initializable{
 
     /**
      * @brief Identificativo H - Box della toolbar
@@ -326,6 +334,55 @@ public class HomeController implements Initializable {
      */
     @FXML
     private void ImportaLista(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("File di Oggetti Serializzati", "*.ser"));
+        File file = fileChooser.showOpenDialog(stage); // Si aprirà la finestra per selezionare un file
+
+        if (file != null) {
+            // Esegui azioni con il file selezionato
+            ArrayList<Contatto> listaContatti = null;
+        
+            try (ObjectInputStream objIn = new ObjectInputStream(new FileInputStream(file))) {
+                // Deserializza la lista di contatti dal file
+                listaContatti = (ArrayList<Contatto>) objIn.readObject();
+                System.out.println("Contatti caricati da: " + file.getAbsolutePath());
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+                System.out.println("Errore durante la deserializzazione del file " + file.getAbsolutePath());
+            }
+            if(listaContatti != null){
+                SuperController.lista.clear();
+                for(Contatto contatto : listaContatti){
+                // Ricostruisci ogni contatto usando i valori delle stringhe
+                String nome = contatto.getNome();
+                String cognome = contatto.getCognome();
+                String numTel1 = contatto.getNumTel1();
+                String numTel2 = contatto.getNumTel2();
+                String numTel3 = contatto.getNumTel3();
+                String email1 = contatto.getEmail1();
+                String email2 = contatto.getEmail2();
+                String email3 = contatto.getEmail3();
+
+                // Crea un nuovo contatto con le StringProperty
+                Contatto nuovoContatto = new Contatto(
+                    new SimpleStringProperty(nome),
+                    new SimpleStringProperty(cognome),
+                    new SimpleStringProperty(numTel1),
+                    new SimpleStringProperty(numTel2),
+                    new SimpleStringProperty(numTel3),
+                    new SimpleStringProperty(email1),
+                    new SimpleStringProperty(email2),
+                    new SimpleStringProperty(email3)
+                );
+                SuperController.lista.add(nuovoContatto);
+            }
+                FXCollections.sort(SuperController.lista);
+                System.out.println("Rubrica importata correttamente.");
+        } else {
+            System.out.println("Nessun file selezionato.");
+        }
+    }
     }
 
     /**
@@ -340,7 +397,50 @@ public class HomeController implements Initializable {
      */
     @FXML
     private void EsportaLista(ActionEvent event) {
-    }
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("File di Oggetti Serializzati", "*.ser"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        File file = fileChooser.showSaveDialog(stage); // Si aprirà la finestra per selezionare un file
+
+        if (file != null) {
+            if(file.exists()){
+                // Fai apparire una finestra di conferma per sovrascrivere il file
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Conferma Sovrascrittura");
+                alert.setHeaderText("Il file esiste già");
+                alert.setContentText("Vuoi sovrascrivere il file?");
+            
+            // Mostra la finestra di conferma e aspetta la risposta
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                // Se l'utente conferma, serializza i dati nel file
+                ArrayList<Contatto> listaContatti = new ArrayList<>(SuperController.lista);
+
+                // Serializza la lista di contatti nel file
+                try (ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(file))) {
+                    objOut.writeObject(listaContatti);
+                    System.out.println("Rubrica esportata correttamente in " + file.getAbsolutePath());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("Esportazione annullata.");
+            }
+            } else {
+                // Se il file non esiste, salva direttamente
+                ArrayList<Contatto> listaContatti = new ArrayList<>(SuperController.lista);
+
+                // Serializza la lista di contatti nel file
+                try (ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(file))) {
+                    objOut.writeObject(listaContatti);
+                    System.out.println("Rubrica esportata correttamente in " + file.getAbsolutePath());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+                System.out.println("Nessun file selezionato.");
+            }
+        }
 
     /**
      * Il metodo mostra la barra degli strumenti.
