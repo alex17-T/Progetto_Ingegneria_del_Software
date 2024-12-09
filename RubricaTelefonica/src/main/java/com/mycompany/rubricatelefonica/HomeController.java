@@ -55,48 +55,127 @@ import javafx.stage.Stage;
  */
 public class HomeController implements Initializable {
 
+    /**
+ * @brief Identificativo H - Box della toolbar
+ */    
     @FXML
     private HBox ToolBar;
+
+    /**
+ * @brief Identificativo dell'immagine di un contatto
+ */
     @FXML
     private ImageView contactImage;
+
+    /**
+ * @brief Identificativo della tabella dei contatti
+ */  
     @FXML
     private TableView<Contatto> Tabella_contatti;
+
+    /**
+ * @brief Identificativo della colonna del nome della tabella dei contatti
+ */ 
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_nome;
+
+    /**
+ * @brief Identificativo della colonna del cognome della tabella dei contatti
+ */
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_cognome;
+
+    /**
+ * @brief Identificativo della colonna del numero di telefono della tabella dei contatti
+ */
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_telefono;
+
+    /**
+ * @brief Identificativo della colonna dell'email della tabella dei contatti
+ */
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_email;
+
+    /**
+ * @brief Identificativo H - Box della barra di ricerca
+ */    
     @FXML
     private HBox SearchBar;
+    
+    /**
+ * @brief Identificativo del bottone per modificare i dettagli di un contatto
+ */
     @FXML
     private Button modificaButton;
     @FXML
     private TableColumn<Contatto, CheckBox> Colonna_Spunta;
     @FXML
     private TableColumn<Contatto, ImageView> Colonna_fotoProfilo;
+
+    /**
+ * @brief Identificativo della casella di testo del ome
+ */  
     @FXML
     private TextField nomeInfo;
+
+    /**
+ * @brief Identificativo della casella di testo del cognome
+ */
     @FXML
     private TextField cognomeInfo;
+
+    /**
+ * @brief Identificativo della casella di testo del primo numero di telefono
+ */    
     @FXML
     private TextField numInfo1;
+
+    /**
+ * @brief Identificativo della casella di testo del secondo numero di telefono
+ */    
     @FXML
     private TextField numInfo2;
+
+    /**
+ * @brief Identificativo della casella di testo del terzo numero di telefono
+ */    
     @FXML
     private TextField numInfo3;
+
+    /**
+ * @brief Identificativo della casella di testo della prima email
+ */    
     @FXML
     private TextField emailInfo1;
+
+    /**
+ * @brief Identificativo della casella di testo della seconda email
+ */        
     @FXML
     private TextField emailInfo2;
+    
+    /**
+ * @brief Identificativo della casella di testo della terza email
+ */     
     @FXML
     private TextField emailInfo3;
+    
+    /**
+ * @brief Identificativo della Vertical Box contenente i dettagli di un contatto
+ */ 
     @FXML
     private VBox DettagliContatto;
+    
+    /**
+ * @brief Identificativo del bottone per modificare la lista dei contatti
+ */    
     @FXML
     private Button ModificaLista;
+
+    /**
+ * @brief Identificativo del bottone per salvare una modifica a un contatto
+ */ 
     @FXML
     private Button SalvaModificheContatto;
 
