@@ -444,9 +444,10 @@ public class HomeController implements Initializable {
      * Questo metodo viene invocato al clic sul pulsante "Salva Modifiche".
      * Aggiorna il contatto attualmente selezionato nella tabella con i dati
      * inseriti nei campi di input relativi al nome, cognome, numeri di telefono
-     * ed email. Dopo l'aggiornamento: - Viene ricaricata la tabella per
-     * riflettere le modifiche. - Viene abilitata/disabilitata la proprietà
-     * `mouseTransparent` del pannello `DettagliContatto`.
+     * ed email. Dopo l'aggiornamento:
+     * - Viene ricaricata la tabella per riflettere le modifiche.
+     * - Viene abilitata/disabilitata la proprietà `mouseTransparent` del
+     * pannello `DettagliContatto`.
      *
      * @param event l'evento che rappresenta l'azione del clic sul pulsante
      * (tipicamente generato dall'utente tramite interazione con l'interfaccia
