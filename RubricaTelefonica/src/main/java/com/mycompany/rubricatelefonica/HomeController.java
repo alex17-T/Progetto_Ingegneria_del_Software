@@ -370,6 +370,9 @@ public class HomeController implements Initializable {
     
     @FXML
     private void RimuoviContattiSelezionati(ActionEvent event) {
+        
+        SuperController.lista.remove(Tabella_contatti.getSelectionModel().getSelectedItem());
+        
     }
 
     /**
