@@ -14,6 +14,7 @@
 package com.mycompany.rubricatelefonica;
 
 import com.mycompany.rubricatelefonica.*;
+import static com.mycompany.rubricatelefonica.SuperController.lista;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -33,6 +34,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -108,11 +111,6 @@ public class HomeController implements Initializable{
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_email;
 
-    /**
-     * @brief Identificativo H - Box della barra di ricerca
-     */
-    @FXML
-    private HBox SearchBar;
 
     /**
      * @brief Identificativo del bottone per modificare i dettagli di un
@@ -194,6 +192,12 @@ public class HomeController implements Initializable{
     private Button SalvaModificheContatto;
     @FXML
     private Pane detailPane;
+    @FXML
+    private HBox SearchBox;
+    @FXML
+    private TextField serchBar;
+     public static FilteredList<Contatto> listaFiltrata;
+     public static SortedList<Contatto> listaOrdinata;
 
     /**
      * @brief Il metodo configura la tabella e le sue colonne.
@@ -222,6 +226,7 @@ public class HomeController implements Initializable{
         // Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(
         //     observable, oldValue, newValu) -> {showContattiDetails( (Contatto) newValue);
         // }
+          listaFiltrata = new FilteredList<>(lista, b->true);
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
             /**
              * @brief Visualizza i dettagli di un contatto se selezionato.
@@ -243,7 +248,32 @@ public class HomeController implements Initializable{
                 showContattiDetails(newValue);
             }
         });
-
+        
+        
+        serchBar.textProperty().addListener((observable ,oldValue , newValue)->{
+        listaFiltrata.setPredicate(Contatto -> {
+        
+          if(newValue == null || newValue.isEmpty()) return true;
+        
+          String lowCaseFilter = newValue.toLowerCase();
+        
+          if(Contatto.getNome().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+          else if (Contatto.getCognome().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+          else if(Contatto.getNumTel1().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+          else if(Contatto.getNumTel2().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+          else if(Contatto.getNumTel3().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+          else if(Contatto.getEmail1().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+          else if(Contatto.getEmail1().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+          else if(Contatto.getEmail1().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
+        
+            return false;
+        
+            });
+        });
+      
+        listaOrdinata = new SortedList<>(listaFiltrata);
+        listaOrdinata.comparatorProperty().bind(Tabella_contatti.comparatorProperty());
+        Tabella_contatti.setItems(listaOrdinata);
     }
 
     /**
