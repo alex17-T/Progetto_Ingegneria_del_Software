@@ -39,7 +39,7 @@
                         <HBox prefHeight="40.0" prefWidth="197.0" stylesheets="@secondary.css">
                            <children>
                               <Label text="Nome : " />
-                              <TextField fx:id="nomeField" />
+                              <TextField fx:id="nomeField" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                            </children>
                            <padding>
                               <Insets left="10.0" top="5.0" />
@@ -48,7 +48,7 @@
                         <HBox prefHeight="39.0" prefWidth="197.0" stylesheets="@secondary.css">
                            <children>
                               <Label prefHeight="17.0" prefWidth="67.0" text="Cognome : " />
-                              <TextField fx:id="cognomeField" />
+                              <TextField fx:id="cognomeField" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                            </children>
                            <padding>
                               <Insets left="10.0" top="8.0" />
@@ -72,37 +72,37 @@
                   <HBox prefHeight="40.0" prefWidth="197.0" stylesheets="@secondary.css">
                      <children>
                         <Label prefHeight="17.0" prefWidth="68.0" stylesheets="@secondary.css" text="Telefono 1 : " />
-                        <TextField fx:id="t1Field" stylesheets="@secondary.css" />
+                        <TextField fx:id="t1Field" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="39.0" prefWidth="197.0" stylesheets="@secondary.css" GridPane.rowIndex="1">
                      <children>
                         <Label prefHeight="17.0" prefWidth="69.0" stylesheets="@secondary.css" text="Telefono 2 : " />
-                        <TextField fx:id="t2Field" stylesheets="@secondary.css" />
+                        <TextField fx:id="t2Field" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="39.0" prefWidth="197.0" stylesheets="@secondary.css" GridPane.rowIndex="2">
                      <children>
                         <Label prefHeight="17.0" prefWidth="69.0" stylesheets="@secondary.css" text="Telefono 3 : " />
-                        <TextField fx:id="t3Field" stylesheets="@secondary.css" />
+                        <TextField fx:id="t3Field" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="40.0" prefWidth="197.0" stylesheets="@secondary.css" GridPane.columnIndex="1">
                      <children>
                         <Label stylesheets="@secondary.css" text="Mail 1 : " />
-                        <TextField fx:id="m1Field" stylesheets="@secondary.css" />
+                        <TextField fx:id="m1Field" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="39.0" prefWidth="197.0" stylesheets="@secondary.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
                         <Label stylesheets="@secondary.css" text="Mail 2 : " />
-                        <TextField fx:id="m2Field" stylesheets="@secondary.css" />
+                        <TextField fx:id="m2Field" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                      </children>
                   </HBox>
                   <HBox prefHeight="40.0" prefWidth="197.0" stylesheets="@secondary.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
                         <Label stylesheets="@secondary.css" text="Mail 3 : " />
-                        <TextField fx:id="m3Field" stylesheets="@secondary.css" />
+                        <TextField fx:id="m3Field" styleClass="casellaTesto" stylesheets="@textFileld.css" />
                      </children>
                   </HBox>
                </children>
@@ -110,7 +110,7 @@
                   <Insets left="10.0" top="5.0" />
                </padding>
             </GridPane>
-            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="536.0" styleClass="LightBlueRound" stylesheets="@secondary.css">
+            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="536.0">
                <children>
                   <Button fx:id="esciButton" alignment="CENTER" layoutX="264.0" layoutY="12.0" mnemonicParsing="false" onAction="#tornaHome" prefHeight="25.0" prefWidth="42.0" stylesheets="@secondary.css" text="Esci" />
                   <Button fx:id="creaButton" alignment="CENTER" layoutX="657.0" layoutY="10.0" mnemonicParsing="false" onAction="#creaContatto" stylesheets="@secondary.css" text="Crea contatto" />
