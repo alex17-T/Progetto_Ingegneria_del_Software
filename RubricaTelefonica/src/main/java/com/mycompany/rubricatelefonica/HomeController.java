@@ -350,10 +350,6 @@ public class HomeController implements Initializable {
 
     }
 
-    @FXML
-    private void DettagliContatto(ActionEvent event) {
-    }
-
     /**
      * Salva le modifiche apportate alle informazioni di un contatto selezionato
      * nella tabella.
