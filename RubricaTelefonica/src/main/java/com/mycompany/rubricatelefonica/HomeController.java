@@ -1,10 +1,9 @@
 /**
  * @file HomeController.java
  * @brief Questo file contiene la logica dell'interfaccia principale.
- * 
- * Questo file implementa i metodi che rendono interattiva e
- * correttamente funzionante l'interfaccia grafica
- * codificata nel file Home.fxml.
+ *
+ * Questo file implementa i metodi che rendono interattiva e correttamente
+ * funzionante l'interfaccia grafica codificata nel file Home.fxml.
  */
 
 /*
@@ -47,8 +46,9 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 /**
- * @brief Questa classe gestisce l'interfaccia principale della rubrica telefonica.
- * 
+ * @brief Questa classe gestisce l'interfaccia principale della rubrica
+ * telefonica.
+ *
  * FXML Controller class
  *
  * @author alessandro
@@ -56,56 +56,59 @@ import javafx.stage.Stage;
 public class HomeController implements Initializable {
 
     /**
- * @brief Identificativo H - Box della toolbar
- */    
+     * @brief Identificativo H - Box della toolbar
+     */
     @FXML
     private HBox ToolBar;
 
     /**
- * @brief Identificativo dell'immagine di un contatto
- */
+     * @brief Identificativo dell'immagine di un contatto
+     */
     @FXML
     private ImageView contactImage;
 
     /**
- * @brief Identificativo della tabella dei contatti
- */  
+     * @brief Identificativo della tabella dei contatti
+     */
     @FXML
     private TableView<Contatto> Tabella_contatti;
 
     /**
- * @brief Identificativo della colonna del nome della tabella dei contatti
- */ 
+     * @brief Identificativo della colonna del nome della tabella dei contatti
+     */
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_nome;
 
     /**
- * @brief Identificativo della colonna del cognome della tabella dei contatti
- */
+     * @brief Identificativo della colonna del cognome della tabella dei
+     * contatti
+     */
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_cognome;
 
     /**
- * @brief Identificativo della colonna del numero di telefono della tabella dei contatti
- */
+     * @brief Identificativo della colonna del numero di telefono della tabella
+     * dei contatti
+     */
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_telefono;
 
     /**
- * @brief Identificativo della colonna dell'email della tabella dei contatti
- */
+     * @brief Identificativo della colonna dell'email della tabella dei contatti
+     */
     @FXML
     private TableColumn<Contatto, StringProperty> Colonna_email;
 
     /**
- * @brief Identificativo H - Box della barra di ricerca
- */    
+     * @brief Identificativo H - Box della barra di ricerca
+     */
     @FXML
     private HBox SearchBar;
-    
+
     /**
- * @brief Identificativo del bottone per modificare i dettagli di un contatto
- */
+     * @brief Identificativo del bottone per modificare i dettagli di un
+     * contatto
+     */
     @FXML
     private Button modificaButton;
     @FXML
@@ -114,83 +117,84 @@ public class HomeController implements Initializable {
     private TableColumn<Contatto, ImageView> Colonna_fotoProfilo;
 
     /**
- * @brief Identificativo della casella di testo del ome
- */  
+     * @brief Identificativo della casella di testo del ome
+     */
     @FXML
     private TextField nomeInfo;
 
     /**
- * @brief Identificativo della casella di testo del cognome
- */
+     * @brief Identificativo della casella di testo del cognome
+     */
     @FXML
     private TextField cognomeInfo;
 
     /**
- * @brief Identificativo della casella di testo del primo numero di telefono
- */    
+     * @brief Identificativo della casella di testo del primo numero di telefono
+     */
     @FXML
     private TextField numInfo1;
 
     /**
- * @brief Identificativo della casella di testo del secondo numero di telefono
- */    
+     * @brief Identificativo della casella di testo del secondo numero di
+     * telefono
+     */
     @FXML
     private TextField numInfo2;
 
     /**
- * @brief Identificativo della casella di testo del terzo numero di telefono
- */    
+     * @brief Identificativo della casella di testo del terzo numero di telefono
+     */
     @FXML
     private TextField numInfo3;
 
     /**
- * @brief Identificativo della casella di testo della prima email
- */    
+     * @brief Identificativo della casella di testo della prima email
+     */
     @FXML
     private TextField emailInfo1;
 
     /**
- * @brief Identificativo della casella di testo della seconda email
- */        
+     * @brief Identificativo della casella di testo della seconda email
+     */
     @FXML
     private TextField emailInfo2;
-    
+
     /**
- * @brief Identificativo della casella di testo della terza email
- */     
+     * @brief Identificativo della casella di testo della terza email
+     */
     @FXML
     private TextField emailInfo3;
-    
+
     /**
- * @brief Identificativo della Vertical Box contenente i dettagli di un contatto
- */ 
+     * @brief Identificativo della Vertical Box contenente i dettagli di un
+     * contatto
+     */
     @FXML
     private VBox DettagliContatto;
-    
+
     /**
- * @brief Identificativo del bottone per modificare la lista dei contatti
- */    
+     * @brief Identificativo del bottone per modificare la lista dei contatti
+     */
     @FXML
     private Button ModificaLista;
 
     /**
- * @brief Identificativo del bottone per salvare una modifica a un contatto
- */ 
+     * @brief Identificativo del bottone per salvare una modifica a un contatto
+     */
     @FXML
     private Button SalvaModificheContatto;
 
     /**
      * @brief Il metodo configura la tabella e le sue colonne.
-     * 
+     *
      * Questo metodo inizializza le colonne della tabella riferendole agli
-     * attributi nome, cognome, numTel1 e email1 di Contatto.
-     * La tabella viene anche settata come "senza elementi selezionati" e
-     * gli viene associato un ChangeListener per attivarsi se il contatto
-     * selezionato cambia.
-     * 
+     * attributi nome, cognome, numTel1 e email1 di Contatto. La tabella viene
+     * anche settata come "senza elementi selezionati" e gli viene associato un
+     * ChangeListener per attivarsi se il contatto selezionato cambia.
+     *
      * @pre La lista dei contatti (cioè SuperController.lista) è inizializzata.
      * @post La tabella contiene i contatti della lista osservabile.
-     * 
+     *
      * @see showContattiDetails()
      */
     @Override
@@ -210,14 +214,17 @@ public class HomeController implements Initializable {
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
             /**
              * @brief Visualizza i dettagli di un contatto se selezionato.
-             * 
-             * Quando cambia il contatto selezionato nella tabella (anche nessuno),
-             * questo metodo si attiva e mostra i dati del contatto selezionato
-             * (tali dati sono tutte stringhe vuote se non è selezionato nessun contatto).
-             * 
+             *
+             * Quando cambia il contatto selezionato nella tabella (anche
+             * nessuno), questo metodo si attiva e mostra i dati del contatto
+             * selezionato (tali dati sono tutte stringhe vuote se non è
+             * selezionato nessun contatto).
+             *
              * @invariant oldValue e newValue hanno valori differenti.
-             * @param observable La proprietà osservata, in questo caso il cambio del contatto selezionato.
-             * @param oldValue Il contatto precedentemente selezionato (anche nessuno).
+             * @param observable La proprietà osservata, in questo caso il
+             * cambio del contatto selezionato.
+             * @param oldValue Il contatto precedentemente selezionato (anche
+             * nessuno).
              * @param newValue Il nuovo contatto selezionato (anche nessuno).
              */
             @Override
@@ -231,14 +238,14 @@ public class HomeController implements Initializable {
     /**
      * Il metodo apre una finestra per l’inserimento dei dati del nuovo contatto
      *
-     * Questo metodo viene invocato al clic sul pulsante "Aggiungi".
-     * Viene aperta una nuova finestra per l'inserimento nella tabella dei dati:
-     * nome, cognome, numeri di telefono ed indirizzi email. 
-     * Dopo l'inserimento è possibile vedere il contatto in tabella 
-     * 
+     * Questo metodo viene invocato al clic sul pulsante "Aggiungi". Viene
+     * aperta una nuova finestra per l'inserimento nella tabella dei dati: nome,
+     * cognome, numeri di telefono ed indirizzi email. Dopo l'inserimento è
+     * possibile vedere il contatto in tabella
+     *
      * @param event l'evento è generato dall'utente tramite interazione con
      * l'interfaccia grafica quando desidera aggiungere un contatto.
-     * 
+     *
      * @throws IOException se il contatto che l'utente cerca di aggiungere è già
      * presente in rubrica
      */
@@ -250,13 +257,13 @@ public class HomeController implements Initializable {
     /**
      * Il metodo permette di modificare la foto profilo di un contatto
      *
-     * Dopo che l'utente ha cliccato il pulsante edit viene aperta la finestra 
+     * Dopo che l'utente ha cliccato il pulsante edit viene aperta la finestra
      * dell’esplora risorse dove può essere inserito inserire il percorso del
      * file .jpg da usare come foto profilo.
-     * 
+     *
      * @param event l'evento è generato dall'utente tramite interazione con
      * l'interfaccia grafica.
-     * 
+     *
      * @throws FileNotFoundException se il file specificato non viene trovato
      */
     @FXML
@@ -264,19 +271,19 @@ public class HomeController implements Initializable {
         FileChooser fileChooser = new FileChooser();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         File file = fileChooser.showOpenDialog(stage);
-         Image image = new Image(new FileInputStream(file));// Leggi l'immagine
-          ImageView FotoSel = new ImageView(image);// Creazione di un ImageView
-      //    Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoSel);
-          contactImage.setImage(image);
-          
+        Image image = new Image(new FileInputStream(file));// Leggi l'immagine
+        ImageView FotoSel = new ImageView(image);// Creazione di un ImageView
+        //    Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoSel);
+        contactImage.setImage(image);
+
     }
 
     /**
-     * Il metodo abilita o disabilita la modalità di modifica per i dettagli
-     * di un contatto.
+     * Il metodo abilita o disabilita la modalità di modifica per i dettagli di
+     * un contatto.
      *
-     * @param event l'evento è generato dall'utente tramite l'interazione con 
-     * l'interfaccia grafica. 
+     * @param event l'evento è generato dall'utente tramite l'interazione con
+     * l'interfaccia grafica.
      */
     @FXML
     private void ModificaContatto(ActionEvent event) {
@@ -290,27 +297,27 @@ public class HomeController implements Initializable {
      * Il metodo permette di rimuovere la foto profilo di un contatto
      *
      * Dopo che l'utente ha cliccato il pulsante del cestino accanto alla foto
-     * profilo, quest'ultima viene rimossa. 
-     * 
-     * @param event l'evento è generato dall'utente tramite l'interazione con 
+     * profilo, quest'ultima viene rimossa.
+     *
+     * @param event l'evento è generato dall'utente tramite l'interazione con
      * l'interfaccia grafica.
-     * 
+     *
      * @throws FileNotFoundException se il file specificato non viene trovato
      */
     @FXML
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
-       //mageView FotoDefault = new ImageView(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
-      //  Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoDefault)   ;    
-     contactImage.setImage(new Image(this.getClass().getResourceAsStream("iconaSecondary.jpg")));
+        //mageView FotoDefault = new ImageView(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
+        //  Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoDefault)   ;    
+        contactImage.setImage(new Image(this.getClass().getResourceAsStream("iconaSecondary.jpg")));
     }
 
     /**
      * Il metodo permette l'importazione completa di una lista di contatti
      *
      * Dopo che l'utente ha cliccato il pulsante importa viene aperta la
-     * finestra dell’esplora risorse dove può essere inserito il file da cui 
+     * finestra dell’esplora risorse dove può essere inserito il file da cui
      * importare.
-     * 
+     *
      * @param event l'evento è generato dall'utente tramite interazione con
      * l'interfaccia grafica.
      */
@@ -324,7 +331,7 @@ public class HomeController implements Initializable {
      * Dopo che l'utente ha cliccato il pulsante esporta viene aperta la
      * finestra dell’esplora risorse dove può scegliere la cartella dove
      * esportare
-     * 
+     *
      * @param event l'evento è generato dall'utente tramite interazione con
      * l'interfaccia grafica
      */
@@ -335,24 +342,23 @@ public class HomeController implements Initializable {
     /**
      * Il metodo mostra la barra degli strumenti.
      *
-     * Viene invocato al clic dell'utente sul pulsante seleziona
-     * tutto.
-     * 
-     * @param event evento generato dall'utente tramite interazione con 
+     * Viene invocato al clic dell'utente sul pulsante seleziona tutto.
+     *
+     * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica.
      */
     @FXML
     private void ModificaListaContatti(ActionEvent event) {
         ToolBar.visibleProperty().set(!(ToolBar.visibleProperty().get()));
     }
-    
+
     /**
-     * Il metodo seleziona tutti i contatti nella tabella utilizzando i checkbox.
+     * Il metodo seleziona tutti i contatti nella tabella utilizzando i
+     * checkbox.
      *
-     * Viene invocato al clic dell'utente sul pulsante seleziona
-     * tutto.
-     * 
-     * @param event evento generato dall'utente tramite interazione con 
+     * Viene invocato al clic dell'utente sul pulsante seleziona tutto.
+     *
+     * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica.
      */
     @FXML
@@ -363,24 +369,23 @@ public class HomeController implements Initializable {
      * Il metodo rimuove tutti i contatti nella tabella selezionati.
      *
      * Viene invocato al clic dell'utente sul pulsante rimuovi selezionati.
-     * 
-     * @param event evento generato dall'utente tramite interazione con 
+     *
+     * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica.
-     */    
-    
+     */
     @FXML
     private void RimuoviContattiSelezionati(ActionEvent event) {
-        
+
         SuperController.lista.remove(Tabella_contatti.getSelectionModel().getSelectedItem());
-        
+
     }
 
     /**
      * Il metodo permette di cercare un contatto nella lista dei contatti
      *
      * Viene invocato al clic sulla barra di ricerca.
-     * 
-     * @param event evento generato dall'utente tramite interazione con 
+     *
+     * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica.
      */
     @FXML
@@ -392,10 +397,10 @@ public class HomeController implements Initializable {
      * strumenti.
      *
      * Viene invocato al clic sulla barra di ricerca.
-     * 
-     * @param event evento generato dall'utente tramite interazione con 
+     *
+     * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica.
-     */    
+     */
     @FXML
     private void AnnullaOperazione(ActionEvent event) {
         ToolBar.visibleProperty().set(false);
@@ -404,7 +409,7 @@ public class HomeController implements Initializable {
     /**
      * Il metodo mostra i dettagli di un contatto selezionato
      *
-     * @param event evento generato dall'utente tramite interazione con 
+     * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica, quando seleziona un contatto.
      */
     private void showContattiDetails(Contatto c) {
