@@ -137,21 +137,6 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="ListaContatti" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="299.0" yPosition="836.0">
-      <Fields>
-        <Field name="listaContatti" type="List&lt;Contatto&gt;" visibility="private"/>
-        <Field name="listaOsservabile" type="ObservableList&lt;Contatto&gt;" visibility="public"/>
-      </Fields>
-      <Constructors>
-        <Constructor visibility="public"/>
-      </Constructors>
-      <Methods>
-        <Method name="getLista" returnType="List" visibility="public"/>
-        <Method name="addOsservabile" returnType="void" visibility="public">
-          <Argument type="Contatto" name="c"/>
-        </Method>
-      </Methods>
-    </Class>
     <Class name="SecondaryController" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="959.0" yPosition="645.0">
       <Fields>
         <Field name="datiObbligatori" type="VBox" visibility="private"/>
@@ -195,13 +180,10 @@
   </ClassDiagramComponents>
   <ClassDiagramRelations>
     <HasRelation name="Colonna_email" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="Colonna_telefono" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Tabella_contatti" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="lista" source="com.mycompany.rubricatelefonica.SuperController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ObservableList&lt;Contatto&gt;"/>
     <HasRelation name="Colonna_nome" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="com.mycompany.rubricatelefonica.ListaContatti" target="com.mycompany.rubricatelefonica.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="Colonna_cognome" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="Tabella_contatti" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="listaContatti" source="com.mycompany.rubricatelefonica.ListaContatti" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Contatto&gt;"/>
-    <HasRelation name="listaOsservabile" source="com.mycompany.rubricatelefonica.ListaContatti" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ObservableList&lt;Contatto&gt;"/>
+    <HasRelation name="Colonna_telefono" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
