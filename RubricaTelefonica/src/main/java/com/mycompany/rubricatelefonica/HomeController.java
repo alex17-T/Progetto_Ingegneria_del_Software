@@ -198,6 +198,7 @@ public class HomeController implements Initializable{
     private TextField serchBar;
      public static FilteredList<Contatto> listaFiltrata;
      public static SortedList<Contatto> listaOrdinata;
+     private boolean listenerAdded = false;
     @FXML
     private CheckBox selezionaTutti;
     @FXML
@@ -447,6 +448,7 @@ public class HomeController implements Initializable{
                     new SimpleStringProperty(email2),
                     new SimpleStringProperty(email3)
                 );
+                nuovoContatto.setSelect(new CheckBox());
                 SuperController.lista.add(nuovoContatto);
             }
                 FXCollections.sort(SuperController.lista);
@@ -487,9 +489,10 @@ public class HomeController implements Initializable{
         File file = fileChooser.showSaveDialog(stage); // Si aprirà la finestra per selezionare un file
 
         if (file != null) {
-                    if (!file.getName().endsWith(".ser")) {
-                        file = new File(file.getAbsolutePath() + ".ser");
-                    }
+            String fileName = file.getName();
+            if (!fileName.endsWith(".ser")) {
+                file = new File(file.getParentFile(), fileName + ".ser"); // Usa getParentFile() invece di getParent()
+            }
             if(file.exists()){
                 // Fai apparire una finestra di conferma per sovrascrivere il file
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -559,10 +562,27 @@ public class HomeController implements Initializable{
      */
     @FXML
     private void ModificaListaContatti(ActionEvent event) {
-          ToolBar.visibleProperty().set(!(ToolBar.visibleProperty().get()));
-          Colonna_Spunta.setVisible(!Colonna_Spunta.visibleProperty().get());
-          mFotobtn.mouseTransparentProperty().set(!mFotobtn.mouseTransparentProperty().get());
-          RFotobtn.mouseTransparentProperty().set(!RFotobtn.mouseTransparentProperty().get());
+        ToolBar.visibleProperty().set(!(ToolBar.visibleProperty().get()));
+        Colonna_Spunta.setVisible(!Colonna_Spunta.visibleProperty().get());
+        mFotobtn.mouseTransparentProperty().set(!mFotobtn.mouseTransparentProperty().get());
+        RFotobtn.mouseTransparentProperty().set(!RFotobtn.mouseTransparentProperty().get());
+        // Dopo che la toolbar è visibile, imposta il listener sul checkbox principale
+        if (ToolBar.visibleProperty().get() && !listenerAdded) {
+            selezionaTutti.selectedProperty().addListener((obs, oldVal, newVal) -> {
+                for (Contatto c : listaOrdinata) {
+                    c.getSelect().setSelected(newVal); // Imposta il valore di selezione per ogni contatto
+                }
+            });
+            // Imposta la variabile di stato per evitare aggiunta ripetuta del listener
+            listenerAdded = true;
+        }
+        if(ToolBar.visibleProperty().get()){
+            // Inizializza lo stato dei checkbox dei contatti in base al checkbox principale
+            boolean initialSelection = selezionaTutti.isSelected();
+            for (Contatto c : listaOrdinata) {
+                c.getSelect().setSelected(initialSelection); // Imposta lo stato iniziale dei checkbox
+            }
+        }
     }
 
     /**
@@ -576,8 +596,15 @@ public class HomeController implements Initializable{
      */
     @FXML
     private void SelezionaTuttoCheckBox(ActionEvent event) {
-         
-        
+        // Aggiungi un listener per il checkbox principale (selezionaTutti)
+        selezionaTutti.selectedProperty().addListener((obs, oldVal, newVal) -> {
+            // Se il checkbox principale è selezionato, seleziona tutti i contatti
+            for (Contatto c : listaOrdinata) {
+                c.getSelect().setSelected(newVal); // Propaga la selezione o deselezione
+            }
+        });
+    }
+    /*    
         selezionaTutti.selectedProperty();
         
      // if(selezionaTutti.isSelected()){
@@ -587,7 +614,7 @@ public class HomeController implements Initializable{
        }
       //Tabella_contatti.refresh();
        });  
-    }
+    }*/
 
     /**
      * Il metodo rimuove tutti i contatti nella tabella selezionati.
