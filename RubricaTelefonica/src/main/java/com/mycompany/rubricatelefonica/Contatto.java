@@ -12,6 +12,7 @@ package com.mycompany.rubricatelefonica;
 import java.io.Serializable;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -47,6 +48,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
     private String email1String;
     private String email2String;
     private String email3String;
+    private CheckBox  select;
     
     /**
      * @brief Compara i contatti prima per nome e, in caso di pareggio, per cognome.
@@ -146,6 +148,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
         this.email1 = email1;
         this.email2 = email2;
         this.email3 = email3;
+        this.select = new CheckBox();
         this.path = getClass().getResource("/com/mycompany/rubricatelefonica/iconaSecondary.jpg").toString();
         this.fotoprofilo = new Image(path);
       //  this.fotoprofilo = new Image("C:\\Users\\alessandro\\Documents\\NetBeansProjects\\RubricaTelefonica\\Progetto_Ingegneria_del_Software\\RubricaTelefonica\\src\\main\\resources\\com\\mycompany\\rubricatelefonica");
@@ -318,4 +321,13 @@ public class Contatto implements Comparable<Contatto>, Serializable{
         this.fotoprofilo = new Image(path);
     }
     
+    
+    public  CheckBox getSelect(){
+    
+        return this.select;
+    }
+    public void setSelect(CheckBox s){
+    this.select=s;
+    }
+            
 }
