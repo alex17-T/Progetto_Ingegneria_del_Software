@@ -663,6 +663,7 @@ public class HomeController implements Initializable{
     @FXML
     private void AnnullaOperazione(ActionEvent event) {
         ToolBar.visibleProperty().set(false);
+        Colonna_Spunta.setVisible(!Colonna_Spunta.visibleProperty().get());
     }
 
     /**
