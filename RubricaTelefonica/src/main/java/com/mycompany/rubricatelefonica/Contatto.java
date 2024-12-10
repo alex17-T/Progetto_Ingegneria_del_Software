@@ -26,6 +26,8 @@ import javafx.scene.image.ImageView;
  * @author Giovanni
  */
 public class Contatto implements Comparable<Contatto>, Serializable{
+    
+    public static String creatoreFoto = "/com/mycompany/rubricatelefonica/iconaSecondary.jpg";
   
     private transient StringProperty nome;
     private transient StringProperty cognome;
@@ -35,7 +37,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
     private transient StringProperty email1;
     private transient StringProperty email2;
     private transient StringProperty email3;
-    private transient ImageView fotoprofilo; //Non viene serializzato
+    private transient Image fotoprofilo; //Non viene serializzato
     private String path;
     private String nomeString;
     private String cognomeString;
@@ -107,7 +109,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
  *
  * @return l'immagine di profilo come oggetto Image
  */
-    public ImageView getFotoprofilo() {
+    public Image getFotoprofilo() {
         return fotoprofilo;
     }
 /**
@@ -115,8 +117,8 @@ public class Contatto implements Comparable<Contatto>, Serializable{
  *
  * @param fotoprofilo la nuova immagine di profilo
  */
-    public void setFotoprofilo(ImageView fotoprofilo) {
-        this.fotoprofilo = fotoprofilo;
+    public void setFotoprofilo(String path) {
+        this.fotoprofilo = new Image(path);
     }
     
     
@@ -145,7 +147,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
         this.email2 = email2;
         this.email3 = email3;
         this.path = getClass().getResource("/com/mycompany/rubricatelefonica/iconaSecondary.jpg").toString();
-        this.fotoprofilo = new ImageView(new Image(path));
+        this.fotoprofilo = new Image(path);
       //  this.fotoprofilo = new Image("C:\\Users\\alessandro\\Documents\\NetBeansProjects\\RubricaTelefonica\\Progetto_Ingegneria_del_Software\\RubricaTelefonica\\src\\main\\resources\\com\\mycompany\\rubricatelefonica");
         this.nomeString = nome.get();
         this.cognomeString = cognome.get();
@@ -156,6 +158,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
         this.email2String = email2.get();
         this.email3String = email3.get();
     }
+    
 /**
  * Restituisce il nome della persona come String.
  *
@@ -312,5 +315,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
  */
     public void setPath(String path) {
         this.path = path;
+        this.fotoprofilo = new Image(path);
     }
+    
 }

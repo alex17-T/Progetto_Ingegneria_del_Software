@@ -2,6 +2,7 @@
 package com.mycompany.rubricatelefonica;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
@@ -17,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.FileChooser;
 
 /**
  * @file SecondaryController.java
@@ -119,6 +121,8 @@ public class SecondaryController {
     
     
     public void initialize(){
+        
+        
         /**
          * @brief Abilitazione del bottone secondo una condizione dettata dai campi di testo
          * di nome e cognome
@@ -143,6 +147,18 @@ public class SecondaryController {
 
     @FXML
     private void cambiaImage(ActionEvent event) {
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PNG File", "*.png", "*.jpg", "*.jpeg")
+        );
+        
+        File file = fc.showOpenDialog(null);
+        //Image foto = new Image(file.toURI().toString());
+        Contatto.creatoreFoto = file.toURI().toString();
+        
+        immagine.setImage(new Image(Contatto.creatoreFoto));
+        
+        //c.setPath();
     }
     
     /**
@@ -161,6 +177,8 @@ public class SecondaryController {
     private void creaContatto(ActionEvent event) throws IOException {
         
         Contatto c = new Contatto(nomeField.textProperty(), cognomeField.textProperty(), t1Field.textProperty(), t2Field.textProperty(), t3Field.textProperty(), m1Field.textProperty(), m2Field.textProperty(), m3Field.textProperty());
+        c.setPath(Contatto.creatoreFoto);
+        Contatto.creatoreFoto = getClass().getResource("/com/mycompany/rubricatelefonica/iconaSecondary.jpg").toString();
         SuperController.lista.add(c);
         FXCollections.sort(SuperController.lista);
         
@@ -183,4 +201,5 @@ public class SecondaryController {
         
           App.setRoot("Home");
     }
+
 }
