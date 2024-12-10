@@ -363,7 +363,7 @@ public class HomeController implements Initializable{
         //mageView FotoDefault = new ImageView(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
         //  Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoDefault)   ;    
         //contactImage.setImage(new Image(this.getClass().getResourceAsStream("iconaSecondary.jpg")));
-        Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo("/com/mycompany/rubricatelefonica/iconaSecondary.jpg");
+        Tabella_contatti.getSelectionModel().getSelectedItem().setPath("/com/mycompany/rubricatelefonica/iconaSecondary.jpg");
         contactImage.setImage(Tabella_contatti.getSelectionModel().getSelectedItem().getFotoprofilo());
     }
 
