@@ -385,6 +385,16 @@ public class HomeController implements Initializable{
         File file = fileChooser.showOpenDialog(stage); // Si aprirà la finestra per selezionare un file
 
         if (file != null) {
+            //Controlla se il file è vuoto
+            if(file.length() == 0){
+                System.out.println("Il file è vuoto. Impossibile importare.");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Errore durante l'importazione");
+                alert.setHeaderText("File vuoto");
+                alert.setContentText("Il file selezionato è vuoto. Impossibile procedere con l'importazione.");
+                alert.showAndWait();
+                return;  // Non procedere oltre
+            }
             // Esegui azioni con il file selezionato
             ArrayList<Contatto> listaContatti = null;
         
@@ -395,10 +405,20 @@ public class HomeController implements Initializable{
             } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
                 System.out.println("Errore durante la deserializzazione del file " + file.getAbsolutePath());
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Errore durante l'importazione");
+                alert.setHeaderText("Errore nel file");
+                alert.setContentText("Il file non è valido o è corrotto.");
+                alert.showAndWait();
+                return;
             }
-            if(listaContatti != null){
+            if(listaContatti != null && !listaContatti.isEmpty()){
                 SuperController.lista.clear();
                 for(Contatto contatto : listaContatti){
+                // Esegui validazione del contatto prima di aggiungerlo
+                if (contatto.getNome().isEmpty() && contatto.getCognome().isEmpty()) {
+                    continue; // Salta il contatto se non valido
+                }
                 // Ricostruisci ogni contatto usando i valori delle stringhe
                 String nome = contatto.getNome();
                 String cognome = contatto.getCognome();
@@ -424,9 +444,21 @@ public class HomeController implements Initializable{
             }
                 FXCollections.sort(SuperController.lista);
                 System.out.println("Rubrica importata correttamente.");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Importazione completata");
+                alert.setHeaderText("Rubrica importata");
+                alert.setContentText("La rubrica è stata importata correttamente.");
+                alert.showAndWait();
         } else {
-            System.out.println("Nessun file selezionato.");
+            System.out.println("Lista di contatti vuota nel file.");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("File vuoto");
+            alert.setHeaderText("Nessun contatto trovato");
+            alert.setContentText("Il file non contiene alcun contatto valido.");
+            alert.showAndWait();
         }
+    } else {
+        System.out.println("Nessun file selezionato.");
     }
     }
 
@@ -448,6 +480,9 @@ public class HomeController implements Initializable{
         File file = fileChooser.showSaveDialog(stage); // Si aprirà la finestra per selezionare un file
 
         if (file != null) {
+                    if (!file.getName().endsWith(".ser")) {
+                        file = new File(file.getAbsolutePath() + ".ser");
+                    }
             if(file.exists()){
                 // Fai apparire una finestra di conferma per sovrascrivere il file
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -464,8 +499,18 @@ public class HomeController implements Initializable{
                 try (ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(file))) {
                     objOut.writeObject(listaContatti);
                     System.out.println("Rubrica esportata correttamente in " + file.getAbsolutePath());
+                    Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                    successAlert.setTitle("Operazione completata");
+                    successAlert.setHeaderText("Esportazione completata");
+                    successAlert.setContentText("La rubrica è stata esportata correttamente.");
+                    successAlert.showAndWait();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                    errorAlert.setTitle("Errore durante l'esportazione");
+                    errorAlert.setHeaderText("Errore nel file");
+                    errorAlert.setContentText("Si è verificato un errore durante l'esportazione.");
+                    errorAlert.showAndWait();
                 }
             } else {
                 System.out.println("Esportazione annullata.");
@@ -478,8 +523,18 @@ public class HomeController implements Initializable{
                 try (ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(file))) {
                     objOut.writeObject(listaContatti);
                     System.out.println("Rubrica esportata correttamente in " + file.getAbsolutePath());
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Operazione completata");
+                    alert.setHeaderText("Esportazione completata");
+                    alert.setContentText("La rubrica è stata esportata correttamente.");
+                    alert.showAndWait();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                    errorAlert.setTitle("Errore durante l'esportazione");
+                    errorAlert.setHeaderText("Errore nel file");
+                    errorAlert.setContentText("Si è verificato un errore durante l'esportazione.");
+                    errorAlert.showAndWait();
                 }
             }
         } else {
