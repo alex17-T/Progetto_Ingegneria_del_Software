@@ -198,6 +198,12 @@ public class HomeController implements Initializable{
     private TextField serchBar;
      public static FilteredList<Contatto> listaFiltrata;
      public static SortedList<Contatto> listaOrdinata;
+    @FXML
+    private CheckBox selezionaTutti;
+    @FXML
+    private Button mFotobtn;
+    @FXML
+    private Button RFotobtn;
 
     /**
      * @brief Il metodo configura la tabella e le sue colonne.
@@ -220,6 +226,7 @@ public class HomeController implements Initializable{
         Colonna_telefono.setCellValueFactory(new PropertyValueFactory<>("numTel1"));
         Colonna_email.setCellValueFactory(new PropertyValueFactory<>("email1"));
         Colonna_fotoProfilo.setCellValueFactory(new PropertyValueFactory<>("fotoprofilo"));
+        Colonna_Spunta.setCellValueFactory(new PropertyValueFactory<>("select"));
         Tabella_contatti.setItems(SuperController.lista);
 
         showContattiDetails(null);
@@ -552,7 +559,10 @@ public class HomeController implements Initializable{
      */
     @FXML
     private void ModificaListaContatti(ActionEvent event) {
-        ToolBar.visibleProperty().set(!(ToolBar.visibleProperty().get()));
+          ToolBar.visibleProperty().set(!(ToolBar.visibleProperty().get()));
+          Colonna_Spunta.setVisible(!Colonna_Spunta.visibleProperty().get());
+          mFotobtn.mouseTransparentProperty().set(!mFotobtn.mouseTransparentProperty().get());
+          RFotobtn.mouseTransparentProperty().set(!RFotobtn.mouseTransparentProperty().get());
     }
 
     /**
@@ -566,6 +576,17 @@ public class HomeController implements Initializable{
      */
     @FXML
     private void SelezionaTuttoCheckBox(ActionEvent event) {
+         
+        
+        selezionaTutti.selectedProperty();
+        
+     // if(selezionaTutti.isSelected()){
+       selezionaTutti.selectedProperty().addListener((obs, oldVal, newVal) -> {
+       for (Contatto c : listaOrdinata){
+       c.getSelect().setSelected(newVal);
+       }
+      //Tabella_contatti.refresh();
+       });  
     }
 
     /**
@@ -578,9 +599,17 @@ public class HomeController implements Initializable{
      */
     @FXML
     private void RimuoviContattiSelezionati(ActionEvent event) {
-
-        SuperController.lista.remove(Tabella_contatti.getSelectionModel().getSelectedItem());
-
+        
+         ObservableList<Contatto> listaDaRimovere = FXCollections.observableArrayList();
+                       for (Contatto c : lista){
+       if(c.getSelect().isSelected()){
+     listaDaRimovere.add(c);
+      // listaOrdinata.remove(c);
+       }
+       }
+                       lista.removeAll(listaDaRimovere);
+      //Tabella_contatti.refresh();
+      
     }
 
     /**
@@ -637,7 +666,6 @@ public class HomeController implements Initializable{
             emailInfo3.setText("");
 
         }
-
     }
 
     /**
@@ -675,7 +703,7 @@ public class HomeController implements Initializable{
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Attenzione");
             alert.setHeaderText("Campi incompleti");
-            alert.setContentText("Il nome e il cognome non possono essere vuoti.");
+            alert.setContentText("Il nome o il cognome sono OBBLIGATORI");
             alert.showAndWait();
             return; // Interrompe l'esecuzione se i campi obbligatori sono vuoti
         }
