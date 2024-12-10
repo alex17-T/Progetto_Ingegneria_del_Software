@@ -48,7 +48,7 @@ public class Contatto implements Comparable<Contatto>, Serializable{
     private String email1String;
     private String email2String;
     private String email3String;
-    private CheckBox  select;
+    private transient CheckBox  select;
     
     /**
      * @brief Compara i contatti prima per nome e, in caso di pareggio, per cognome.
@@ -321,11 +321,20 @@ public class Contatto implements Comparable<Contatto>, Serializable{
         this.fotoprofilo = new Image(path);
     }
     
-    
+    /**
+     * Ritorna il checkbox del contatto.
+     * 
+     * @return Il checkbox del contatto.
+     */
     public  CheckBox getSelect(){
-    
         return this.select;
     }
+    
+    /**
+     * Modifica lo stato del checkbox con quello in input.
+     * 
+     * @param s Il valore da settare nel checkbox del contatto.
+     */
     public void setSelect(CheckBox s){
     this.select=s;
     }
