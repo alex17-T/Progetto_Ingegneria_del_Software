@@ -219,6 +219,7 @@ public class HomeController implements Initializable{
         Colonna_cognome.setCellValueFactory(new PropertyValueFactory<>("cognome"));
         Colonna_telefono.setCellValueFactory(new PropertyValueFactory<>("numTel1"));
         Colonna_email.setCellValueFactory(new PropertyValueFactory<>("email1"));
+        Colonna_fotoProfilo.setCellValueFactory(new PropertyValueFactory<>("fotoprofilo"));
         Tabella_contatti.setItems(SuperController.lista);
 
         showContattiDetails(null);
@@ -273,7 +274,17 @@ public class HomeController implements Initializable{
       
         listaOrdinata = new SortedList<>(listaFiltrata);
         listaOrdinata.comparatorProperty().bind(Tabella_contatti.comparatorProperty());
+        
+        Tabella_contatti.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
+            if(newValue !=null){
+                Contatto c = newValue;
+                contactImage.setImage(c.getFotoprofilo());
+            }
+        });
+        
         Tabella_contatti.setItems(listaOrdinata);
+        
+        
     }
 
     /**
@@ -312,11 +323,13 @@ public class HomeController implements Initializable{
         FileChooser fileChooser = new FileChooser();
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         File file = fileChooser.showOpenDialog(stage);
-        Image image = new Image(new FileInputStream(file));// Leggi l'immagine
-        ImageView FotoSel = new ImageView(image);// Creazione di un ImageView
-        //    Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoSel);
-        contactImage.setImage(image);
-
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("PNG File", "*.png", "*.jpg", "*.jpeg")
+        );
+        
+        SuperController.lista.get(Tabella_contatti.getSelectionModel().getSelectedIndex()).setPath(file.toURI().toString());
+        //contactImage.setImage(Tabella_contatti.getSelectionModel().getSelectedItem().getFotoprofilo());
+        contactImage.setImage(Tabella_contatti.getSelectionModel().getSelectedItem().getFotoprofilo());
     }
 
     /**
@@ -349,7 +362,9 @@ public class HomeController implements Initializable{
     private void RimuoviFotoProfilo(ActionEvent event) throws FileNotFoundException {
         //mageView FotoDefault = new ImageView(new Image(this.getClass().getResourceAsStream("FotoProfiloDefault")));
         //  Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo(FotoDefault)   ;    
-        contactImage.setImage(new Image(this.getClass().getResourceAsStream("iconaSecondary.jpg")));
+        //contactImage.setImage(new Image(this.getClass().getResourceAsStream("iconaSecondary.jpg")));
+        Tabella_contatti.getSelectionModel().getSelectedItem().setFotoprofilo("/com/mycompany/rubricatelefonica/iconaSecondary.jpg");
+        contactImage.setImage(Tabella_contatti.getSelectionModel().getSelectedItem().getFotoprofilo());
     }
 
     /**
