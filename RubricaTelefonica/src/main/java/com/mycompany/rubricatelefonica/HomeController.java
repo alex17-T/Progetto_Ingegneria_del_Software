@@ -660,7 +660,25 @@ public class HomeController implements Initializable{
      */
     @FXML
     private void SalvaModificheContatto(ActionEvent event) {
+            // Controlla se un contatto è selezionato
+        if (Tabella_contatti.getSelectionModel().getSelectedItem() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Errore");
+            alert.setHeaderText("Nessun contatto selezionato");
+            alert.setContentText("Per salvare le modifiche, seleziona prima un contatto dalla tabella.");
+            alert.showAndWait();
+            return; // Interrompe l'esecuzione se nessun contatto è selezionato
+        }
 
+        // Controlla se i campi sono vuoti
+        if (nomeInfo.getText().isEmpty() && cognomeInfo.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Attenzione");
+            alert.setHeaderText("Campi incompleti");
+            alert.setContentText("Il nome e il cognome non possono essere vuoti.");
+            alert.showAndWait();
+            return; // Interrompe l'esecuzione se i campi obbligatori sono vuoti
+        }
         // Seleziona il contatto corrente dalla tabella e aggiorna i suoi dati
         int index = SuperController.lista.indexOf(Tabella_contatti.getSelectionModel().getSelectedItem());
         Contatto contatto = SuperController.lista.get(index);
@@ -678,6 +696,13 @@ public class HomeController implements Initializable{
         // Inverte la proprietà `mouseTransparent` del pannello dei dettagli per renderli non selezionabili
         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
         SalvaModificheContatto.visibleProperty().set(false);
+        
+        // Mostra un messaggio di conferma
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Operazione completata");
+        successAlert.setHeaderText("Modifiche salvate");
+        successAlert.setContentText("Le modifiche al contatto sono state salvate correttamente.");
+        successAlert.showAndWait();
     }
-
 }
+    
