@@ -15,4 +15,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #D0E8F2;
 }
     
+.editButton{
+	-fx-background-color: LightBlue;
+        -fx-background-image: url("editIcon.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: 15px;
+        -fx-background-radius: 10px;
+	-fx-border: none;
+        -fx-cursor: hand;
+}
 
+.exitbutton{
+    -fx-background-color: #cc0000;
+}
+
+.creaContattoButton{
+    -fx-background-color: #21b11c;
+}

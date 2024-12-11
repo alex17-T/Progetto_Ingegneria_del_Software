@@ -12,3 +12,9 @@ and open the template in the editor.
 
     -fx-background-radius: 55px;
 }
+
+.allineaTesto{
+    -fx-alignment: center-right;
+    -fx-background-position: 15px;
+}
+
