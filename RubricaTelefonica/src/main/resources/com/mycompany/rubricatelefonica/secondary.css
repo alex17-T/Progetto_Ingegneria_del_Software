@@ -33,3 +33,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .creaContattoButton{
     -fx-background-color: #21b11c;
 }
+
+.backgroundButtons{
+    -fx-background-color: #B691d2;
+    -fx-background-radius: 50px 50px 0 0;    
+    -fx-border-top-width: 1px;
+    -fx-border-top-style: solid;
+    -fx-border-top-color: #B691d2;
+    -fx-border-top-radius: 15px;
+}
