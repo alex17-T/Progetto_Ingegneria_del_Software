@@ -31,7 +31,7 @@
          </children>
       </StackPane>
       <Button layoutX="398.0" layoutY="604.0" mnemonicParsing="false" onAction="#AggiungiContatto" prefHeight="39.0" prefWidth="56.0" styleClass="addButton" stylesheets="@edit.css" />
-      <Pane fx:id="detailPane" layoutX="545.0" layoutY="91.0" prefHeight="519.0" prefWidth="426.0" styleClass="detailPane" stylesheets="@pane.css">
+      <Pane fx:id="detailPane" layoutX="550.0" layoutY="116.0" prefHeight="519.0" prefWidth="426.0" style="-fx-background-color: B691d2;" styleClass="detailPane" stylesheets="@pane.css">
          <children>
             <ImageView fx:id="contactImage" fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -73,26 +73,30 @@
          </font></Button>
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
-      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="47.0" layoutY="61.0" prefHeight="39.0" prefWidth="434.0" spacing="25.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
+      <Pane prefHeight="96.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 40px 40px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
          <children>
-            <CheckBox fx:id="selezionaTutti" alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-               <padding>
-                  <Insets left="5.0" top="10.0" />
-               </padding>
-            </CheckBox>
-            <Button mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
-            <TextField fx:id="labelContatore" editable="false" prefHeight="25.0" prefWidth="29.0" />
-            <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />
+            <HBox fx:id="SearchBox" alignment="CENTER" layoutX="287.0" layoutY="48.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0" style="-fx-background-color: cbaed7; -fx-background-radius: 15;">
+               <children>
+                  <TextField fx:id="serchBar" prefHeight="31.0" prefWidth="392.0" promptText="Cerca..." style="-fx-background-color: #FFFFFF;" styleClass="searchBar" stylesheets="@search_bar.css" visible="false" />
+                  <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="30.0" prefWidth="34.0" styleClass="srcButton" stylesheets="@edit.css" />
+               </children>
+            </HBox>
+            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="250.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="25.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
+               <children>
+                  <TextField fx:id="labelContatore" editable="false" prefHeight="25.0" prefWidth="29.0" />
+                  <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />
+                  <CheckBox fx:id="selezionaTutti" alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets left="5.0" top="10.0" />
+                     </padding>
+                  </CheckBox>
+                  <Button mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox fx:id="SearchBox" alignment="CENTER" layoutX="35.0" layoutY="22.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0">
-         <children>
-            <TextField fx:id="serchBar" prefHeight="31.0" prefWidth="392.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" />
-            <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="30.0" prefWidth="34.0" styleClass="srcButton" stylesheets="@edit.css" />
-         </children>
-      </HBox>
+      </Pane>
    </children>
 </Pane>
