@@ -11,6 +11,10 @@ and open the template in the editor.
 .casellaTesto{
 
     -fx-background-radius: 55px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ffc800;
+    -fx-border-style: solid;
+    -fx-border-radius: 55px;
 }
 
 .allineaTesto{
