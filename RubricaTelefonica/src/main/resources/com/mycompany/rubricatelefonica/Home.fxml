@@ -73,7 +73,7 @@
          </font></Button>
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
-      <Pane prefHeight="96.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 40px 40px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
+      <Pane prefHeight="96.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 50px 50px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
          <children>
             <HBox fx:id="SearchBox" alignment="CENTER" layoutX="290.0" layoutY="51.0" prefHeight="31.0" prefWidth="450.0" spacing="20.0" style="-fx-background-color: cbaed7; -fx-background-radius: 15;">
                <children>
@@ -83,7 +83,7 @@
             </HBox>
             <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css">
                <children>
-                  <TextField fx:id="labelContatore" editable="false" prefHeight="40.0" prefWidth="106.0" style="-fx-border-image-width: 3px; -fx-background-color: B691d2;" text="contatore" />
+                  <TextField fx:id="labelContatore" editable="false" prefHeight="40.0" prefWidth="106.0" style="-fx-border-image-width: 3px; -fx-background-color: B691d2;" text="Contatore" />
                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" text="Annulla" />
                   <CheckBox fx:id="selezionaTutti" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                      <cursor>
