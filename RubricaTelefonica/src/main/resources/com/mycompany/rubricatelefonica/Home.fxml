@@ -21,7 +21,6 @@
             <TableView fx:id="Tabella_contatti" editable="true" prefHeight="557.0" prefWidth="356.0">
               <columns>
                   <TableColumn fx:id="Colonna_Spunta" prefWidth="28.0" text="C" visible="false" />
-                  <TableColumn fx:id="Colonna_fotoProfilo" prefWidth="54.0" text="F Profilo" />
                 <TableColumn fx:id="Colonna_nome" prefWidth="109.0" text="Nome" />
                 <TableColumn fx:id="Colonna_cognome" prefWidth="109.0" text="Cognome" />
                   <TableColumn fx:id="Colonna_telefono" prefWidth="60.0" text="Telefono 1" />
@@ -81,9 +80,8 @@
                   <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="16.0" prefWidth="27.0" styleClass="srcButton" stylesheets="@edit.css" />
                </children>
             </HBox>
-            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css">
+            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
                <children>
-                  <TextField fx:id="labelContatore" editable="false" prefHeight="40.0" prefWidth="106.0" style="-fx-border-image-width: 3px; -fx-background-color: B691d2;" text="Contatore" />
                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" text="Annulla" />
                   <CheckBox fx:id="selezionaTutti" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                      <cursor>
