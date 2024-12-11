@@ -26,6 +26,8 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.animation.FadeTransition;
+import javafx.animation.TranslateTransition;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleStringProperty;
@@ -56,6 +58,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 /**
  * @brief Questa classe gestisce l'interfaccia principale della rubrica
@@ -205,6 +208,9 @@ public class HomeController implements Initializable{
     private Button mFotobtn;
     @FXML
     private Button RFotobtn;
+    @FXML
+    private TextField labelContatore;
+     boolean visibilita;
 
     /**
      * @brief Il metodo configura la tabella e le sue colonne.
@@ -562,8 +568,30 @@ public class HomeController implements Initializable{
      */
     @FXML
     private void ModificaListaContatti(ActionEvent event) {
-        ToolBar.visibleProperty().set(!(ToolBar.visibleProperty().get()));
+    
+         FadeTransition fadeIn = new FadeTransition(Duration.millis(500), ToolBar);
+         FadeTransition fadeOut= new FadeTransition(Duration.millis(500), ToolBar);
+        
+        if(!visibilita){
+           
+             fadeIn.setFromValue(0); // Opacità iniziale
+             fadeIn.setToValue(1);   // Opacità finale (visibile)
+             fadeIn.play();
+             ToolBar.setVisible(true);
+             visibilita = true;
+             
+      }else {
+      
+           
+             fadeOut.setFromValue(1); // Opacità iniziale
+             fadeOut.setToValue(0);   // Opacità finale (non visibile visibile)
+             fadeOut.play();
+             visibilita = false;
+           //  ToolBar.setVisible(false);
+      } 
+            
         Colonna_Spunta.setVisible(!Colonna_Spunta.visibleProperty().get());
+       
         mFotobtn.mouseTransparentProperty().set(!mFotobtn.mouseTransparentProperty().get());
         RFotobtn.mouseTransparentProperty().set(!RFotobtn.mouseTransparentProperty().get());
         // Dopo che la toolbar è visibile, imposta il listener sul checkbox principale
