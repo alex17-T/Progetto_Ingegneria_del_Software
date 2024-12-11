@@ -75,17 +75,17 @@
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
       <Pane prefHeight="96.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 40px 40px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
          <children>
-            <HBox fx:id="SearchBox" alignment="CENTER" layoutX="287.0" layoutY="48.0" prefHeight="39.0" prefWidth="465.0" spacing="20.0" style="-fx-background-color: cbaed7; -fx-background-radius: 15;">
+            <HBox fx:id="SearchBox" alignment="CENTER" layoutX="290.0" layoutY="51.0" prefHeight="31.0" prefWidth="450.0" spacing="20.0" style="-fx-background-color: cbaed7; -fx-background-radius: 15;">
                <children>
-                  <TextField fx:id="serchBar" prefHeight="31.0" prefWidth="392.0" promptText="Cerca..." style="-fx-background-color: #FFFFFF;" styleClass="searchBar" stylesheets="@search_bar.css" visible="false" />
-                  <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="30.0" prefWidth="34.0" styleClass="srcButton" stylesheets="@edit.css" />
+                  <TextField fx:id="serchBar" prefHeight="22.0" prefWidth="374.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" visible="false" />
+                  <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="16.0" prefWidth="27.0" styleClass="srcButton" stylesheets="@edit.css" />
                </children>
             </HBox>
-            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="250.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="25.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
+            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css">
                <children>
-                  <TextField fx:id="labelContatore" editable="false" prefHeight="25.0" prefWidth="29.0" />
-                  <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />
-                  <CheckBox fx:id="selezionaTutti" alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
+                  <TextField fx:id="labelContatore" editable="false" prefHeight="40.0" prefWidth="106.0" style="-fx-border-image-width: 3px; -fx-background-color: B691d2;" text="contatore" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" text="Annulla" />
+                  <CheckBox fx:id="selezionaTutti" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -93,8 +93,11 @@
                         <Insets left="5.0" top="10.0" />
                      </padding>
                   </CheckBox>
-                  <Button mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" prefHeight="40.0" prefWidth="135.0" style="-fx-border-color: B691d2; -fx-background-color: B691d2; -fx-background-radius: 0;" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
                </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
             </HBox>
          </children>
       </Pane>
