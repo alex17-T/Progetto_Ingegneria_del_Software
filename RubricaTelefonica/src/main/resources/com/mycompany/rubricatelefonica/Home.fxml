@@ -73,7 +73,7 @@
          </font></Button>
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
-      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="33.0" layoutY="65.0" prefHeight="39.0" prefWidth="946.0" spacing="100.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
+      <HBox fx:id="ToolBar" alignment="CENTER" layoutX="47.0" layoutY="61.0" prefHeight="39.0" prefWidth="434.0" spacing="25.0" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
          <children>
             <CheckBox fx:id="selezionaTutti" alignment="CENTER" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="21.0" prefWidth="151.0" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                <cursor>
@@ -84,7 +84,7 @@
                </padding>
             </CheckBox>
             <Button mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
-            <TextField editable="false" prefHeight="25.0" prefWidth="29.0" />
+            <TextField fx:id="labelContatore" editable="false" prefHeight="25.0" prefWidth="29.0" />
             <Button mnemonicParsing="false" onAction="#AnnullaOperazione" text="Annulla" />
          </children>
       </HBox>
