@@ -24,7 +24,7 @@
                 <TableColumn fx:id="Colonna_nome" prefWidth="109.0" text="Nome" />
                 <TableColumn fx:id="Colonna_cognome" prefWidth="109.0" text="Cognome" />
                   <TableColumn fx:id="Colonna_telefono" prefWidth="60.0" text="Telefono 1" />
-                  <TableColumn fx:id="Colonna_email" prefWidth="90.0" text="Email 1" />
+                  <TableColumn fx:id="Colonna_email" prefWidth="186.0" text="Email 1" />
               </columns>
             </TableView>
          </children>
@@ -74,12 +74,6 @@
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
       <Pane prefHeight="96.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 50px 50px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
          <children>
-            <HBox fx:id="SearchBox" alignment="CENTER" layoutX="290.0" layoutY="51.0" prefHeight="31.0" prefWidth="450.0" spacing="20.0" style="-fx-background-color: cbaed7; -fx-background-radius: 15;">
-               <children>
-                  <TextField fx:id="serchBar" prefHeight="22.0" prefWidth="374.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" visible="false" />
-                  <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="16.0" prefWidth="27.0" styleClass="srcButton" stylesheets="@edit.css" />
-               </children>
-            </HBox>
             <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
                <children>
                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" text="Annulla" />
@@ -96,6 +90,12 @@
                <padding>
                   <Insets bottom="10.0" />
                </padding>
+            </HBox>
+            <HBox fx:id="SearchBox" alignment="CENTER" layoutX="275.0" layoutY="50.0" prefHeight="31.0" prefWidth="450.0" spacing="20.0" style="-fx-background-color: cbaed7; -fx-background-radius: 15;">
+               <children>
+                  <TextField fx:id="serchBar" prefHeight="22.0" prefWidth="374.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" />
+                  <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="16.0" prefWidth="27.0" styleClass="srcButton" stylesheets="@edit.css" />
+               </children>
             </HBox>
          </children>
       </Pane>
