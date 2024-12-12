@@ -123,9 +123,7 @@ public class HomeController implements Initializable{
     private Button modificaButton;
     @FXML
     private TableColumn<Contatto, CheckBox> Colonna_Spunta;
-    @FXML
-    private TableColumn<Contatto, ImageView> Colonna_fotoProfilo;
-
+    
     /**
      * @brief Identificativo della casella di testo del ome
      */
@@ -232,7 +230,6 @@ public class HomeController implements Initializable{
         Colonna_cognome.setCellValueFactory(new PropertyValueFactory<>("cognome"));
         Colonna_telefono.setCellValueFactory(new PropertyValueFactory<>("numTel1"));
         Colonna_email.setCellValueFactory(new PropertyValueFactory<>("email1"));
-        Colonna_fotoProfilo.setCellValueFactory(new PropertyValueFactory<>("fotoprofilo"));
         Colonna_Spunta.setCellValueFactory(new PropertyValueFactory<>("select"));
         Tabella_contatti.setItems(SuperController.lista);
 
@@ -358,6 +355,8 @@ public class HomeController implements Initializable{
 
         SalvaModificheContatto.visibleProperty().set(!SalvaModificheContatto.visibleProperty().get());
         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
+         mFotobtn.mouseTransparentProperty().set(!mFotobtn.mouseTransparentProperty().get());
+        RFotobtn.mouseTransparentProperty().set(!RFotobtn.mouseTransparentProperty().get());
 
     }
 
@@ -592,8 +591,7 @@ public class HomeController implements Initializable{
             
         Colonna_Spunta.setVisible(!Colonna_Spunta.visibleProperty().get());
        
-        mFotobtn.mouseTransparentProperty().set(!mFotobtn.mouseTransparentProperty().get());
-        RFotobtn.mouseTransparentProperty().set(!RFotobtn.mouseTransparentProperty().get());
+       
         // Dopo che la toolbar è visibile, imposta il listener sul checkbox principale
         if (ToolBar.visibleProperty().get() && !listenerAdded) {
             selezionaTutti.selectedProperty().addListener((obs, oldVal, newVal) -> {
