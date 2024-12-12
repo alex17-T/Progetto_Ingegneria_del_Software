@@ -4,6 +4,8 @@
  */
 package com.mycompany.rubricatelefonica;
 
+import java.io.File;
+import java.io.FileInputStream;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,6 +13,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.scene.Node;
+import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
+import javafx.stage.FileChooser;
 
 /**
  * JavaFX App
@@ -32,6 +44,7 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
+        ImportaListaDefault("/com/mycompany/rubricatelefonica/default.ser");
         scene = new Scene(loadFXML("Home"));
         stage.setScene(scene);
         stage.show();
@@ -49,6 +62,84 @@ public class App extends Application {
      */
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
+    }
+    
+    /**
+     * @brief Caricamento del file di default nella tabella.
+     */
+    private void ImportaListaDefault(String filePath) {
+        // Carica il file dal classpath come InputStream
+        InputStream inputStream = getClass().getResourceAsStream(filePath);
+        
+        if (inputStream == null) {
+            System.out.println("File non trovato nel classpath.");
+            return;
+        }
+
+        ArrayList<Contatto> listaContatti = null;
+
+        // Procedi con la deserializzazione del file
+        try (ObjectInputStream objIn = new ObjectInputStream(inputStream)) {
+            // Deserializza la lista di contatti dal file
+            listaContatti = (ArrayList<Contatto>) objIn.readObject();
+            System.out.println("Contatti caricati da: " + filePath);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Errore durante la deserializzazione del file " + filePath);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Errore durante l'importazione");
+            alert.setHeaderText("Errore nel file");
+            alert.setContentText("Il file non è valido o è corrotto.");
+            alert.showAndWait();
+            return;
+        }
+
+        if (listaContatti != null && !listaContatti.isEmpty()) {
+            SuperController.lista.clear();
+            for (Contatto contatto : listaContatti) {
+                // Esegui validazione del contatto prima di aggiungerlo
+                if (contatto.getNome().isEmpty() && contatto.getCognome().isEmpty()) {
+                    continue; // Salta il contatto se non valido
+                }
+                // Ricostruisci ogni contatto usando i valori delle stringhe
+                String nome = contatto.getNome();
+                String cognome = contatto.getCognome();
+                String numTel1 = contatto.getNumTel1();
+                String numTel2 = contatto.getNumTel2();
+                String numTel3 = contatto.getNumTel3();
+                String email1 = contatto.getEmail1();
+                String email2 = contatto.getEmail2();
+                String email3 = contatto.getEmail3();
+
+                // Crea un nuovo contatto con le StringProperty
+                Contatto nuovoContatto = new Contatto(
+                        new SimpleStringProperty(nome),
+                        new SimpleStringProperty(cognome),
+                        new SimpleStringProperty(numTel1),
+                        new SimpleStringProperty(numTel2),
+                        new SimpleStringProperty(numTel3),
+                        new SimpleStringProperty(email1),
+                        new SimpleStringProperty(email2),
+                        new SimpleStringProperty(email3)
+                );
+                nuovoContatto.setSelect(new CheckBox());
+                SuperController.lista.add(nuovoContatto);
+            }
+            FXCollections.sort(SuperController.lista);
+            System.out.println("Rubrica importata correttamente.");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Importazione completata");
+            alert.setHeaderText("Rubrica importata");
+            alert.setContentText("La rubrica è stata importata correttamente.");
+            alert.showAndWait();
+        } else {
+            System.out.println("Lista di contatti vuota nel file.");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("File vuoto");
+            alert.setHeaderText("Nessun contatto trovato");
+            alert.setContentText("Il file non contiene alcun contatto valido.");
+            alert.showAndWait();
+        }
     }
 
     /**
