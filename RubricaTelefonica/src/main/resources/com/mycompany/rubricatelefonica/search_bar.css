@@ -1,13 +1,19 @@
 .searchBar{
-    -fx-background-radius: 90px; 
-    -fx-border-radius: 90px;
-    -fx-background-color: transparent;
+    -fx-background-radius: 70px; 
+    -fx-border-radius: 70
+        px;
+    -fx-background-color: #B691d2
+        ;
     -fx-prompt-text-fill: #000000;
-    
+     -fx-background-image: url("search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
+      -fx-background-size: 30px;
+        -fx-background-position:330px;
+        -fx-background-repeat: no-repeat;
+        
 }
 
 .HBsearchBarStyle{
-    -fx-background-color: #cbaed7;
+    -fx-background-color: #B691d2;
     -fx-background-radius: 15px;
     -fx-border-radius: 15px;
     -fx-border-width: 3px;

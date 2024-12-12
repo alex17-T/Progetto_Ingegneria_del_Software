@@ -1,5 +1,5 @@
 .editButton{
-	-fx-background-color: lightblue;
+	-fx-background-color: #F3D500;
         -fx-background-image: url("editIcon.png");
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
@@ -44,7 +44,8 @@
 }
 
 .addButton{
-    -fx-background-color: #e4e5e0;
+    -fx-background-color: #d4bda
+        8;
         -fx-background-image: url("person_add_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
@@ -65,9 +66,9 @@
         -fx-background-repeat: no-repeat;
         -fx-background-position: 15px;
         -fx-background-radius: 30px;
-        -fx-background-color: #ffc800;
+        -fx-background-color: #F8A751;
         -fx-border-radius: 30px;
-        -fx-border-color: #ffc800;
+        -fx-border-color: #F8A751;
         -fx-border-style: solid;
         -fx-cursor: hand;
 }
@@ -83,26 +84,26 @@
         -fx-background-repeat: no-repeat;
         -fx-background-position: 15px;
         -fx-background-radius: 30px;
-        -fx-background-color: #ffc800;
+        -fx-background-color: #F8A751;
         -fx-border-radius: 30px;
-        -fx-border-color: #ffc800;
+        -fx-border-color: #F8A751;
         -fx-border-style: solid;
         -fx-cursor: hand;
 }
 
 .expButton:hover{
-    -fx-background-color: #ffffff;
+    -fx-background-color: #F8A751;
 }
 
 .ModConButton{
     -fx-background-color: #e4e5e0;
         -fx-background-image: url("editIcon.png");
-        -fx-background-size: 30px;
+        -fx-background-size: 25px;
         -fx-background-repeat: no-repeat;
         /*-fx-left: 10px;*/
         -fx-background-position: 5px;
         -fx-background-radius: 30px;
-        -fx-background-color: #ffffff;
+        -fx-background-color: #ded4c0;
         -fx-border-radius: 30px;
         -fx-cursor: hand;
 
