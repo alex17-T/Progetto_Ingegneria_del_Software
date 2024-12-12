@@ -234,6 +234,7 @@ public class HomeController implements Initializable{
         Tabella_contatti.setItems(SuperController.lista);
 
         showContattiDetails(null);
+        modificaButton.setDisable(true);
 
         // Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(
         //     observable, oldValue, newValu) -> {showContattiDetails( (Contatto) newValue);
@@ -247,6 +248,8 @@ public class HomeController implements Initializable{
              * nessuno), questo metodo si attiva e mostra i dati del contatto
              * selezionato (tali dati sono tutte stringhe vuote se non è
              * selezionato nessun contatto).
+             * Inoltre non è possibile cliccare modificaButton
+             * se non è selezionato nessun contatto
              *
              * @invariant oldValue e newValue hanno valori differenti.
              * @param observable La proprietà osservata, in questo caso il
@@ -258,6 +261,7 @@ public class HomeController implements Initializable{
             @Override
             public void changed(ObservableValue<? extends Contatto> observable, Contatto oldValue, Contatto newValue) {
                 showContattiDetails(newValue);
+                modificaButton.setDisable(newValue == null);
             }
         });
         
@@ -282,7 +286,6 @@ public class HomeController implements Initializable{
         
             });
         });
-      
         listaOrdinata = new SortedList<>(listaFiltrata);
         listaOrdinata.comparatorProperty().bind(Tabella_contatti.comparatorProperty());
         
@@ -294,8 +297,6 @@ public class HomeController implements Initializable{
         });
         
         Tabella_contatti.setItems(listaOrdinata);
-        
-        
     }
 
     /**
