@@ -98,7 +98,7 @@
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
       <Pane prefHeight="102.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 50px 50px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
          <children>
-            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css">
+            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
                <children>
                   <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-background-radius: 30px; -fx-border-radius: 30px; -fx-border-width: 3px;" text="Annulla">
                      <font>
