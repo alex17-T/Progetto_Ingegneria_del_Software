@@ -23,36 +23,60 @@
                   <TableColumn fx:id="Colonna_Spunta" prefWidth="28.0" text="C" visible="false" />
                 <TableColumn fx:id="Colonna_nome" prefWidth="109.0" text="Nome" />
                 <TableColumn fx:id="Colonna_cognome" prefWidth="109.0" text="Cognome" />
-                  <TableColumn fx:id="Colonna_telefono" prefWidth="60.0" text="Telefono 1" />
-                  <TableColumn fx:id="Colonna_email" prefWidth="186.0" text="Email 1" />
+                  <TableColumn fx:id="Colonna_telefono" prefWidth="115.0" text="Telefono 1" />
+                  <TableColumn fx:id="Colonna_email" prefWidth="131.0" text="Email 1" />
               </columns>
             </TableView>
          </children>
       </StackPane>
       <Button layoutX="398.0" layoutY="604.0" mnemonicParsing="false" onAction="#AggiungiContatto" prefHeight="39.0" prefWidth="56.0" styleClass="addButton" stylesheets="@edit.css" />
-      <Pane fx:id="detailPane" layoutX="550.0" layoutY="116.0" prefHeight="519.0" prefWidth="426.0" style="-fx-background-color: cbaed7;" styleClass="detailPane" stylesheets="@pane.css">
+      <Pane fx:id="detailPane" layoutX="550.0" layoutY="110.0" prefHeight="519.0" prefWidth="426.0" style="-fx-background-color: cbaed7;" styleClass="detailPane" stylesheets="@pane.css">
          <children>
-            <ImageView fx:id="contactImage" fitHeight="150.0" fitWidth="200.0" layoutX="139.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="contactImage" fitHeight="156.0" fitWidth="160.0" layoutX="129.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@iconaSecondary.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="mFotobtn" layoutX="228.0" layoutY="148.0" mnemonicParsing="false" mouseTransparent="true" onAction="#ModificaFotoContatto" prefHeight="31.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" />
-            <Button fx:id="modificaButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="256.0" layoutY="466.0" mnemonicParsing="false" onAction="#ModificaContatto" prefHeight="39.0" prefWidth="139.0" styleClass="ModConButton" stylesheets="@edit.css" text="Modifica Contatto" textOverrun="CLIP">
+            <Button fx:id="mFotobtn" layoutX="229.0" layoutY="148.0" mnemonicParsing="false" mouseTransparent="true" onAction="#ModificaFotoContatto" prefHeight="31.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" />
+            <Button fx:id="modificaButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="256.0" layoutY="473.0" mnemonicParsing="false" onAction="#ModificaContatto" prefHeight="39.0" prefWidth="140.0" styleClass="ModConButton" stylesheets="@edit.css" text="Modifica Contatto" textOverrun="CLIP">
                <font>
                   <Font name="Calibri Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="RFotobtn" layoutX="139.0" layoutY="148.0" mnemonicParsing="false" mouseTransparent="true" onAction="#RimuoviFotoProfilo" prefHeight="31.0" prefWidth="56.0" styleClass="remButton" stylesheets="@edit.css" />
+            <Button fx:id="RFotobtn" layoutX="129.0" layoutY="148.0" mnemonicParsing="false" mouseTransparent="true" onAction="#RimuoviFotoProfilo" prefHeight="31.0" prefWidth="56.0" styleClass="remButton" stylesheets="@edit.css" />
             <VBox fx:id="DettagliContatto" layoutX="116.0" layoutY="191.0" mouseTransparent="true" prefHeight="282.0" prefWidth="186.0" spacing="2.0">
                <children>
-                  <TextField fx:id="nomeInfo" alignment="CENTER" promptText="nome" />
-                  <TextField fx:id="cognomeInfo" alignment="CENTER" promptText="cognome" />
-                  <TextField fx:id="numInfo1" alignment="CENTER" promptText="numero telefono 1" />
-                  <TextField fx:id="numInfo2" alignment="CENTER" promptText="numero telefono 2" />
-                  <TextField fx:id="numInfo3" alignment="CENTER" promptText="numero telefono 3" />
-                  <TextField fx:id="emailInfo1" alignment="CENTER" promptText="email 1" />
-                  <TextField fx:id="emailInfo2" alignment="CENTER" promptText="email2" />
-                  <TextField fx:id="emailInfo3" alignment="CENTER" promptText="email3" />
+                  <TextField fx:id="nomeInfo" alignment="CENTER" promptText="nome" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="cognomeInfo" alignment="CENTER" promptText="cognome" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="numInfo1" alignment="CENTER" promptText="numero telefono 1" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="numInfo2" alignment="CENTER" promptText="numero telefono 2" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="numInfo3" alignment="CENTER" promptText="numero telefono 3" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="emailInfo1" alignment="CENTER" promptText="email 1" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="emailInfo2" alignment="CENTER" promptText="email2" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
+                  <TextField fx:id="emailInfo3" alignment="CENTER" promptText="email3" styleClass="casellaTestoHome" stylesheets="@textFileld.css">
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font></TextField>
                </children>
             </VBox>
             <Button fx:id="SalvaModificheContatto" alignment="CENTER" contentDisplay="RIGHT" layoutX="47.0" layoutY="466.0" mnemonicParsing="false" onAction="#SalvaModificheContatto" prefHeight="39.0" prefWidth="139.0" styleClass="ModConButton" stylesheets="@edit.css" text="Salva" textOverrun="CLIP" visible="false">
@@ -62,38 +86,50 @@
             </Button>
          </children>
       </Pane>
-      <Button layoutX="574.0" layoutY="650.0" mnemonicParsing="false" onAction="#ImportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="impButton" stylesheets="@edit.css" text="Importa">
+      <Button layoutX="582.0" layoutY="647.0" mnemonicParsing="false" onAction="#ImportaLista" prefHeight="39.0" prefWidth="150.0" styleClass="impButton" stylesheets="@edit.css" text="Importa">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></Button>
-      <Button layoutX="778.0" layoutY="650.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="31.0" prefWidth="157.0" styleClass="expButton" stylesheets="@edit.css" text="Esporta">
+      <Button layoutX="800.0" layoutY="647.0" mnemonicParsing="false" onAction="#EsportaLista" prefHeight="39.0" prefWidth="150.0" styleClass="expButton" stylesheets="@edit.css" text="Esporta">
          <font>
             <Font name="Calibri Bold" size="14.0" />
          </font></Button>
       <ScrollBar layoutX="479.0" layoutY="110.0" orientation="VERTICAL" prefHeight="567.0" prefWidth="22.0" />
       <Button fx:id="ModificaLista" layoutX="398.0" layoutY="542.0" mnemonicParsing="false" onAction="#ModificaListaContatti" prefHeight="39.0" prefWidth="56.0" styleClass="editButton" stylesheets="@edit.css" textAlignment="RIGHT" />
-      <Pane prefHeight="96.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 50px 50px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
+      <Pane prefHeight="102.0" prefWidth="1000.0" style="-fx-background-radius: 0 0 50px 50px; -fx-background-color: B691d2;" styleClass="barraTool" stylesheets="@Pane_test.css">
          <children>
-            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
+            <HBox fx:id="ToolBar" alignment="CENTER" layoutX="249.0" opacity="0.9" prefHeight="39.0" prefWidth="556.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css">
                <children>
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" text="Annulla" />
-                  <CheckBox fx:id="selezionaTutti" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-border-width: 3px;" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-background-radius: 30px; -fx-border-radius: 30px; -fx-border-width: 3px;" text="Annulla">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
+                  <CheckBox fx:id="selezionaTutti" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-background-radius: 30px; -fx-border-radius: 30px; -fx-border-width: 3px;" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                      <padding>
                         <Insets left="5.0" top="10.0" />
                      </padding>
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font>
                   </CheckBox>
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" prefHeight="40.0" prefWidth="135.0" style="-fx-border-color: B691d2; -fx-background-color: B691d2; -fx-background-radius: 0;" styleClass="remSelButton" stylesheets="@edit.css" text="Rimovi selezionati" />
+                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#RimuoviContattiSelezionati" prefHeight="40.0" prefWidth="150.0" styleClass="remSelButton" stylesheets="@edit.css" text="Rimuovi selezionati">
+                     <font>
+                        <Font name="Calibri Bold" size="14.0" />
+                     </font></Button>
                </children>
                <padding>
                   <Insets bottom="10.0" />
                </padding>
             </HBox>
-            <HBox fx:id="SearchBox" alignment="CENTER" layoutX="275.0" layoutY="50.0" prefHeight="31.0" prefWidth="450.0" spacing="20.0" style="-fx-background-color: cbaed7; -fx-background-radius: 15;">
+            <HBox fx:id="SearchBox" alignment="CENTER" layoutX="275.0" layoutY="57.0" prefHeight="31.0" prefWidth="450.0" spacing="20.0" styleClass="HBsearchBarStyle" stylesheets="@search_bar.css">
                <children>
-                  <TextField fx:id="serchBar" prefHeight="22.0" prefWidth="374.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css" />
+                  <TextField fx:id="serchBar" prefHeight="22.0" prefWidth="374.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css">
+                     <font>
+                        <Font name="Calibri Bold" size="12.0" />
+                     </font></TextField>
                   <Button mnemonicParsing="false" onAction="#CercaElemento" prefHeight="16.0" prefWidth="27.0" styleClass="srcButton" stylesheets="@edit.css" />
                </children>
             </HBox>

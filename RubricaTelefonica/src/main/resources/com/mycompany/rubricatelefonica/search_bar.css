@@ -1,5 +1,14 @@
 .searchBar{
     -fx-background-radius: 90px; 
     -fx-border-radius: 90px;
-    -fx-background-color:#FFFFFF;
+    -fx-background-color: transparent;
+    -fx-prompt-text-fill: #000000;
+    
+}
+
+.HBsearchBarStyle{
+    -fx-background-color: #cbaed7;
+    -fx-background-radius: 15px;
+    -fx-border-radius: 15px;
+    -fx-border-width: 3px;
 }

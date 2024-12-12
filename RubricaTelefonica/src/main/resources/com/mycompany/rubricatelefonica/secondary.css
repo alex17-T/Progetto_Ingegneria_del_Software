@@ -34,6 +34,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #ffa000;
     -fx-background-size: 20px;
     -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #ffa000;
+    -fx-border-style: solid;
     -fx-cursor: hand;
 }
 
@@ -42,6 +45,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #ffd900;
     -fx-background-size: 20px;
     -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #ffd900;
+    -fx-border-style: solid;
     -fx-cursor: hand;
 }
 
@@ -58,7 +64,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #fffa00;
 }
 
-.exitButton:hover{
+.exitbutton:hover{
     -fx-background-color: #fffa00;
 }
 

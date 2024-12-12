@@ -64,8 +64,11 @@
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
         -fx-background-position: 15px;
-        -fx-background-radius: 5px;
-	-fx-border: none;
+        -fx-background-radius: 30px;
+        -fx-background-color: #ffc800;
+        -fx-border-radius: 30px;
+        -fx-border-color: #ffc800;
+        -fx-border-style: solid;
         -fx-cursor: hand;
 }
 
@@ -79,8 +82,11 @@
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
         -fx-background-position: 15px;
-        -fx-background-radius: 5px;
-	-fx-border: none;
+        -fx-background-radius: 30px;
+        -fx-background-color: #ffc800;
+        -fx-border-radius: 30px;
+        -fx-border-color: #ffc800;
+        -fx-border-style: solid;
         -fx-cursor: hand;
 }
 
@@ -95,9 +101,11 @@
         -fx-background-repeat: no-repeat;
         /*-fx-left: 10px;*/
         -fx-background-position: 5px;
-        -fx-background-radius: 5px;
-	-fx-border: none;
+        -fx-background-radius: 30px;
+        -fx-background-color: #ffffff;
+        -fx-border-radius: 30px;
         -fx-cursor: hand;
+
 }
 
 .ModConButton:hover{
@@ -106,15 +114,18 @@
 }
 
 .remSelButton{
-	-fx-background-color: lightblue;
+	
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
         -fx-background-position: center;
         -fx-background-radius: 30px;
-	-fx-border: none;
+        -fx-background-color: #ffc800;
+        -fx-border-radius: 30px;
+        -fx-border-color: #ffc800;
+        -fx-border-style: solid;
         -fx-cursor: hand;
 }
 	
 .remSelButton:hover{
-	-fx-background-color: darkcyan;
+	-fx-background-color: #fffa00;
 }

@@ -22,3 +22,13 @@ and open the template in the editor.
     -fx-background-position: 15px;
 }
 
+.casellaTestoHome{
+
+    -fx-background-color: #ef7089;
+    -fx-background-radius: 55px;
+    -fx-border-width: 2px;
+    -fx-border-color: #ef7089;
+    -fx-border-style: solid;
+    -fx-border-radius: 55px;
+    -fx-prompt-text-fill: #000000;
+}
