@@ -66,6 +66,8 @@ public class App extends Application {
     
     /**
      * @brief Caricamento del file di default nella tabella.
+     * 
+     * @param filePath Il path relativo del file .ser da caricare in rubrica.
      */
     private void ImportaListaDefault(String filePath) {
         // Carica il file dal classpath come InputStream
