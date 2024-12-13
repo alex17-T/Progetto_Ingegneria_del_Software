@@ -375,7 +375,7 @@ public class HomeController implements Initializable{
      *
      * Dopo che l'utente ha cliccato il pulsante edit viene aperta la finestra
      * dell’esplora risorse dove può essere inserito inserire il percorso del
-     * file .jpg da usare come foto profilo.
+     * file immagine da usare come foto profilo.
      *
      * @param event l'evento è generato dall'utente tramite interazione con
      * l'interfaccia grafica.
@@ -613,7 +613,7 @@ public class HomeController implements Initializable{
     /**
      * Il metodo mostra la barra degli strumenti.
      *
-     * Viene invocato al clic dell'utente sul pulsante seleziona tutto.
+     * Viene invocato al clic dell'utente sul pulsante "modifica lista".
      *
      * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica.
@@ -668,7 +668,7 @@ public class HomeController implements Initializable{
      * Il metodo seleziona tutti i contatti nella tabella utilizzando i
      * checkbox.
      *
-     * Viene invocato al clic dell'utente sul pulsante seleziona tutto.
+     * Viene invocato al clic dell'utente sul pulsante "seleziona tutto".
      *
      * @param event evento generato dall'utente tramite interazione con
      * l'interfaccia grafica.
