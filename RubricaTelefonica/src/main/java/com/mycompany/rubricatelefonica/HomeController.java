@@ -121,6 +121,11 @@ public class HomeController implements Initializable{
      */
     @FXML
     private Button modificaButton;
+  
+    /**
+     * @brief Identificativo della colonna delle checkbox della tabella dei contatti
+     */
+    
     @FXML
     private TableColumn<Contatto, CheckBox> Colonna_Spunta;
     
@@ -191,23 +196,49 @@ public class HomeController implements Initializable{
      */
     @FXML
     private Button SalvaModificheContatto;
+ 
     @FXML
     private Pane detailPane;
-    @FXML
-    private HBox SearchBox;
+     /**
+     * @brief Identificativo della textfield per cercare un contatto 
+     */
     @FXML
     private TextField serchBar;
+    /**
+ * @brief Lista filtrata dei contatti.
+ * 
+ * Utilizzata per applicare filtri dinamici alla lista principale.
+ */
      public static FilteredList<Contatto> listaFiltrata;
+     /**
+ * @brief Lista ordinata dei contatti.
+ * 
+ * Basata sulla lista filtrata per mantenere un ordine specifico.
+ */
      public static SortedList<Contatto> listaOrdinata;
+     /**
+ * @brief Indica se un listener è stato aggiunto alla lista.
+ */
      private boolean listenerAdded = false;
+     
+      /**
+     * @brief Identificativo della checkbox per selezionare tutti i contatti
+     */
     @FXML
     private CheckBox selezionaTutti;
+     /**
+     * @brief Identificativo del bottone per  modificare la foto profilo del contatto selezionato
+     */
     @FXML
     private Button mFotobtn;
+    /**
+     * @brief Identificativo del bottone per eliminare la foto profilo del contatto selezionato
+     */
     @FXML
     private Button RFotobtn;
-    @FXML
-    private TextField labelContatore;
+  /**
+     * @brief Identificativo della variabile booleana per gestiore le transizioni della tool bar
+     */
      boolean visibilita;
 
     /**
@@ -236,9 +267,7 @@ public class HomeController implements Initializable{
         showContattiDetails(null);
         modificaButton.setDisable(true);
 
-        // Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(
-        //     observable, oldValue, newValu) -> {showContattiDetails( (Contatto) newValue);
-        // }
+      
           listaFiltrata = new FilteredList<>(lista, b->true);
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
             /**
@@ -265,14 +294,19 @@ public class HomeController implements Initializable{
             }
         });
         
-        
+        /**
+ * @brief Configura la barra di ricerca per filtrare la lista dei contatti.
+ * 
+ * Aggiunge un listener alla barra di ricerca per aggiornare dinamicamente i risultati
+ * in base al testo inserito dall'utente.
+ */
         serchBar.textProperty().addListener((observable ,oldValue , newValue)->{
         listaFiltrata.setPredicate(Contatto -> {
-        
+          // Verifica se il filtro è vuoto o nullo, in tal caso mostra tutti i contatti.
           if(newValue == null || newValue.isEmpty()) return true;
         
           String lowCaseFilter = newValue.toLowerCase();
-        
+          // Controlla se il filtro corrisponde al nome, cognome, numeri di telefono o email.
           if(Contatto.getNome().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
           else if (Contatto.getCognome().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
           else if(Contatto.getNumTel1().toLowerCase().indexOf(lowCaseFilter)!= -1) return true;
@@ -286,9 +320,20 @@ public class HomeController implements Initializable{
         
             });
         });
+        
+/**
+ * @brief Crea una lista ordinata basata sulla lista filtrata e la associa alla tabella dei contatti.
+ * 
+ * Collega la proprietà `comparator` della lista ordinata con quella della tabella per mantenere
+ * un ordinamento coerente.
+ */
         listaOrdinata = new SortedList<>(listaFiltrata);
         listaOrdinata.comparatorProperty().bind(Tabella_contatti.comparatorProperty());
-        
+        /**
+ * @brief Gestisce la selezione di un contatto nella tabella.
+ * 
+ * Quando un contatto è selezionato, aggiorna l'immagine del contatto nel componente `contactImage`.
+ */
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
             if(newValue !=null){
                 Contatto c = newValue;
@@ -296,6 +341,9 @@ public class HomeController implements Initializable{
             }
         });
         
+/**
+ * @brief Imposta la lista ordinata come sorgente dati per la tabella dei contatti.
+ */
         Tabella_contatti.setItems(listaOrdinata);
     }
 
@@ -587,7 +635,7 @@ public class HomeController implements Initializable{
              fadeOut.setToValue(0);   // Opacità finale (non visibile visibile)
              fadeOut.play();
              visibilita = false;
-           //  ToolBar.setVisible(false);
+          
       } 
             
         Colonna_Spunta.setVisible(!Colonna_Spunta.visibleProperty().get());
@@ -631,17 +679,7 @@ public class HomeController implements Initializable{
             }
         });
     }
-    /*    
-        selezionaTutti.selectedProperty();
-        
-     // if(selezionaTutti.isSelected()){
-       selezionaTutti.selectedProperty().addListener((obs, oldVal, newVal) -> {
-       for (Contatto c : listaOrdinata){
-       c.getSelect().setSelected(newVal);
-       }
-      //Tabella_contatti.refresh();
-       });  
-    }*/
+   
 
     /**
      * Il metodo rimuove tutti i contatti nella tabella selezionati.
@@ -658,35 +696,16 @@ public class HomeController implements Initializable{
                        for (Contatto c : lista){
        if(c.getSelect().isSelected()){
      listaDaRimovere.add(c);
-      // listaOrdinata.remove(c);
+   
        }
        }
-                       lista.removeAll(listaDaRimovere);
-      //Tabella_contatti.refresh();
-      
+                     
+                       SuperController.rimElement(listaDaRimovere);
+     
     }
 
-    /**
-     * Il metodo permette di cercare un contatto nella lista dei contatti
-     *
-     * Viene invocato al clic sulla barra di ricerca.
-     *
-     * @param event evento generato dall'utente tramite interazione con
-     * l'interfaccia grafica.
-     */
-    @FXML
-    private void CercaElemento(ActionEvent event) {
-    }
-
-    /**
-     * Il metodo annulla l'operazione corrente e nasconde la barra degli
-     * strumenti.
-     *
-     * Viene invocato al clic sulla barra di ricerca.
-     *
-     * @param event evento generato dall'utente tramite interazione con
-     * l'interfaccia grafica.
-     */
+   
+  
     
 
     /**
