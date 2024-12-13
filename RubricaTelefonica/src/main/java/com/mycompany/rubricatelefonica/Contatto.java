@@ -241,6 +241,28 @@ public class Contatto implements Comparable<Contatto>, Serializable{
         this.email2String = email2.get();
         this.email3String = email3.get();
     }
+
+    public Contatto(StringProperty nome, StringProperty cognome, StringProperty numTel1, StringProperty numTel2, StringProperty numTel3, StringProperty email1, StringProperty email2, StringProperty email3, String nomeString, String cognomeString, String numTel1String, String numTel2String, String numTel3String, String email1String, String email2String, String email3String) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.numTel1 = numTel1;
+        this.numTel2 = numTel2;
+        this.numTel3 = numTel3;
+        this.email1 = email1;
+        this.email2 = email2;
+        this.email3 = email3;
+        this.nomeString = nomeString;
+        this.cognomeString = cognomeString;
+        this.numTel1String = numTel1String;
+        this.numTel2String = numTel2String;
+        this.numTel3String = numTel3String;
+        this.email1String = email1String;
+        this.email2String = email2String;
+        this.email3String = email3String;
+        
+    }
+    
+    
     
 /**
  * Restituisce il nome della persona come String.
