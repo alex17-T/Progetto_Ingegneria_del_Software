@@ -798,6 +798,16 @@ public class HomeController implements Initializable{
         // Inverte la proprietà `mouseTransparent` del pannello dei dettagli per renderli non selezionabili
         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
         SalvaModificheContatto.visibleProperty().set(false);
+          String filepath = SuperController.class.getResource("/com/mycompany/rubricatelefonica/default.ser").getPath();
+     
+       ArrayList<Contatto> listaContattiSalvati = new ArrayList<>(lista);
+       try(ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(filepath))){
+            objOut.writeObject(listaContattiSalvati);
+             System.out.println("Rubrica aggiornata correttamente ");
+       }catch(IOException ex){
+          ex.printStackTrace();
+       }
+      
         
         // Mostra un messaggio di conferma
         Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
