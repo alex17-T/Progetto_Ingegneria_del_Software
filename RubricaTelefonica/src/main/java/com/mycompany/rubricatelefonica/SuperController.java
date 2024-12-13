@@ -12,6 +12,11 @@
  */
 package com.mycompany.rubricatelefonica;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -39,26 +44,56 @@ public class SuperController {
      * @invariant La lista non può mai essere null e deve contenere oggetti di tipo `Contatto`.
      */
     public static ObservableList<Contatto> lista = FXCollections.observableArrayList();
-    /**
- * @brief Aggiunge un nuovo contatto alla lista dei contatti.
+ /**
+ * @brief Aggiunge un nuovo contatto alla lista principale e aggiorna il file serializzato.
+ *
+ * Questo metodo consente di aggiungere un oggetto `Contatto` alla lista principale
+ * dei contatti e di aggiornare il file serializzato in cui la lista è salvata.
+ * 
+ * Il file si trova nel percorso relativo "/com/mycompany/rubricatelefonica/default.ser".
  * 
  * @param c Il contatto da aggiungere alla lista.
- * 
- * Questo metodo consente di aggiungere un oggetto `Contatto` alla lista principale
- * dei contatti.
+ *
+ * @note Se il file non è accessibile o non scrivibile, viene stampato uno stack trace.
  */
   public static void addElemento (Contatto c){
       lista.add(c);
+      
+       String filepath = SuperController.class.getResource("/com/mycompany/rubricatelefonica/default.ser").getPath();
+     
+       ArrayList<Contatto> listaContattiSalvati = new ArrayList<>(lista);
+       try(ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(filepath))){
+            objOut.writeObject(listaContattiSalvati);
+             System.out.println("Rubrica aggiornata correttamente ");
+       }catch(IOException ex){
+          ex.printStackTrace();
+       }
+      
+      
+      
   }
-  /**
- * @brief Rimuove un elenco di contatti dalla lista principale.
+/**
+ * @brief Rimuove un elenco di contatti dalla lista principale e aggiorna il file serializzato.
+ *
+ * Questo metodo consente di eliminare tutti i contatti specificati nella lista
+ * `listaR` dalla lista principale e di aggiornare il file serializzato in cui è salvata.
  * 
+ * Il file si trova nel percorso relativo "/com/mycompany/rubricatelefonica/default.ser".
+ *
  * @param listaR Una lista osservabile contenente i contatti da rimuovere.
- * 
- * Questo metodo elimina tutti i contatti specificati nella lista `listaR` dalla
- * lista principale.
+ *
+ * @note Se il file non è accessibile o non scrivibile, viene stampato uno stack trace.
  */
   public static void rimElement( ObservableList<Contatto> listaR){
   lista.removeAll(listaR);
+  String filepath = SuperController.class.getResource("/com/mycompany/rubricatelefonica/default.ser").getPath();
+     
+       ArrayList<Contatto> listaContattiSalvati = new ArrayList<>(lista);
+       try(ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(filepath))){
+            objOut.writeObject(listaContattiSalvati);
+             System.out.println("Rubrica aggiornata correttamente ");
+       }catch(IOException ex){
+          ex.printStackTrace();
+       }
   }
 }
