@@ -216,14 +216,18 @@ public class HomeController implements Initializable{
  * Basata sulla lista filtrata per mantenere un ordine specifico.
  */
      public static SortedList<Contatto> listaOrdinata;
+
      /**
- * @brief Indica se un listener è stato aggiunto alla lista.
+ * @brief Serve  a inizializzare i checkbox in modo da farli funzionare da subito,
+    altrimenti alla prima selezione e deselezione non verranno rispettivamente selezionati e deselezionati
+    tutti i checkbox dei contatti in rubrica.
  */
      private boolean listenerAdded = false;
      
       /**
      * @brief Identificativo della checkbox per selezionare tutti i contatti
      */
+
     @FXML
     private CheckBox selezionaTutti;
      /**
