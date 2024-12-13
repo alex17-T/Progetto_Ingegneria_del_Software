@@ -4,6 +4,7 @@
  */
 package com.mycompany.rubricatelefonica;
 
+import java.awt.image.BufferedImage;
 import javafx.scene.control.CheckBox;
 import javafx.scene.image.Image;
 import org.junit.jupiter.api.AfterEach;
@@ -25,8 +26,12 @@ import javafx.scene.image.ImageView;
  */
 public class ContattoTest {
     
-    private Contatto c;
-    
+    static Contatto c = new Contatto(
+                new SimpleStringProperty(""),new SimpleStringProperty(""), new SimpleStringProperty(""),
+                new SimpleStringProperty(""), new SimpleStringProperty(""), new SimpleStringProperty(""),
+                new SimpleStringProperty(""), new SimpleStringProperty(""), "", "", "", "", "", "", "", ""
+        );
+
     public ContattoTest() {
     }
     
@@ -41,15 +46,7 @@ public class ContattoTest {
     
     @BeforeEach
     public void setUp() {
-        StringProperty nome = new SimpleStringProperty("");
-        StringProperty cognome = new SimpleStringProperty("");
-        StringProperty numTel1 = new SimpleStringProperty("");
-        StringProperty numTel2 = new SimpleStringProperty("");
-        StringProperty numTel3 = new SimpleStringProperty("");
-        StringProperty email1 = new SimpleStringProperty("");
-        StringProperty email2 = new SimpleStringProperty("");
-        StringProperty email3 = new SimpleStringProperty("");
-        c = new Contatto(nome,cognome,numTel1,numTel2,numTel3,email1,email2,email3);
+        
     }
     
     @AfterEach
@@ -109,7 +106,7 @@ public class ContattoTest {
         String result = c.getNome();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -118,11 +115,11 @@ public class ContattoTest {
     @Test
     public void testSetNome() {
         System.out.println("setNome");
-        String nomeString = "prova";
-        c.setNome(nomeString);
-        String nomeStringExpected = c.getNome();
+        String stringa = "prova";
+        c.setNome(stringa);
+        String StringExpected = c.getNome();
         // TODO review the generated test code and remove the default call to fail.
-        assertEquals(nomeStringExpected, nomeString);
+        assertEquals(StringExpected, stringa);
     }
 
     /**
@@ -131,12 +128,12 @@ public class ContattoTest {
     @Test
     public void testGetCognome() {
         System.out.println("getCognome");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getCognome();
+        c.setCognome("prova");
+        String expResult = "prova";
+        String result = c.getCognome();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -145,11 +142,11 @@ public class ContattoTest {
     @Test
     public void testSetCognome() {
         System.out.println("setCognome");
-        String cognome = "";
-        Contatto instance = null;
-        instance.setCognome(cognome);
+        c.setCognome("prova");
+        String cognome = "prova";
+        assertEquals(c.getCognome(), cognome);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
 
     /**
@@ -158,12 +155,10 @@ public class ContattoTest {
     @Test
     public void testGetNumTel1() {
         System.out.println("getNumTel1");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getNumTel1();
+        c.setNumTel1("prova");
+        String expResult = "prova";
+        String result = c.getNumTel1();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -172,11 +167,11 @@ public class ContattoTest {
     @Test
     public void testSetNumTel1() {
         System.out.println("setNumTel1");
-        String numTel1 = "";
-        Contatto instance = null;
-        instance.setNumTel1(numTel1);
+        String stringa = "prova";
+        c.setNumTel1(stringa);
+        String StringExpected = c.getNumTel1();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(StringExpected, stringa);
     }
 
     /**
@@ -185,12 +180,10 @@ public class ContattoTest {
     @Test
     public void testGetNumTel2() {
         System.out.println("getNumTel2");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getNumTel2();
+        c.setNumTel2("prova");
+        String expResult = "prova";
+        String result = c.getNumTel2();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -199,11 +192,11 @@ public class ContattoTest {
     @Test
     public void testSetNumTel2() {
         System.out.println("setNumTel2");
-        String numTel2 = "";
-        Contatto instance = null;
-        instance.setNumTel2(numTel2);
+        String stringa = "prova";
+        c.setNumTel2(stringa);
+        String StringExpected = c.getNumTel2();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(StringExpected, stringa);
     }
 
     /**
@@ -212,12 +205,10 @@ public class ContattoTest {
     @Test
     public void testGetNumTel3() {
         System.out.println("getNumTel3");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getNumTel3();
+        c.setNumTel3("prova");
+        String expResult = "prova";
+        String result = c.getNumTel3();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -226,11 +217,11 @@ public class ContattoTest {
     @Test
     public void testSetNumTel3() {
         System.out.println("setNumTel3");
-        String numTel3 = "";
-        Contatto instance = null;
-        instance.setNumTel3(numTel3);
+        String stringa = "prova";
+        c.setNumTel3(stringa);
+        String StringExpected = c.getNumTel3();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(StringExpected, stringa);
     }
 
     /**
@@ -239,12 +230,10 @@ public class ContattoTest {
     @Test
     public void testGetEmail1() {
         System.out.println("getEmail1");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getEmail1();
+        c.setEmail1("prova");
+        String expResult = "prova";
+        String result = c.getEmail1();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -253,11 +242,11 @@ public class ContattoTest {
     @Test
     public void testSetEmail1() {
         System.out.println("setEmail1");
-        String email1 = "";
-        Contatto instance = null;
-        instance.setEmail1(email1);
+        String stringa = "prova";
+        c.setEmail1(stringa);
+        String StringExpected = c.getEmail1();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(StringExpected, stringa);
     }
 
     /**
@@ -266,12 +255,10 @@ public class ContattoTest {
     @Test
     public void testGetEmail2() {
         System.out.println("getEmail2");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getEmail2();
+        c.setEmail1("prova");
+        String expResult = "prova";
+        String result = c.getEmail1();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -280,11 +267,11 @@ public class ContattoTest {
     @Test
     public void testSetEmail2() {
         System.out.println("setEmail2");
-        String email2 = "";
-        Contatto instance = null;
-        instance.setEmail2(email2);
+        String stringa = "prova";
+        c.setEmail2(stringa);
+        String StringExpected = c.getEmail2();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(StringExpected, stringa);
     }
 
     /**
@@ -293,12 +280,10 @@ public class ContattoTest {
     @Test
     public void testGetEmail3() {
         System.out.println("getEmail3");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getEmail3();
+        c.setEmail1("prova");
+        String expResult = "prova";
+        String result = c.getEmail1();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -307,11 +292,11 @@ public class ContattoTest {
     @Test
     public void testSetEmail3() {
         System.out.println("setEmail3");
-        String email3 = "";
-        Contatto instance = null;
-        instance.setEmail3(email3);
+        String stringa = "prova";
+        c.setEmail3(stringa);
+        String StringExpected = c.getEmail3();
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(StringExpected, stringa);
     }
 
     /**
@@ -320,12 +305,10 @@ public class ContattoTest {
     @Test
     public void testGetPath() {
         System.out.println("getPath");
-        Contatto instance = null;
-        String expResult = "";
-        String result = instance.getPath();
+        c.setPath("/com/mycompany/rubricatelefonica/editIcon.png");
+        String expResult = "/com/mycompany/rubricatelefonica/editIcon.png";
+        String result = c.getPath();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -334,38 +317,15 @@ public class ContattoTest {
     @Test
     public void testSetPath() {
         System.out.println("setPath");
-        String path = "";
-        Contatto instance = null;
-        instance.setPath(path);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getSelect method, of class Contatto.
-     */
-    @Test
-    public void testGetSelect() {
-        System.out.println("getSelect");
-        Contatto instance = null;
-        CheckBox expResult = null;
-        CheckBox result = instance.getSelect();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setSelect method, of class Contatto.
-     */
-    @Test
-    public void testSetSelect() {
-        System.out.println("setSelect");
-        CheckBox s = null;
-        Contatto instance = null;
-        instance.setSelect(s);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        String percorso = "/com/mycompany/rubricatelefonica/editIcon.png";
+        c.setFotoprofilo(percorso);
+        
+        c.setPath(percorso);
+        
+        
+        assertEquals(c.getPath(),percorso);
+        
     }
     
 }
