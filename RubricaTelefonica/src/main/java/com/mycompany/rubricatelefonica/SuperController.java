@@ -39,5 +39,26 @@ public class SuperController {
      * @invariant La lista non può mai essere null e deve contenere oggetti di tipo `Contatto`.
      */
     public static ObservableList<Contatto> lista = FXCollections.observableArrayList();
-    public static FilteredList<Contatto> listaFiltrata = new FilteredList<>(lista, b->true);
+    /**
+ * @brief Aggiunge un nuovo contatto alla lista dei contatti.
+ * 
+ * @param c Il contatto da aggiungere alla lista.
+ * 
+ * Questo metodo consente di aggiungere un oggetto `Contatto` alla lista principale
+ * dei contatti.
+ */
+  public static void addElemento (Contatto c){
+      lista.add(c);
+  }
+  /**
+ * @brief Rimuove un elenco di contatti dalla lista principale.
+ * 
+ * @param listaR Una lista osservabile contenente i contatti da rimuovere.
+ * 
+ * Questo metodo elimina tutti i contatti specificati nella lista `listaR` dalla
+ * lista principale.
+ */
+  public static void rimElement( ObservableList<Contatto> listaR){
+  lista.removeAll(listaR);
+  }
 }

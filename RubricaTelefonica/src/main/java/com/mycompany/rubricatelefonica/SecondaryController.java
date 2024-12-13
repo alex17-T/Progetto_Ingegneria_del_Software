@@ -153,12 +153,11 @@ public class SecondaryController {
         );
         
         File file = fc.showOpenDialog(null);
-        //Image foto = new Image(file.toURI().toString());
         Contatto.creatoreFoto = file.toURI().toString();
         
         immagine.setImage(new Image(Contatto.creatoreFoto));
         
-        //c.setPath();
+        
     }
     
     /**
@@ -179,7 +178,7 @@ public class SecondaryController {
         Contatto c = new Contatto(nomeField.textProperty(), cognomeField.textProperty(), t1Field.textProperty(), t2Field.textProperty(), t3Field.textProperty(), m1Field.textProperty(), m2Field.textProperty(), m3Field.textProperty());
         c.setPath(Contatto.creatoreFoto);
         Contatto.creatoreFoto = getClass().getResource("/com/mycompany/rubricatelefonica/iconaSecondary.jpg").toString();
-        SuperController.lista.add(c);
+        SuperController.addElemento(c);
         FXCollections.sort(SuperController.lista);
         
         App.setRoot("Home");

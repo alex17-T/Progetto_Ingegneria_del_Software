@@ -65,7 +65,7 @@ public class ContattoTest {
         Contatto altroContatto = null;
         Contatto instance = null;
         int expResult = 0;
-        int result = instance.compareTo(altroContatto);
+       int result = instance.compareTo(altroContatto);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

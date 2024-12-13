@@ -27,27 +27,105 @@ import javafx.scene.image.ImageView;
  * @author Giovanni
  */
 public class Contatto implements Comparable<Contatto>, Serializable{
-    
+    /**
+ * @brief Percorso dell'icona di default associata  alla foto del contatto.
+ */
     public static String creatoreFoto = "/com/mycompany/rubricatelefonica/iconaSecondary.jpg";
-  
+  /**
+ * @brief Nome del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty nome;
+    /**
+ * @brief Cognome del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty cognome;
+    /**
+ * @brief Primo numero di telefono del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty numTel1;
+    /**
+ * @brief Secondo numero di telefono del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty numTel2;
+    /**
+ * @brief Terzo numero di telefono del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty numTel3;
+    /**
+ * @brief Prima email del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty email1;
+    /**
+ * @brief Seconda email del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty email2;
+    /**
+ * @brief Terza email del contatto come proprietà reattiva.
+ * 
+ * Non viene serializzato per ragioni di gestione dati in runtime.
+ */
     private transient StringProperty email3;
-    private transient Image fotoprofilo; //Non viene serializzato
+    /**
+ * @brief Foto del profilo del contatto.
+ * 
+ * Non viene serializzata per motivi di memoria e runtime.
+ */
+    private transient Image fotoprofilo;//Non viene serializzato
+    /**
+ * @brief Percorso della foto di profilo.
+ */
     private String path;
+    /**
+ * @brief Nome del contatto come stringa semplice.
+ */
     private String nomeString;
+      /**
+ * @brief Cognome del contatto come stringa semplice.
+ */
     private String cognomeString;
+      /**
+ * @brief primo numero di telefono del contatto come stringa semplice.
+ */
     private String numTel1String;
+        /**
+ * @brief secondo numero di telefono del contatto come stringa semplice.
+ */
     private String numTel2String;
+        /**
+ * @brief terzo numero di telefono del contatto come stringa semplice.
+ */
     private String numTel3String;
+         /**
+ * @brief prima email del contatto come stringa semplice.
+ */
     private String email1String;
+          /**
+ * @brief seconda email del contatto come stringa semplice.
+ */
     private String email2String;
+          /**
+ * @brief terza email del contatto come stringa semplice.
+ */
     private String email3String;
+    /**
+ * @brief Checkbox per selezionare il contatto.
+ * 
+ * Non viene serializzata per motivi di gestione dell'interfaccia grafica.
+ */
     private transient CheckBox select;
     
     
