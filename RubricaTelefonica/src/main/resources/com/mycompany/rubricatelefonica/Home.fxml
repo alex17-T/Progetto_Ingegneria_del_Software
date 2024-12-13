@@ -123,7 +123,7 @@
                   <Insets bottom="10.0" />
                </padding>
             </HBox>
-            <TextField fx:id="serchBar" layoutX="312.0" layoutY="49.0" prefHeight="31.0" prefWidth="377.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css">
+            <TextField fx:id="serchBar" layoutX="324.0" layoutY="50.0" prefHeight="38.0" prefWidth="403.0" promptText="Cerca..." styleClass="searchBar" stylesheets="@search_bar.css">
                <font>
                   <Font name="Cambria" size="20.0" />
                </font>

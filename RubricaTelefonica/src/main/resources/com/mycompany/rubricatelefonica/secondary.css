@@ -62,12 +62,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .editButton:hover{
     -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
 }
 
 .exitbutton:hover{
     -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
 }
 
 .creaContattoButton:hover{
     -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
 }

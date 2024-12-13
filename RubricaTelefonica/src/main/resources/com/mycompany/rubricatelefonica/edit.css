@@ -10,7 +10,7 @@
 }
 	
 .editButton:hover{
-	-fx-background-color: darkcyan;
+	-fx-background-color: #fffa00;
 }
 
 .remButton{
@@ -44,8 +44,7 @@
 }
 
 .addButton{
-    -fx-background-color: #d4bda
-        8;
+    -fx-background-color: #d4bda8;
         -fx-background-image: url("person_add_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
         -fx-background-size: 20px;
         -fx-background-repeat: no-repeat;
@@ -74,7 +73,8 @@
 }
 
 .impButton:hover{
-    -fx-background-color: #ffffff;
+    -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
 }
 
 .expButton{
@@ -92,7 +92,8 @@
 }
 
 .expButton:hover{
-    -fx-background-color: #F8A751;
+    -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
 }
 
 .ModConButton{
@@ -129,4 +130,5 @@
 	
 .remSelButton:hover{
 	-fx-background-color: #fffa00;
+        -fx-border-color: #fffa00;
 }
