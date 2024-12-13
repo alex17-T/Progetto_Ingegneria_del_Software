@@ -1,9 +1,7 @@
 .searchBar{
     -fx-background-radius: 70px; 
-    -fx-border-radius: 70
-        px;
-    -fx-background-color: #B691d2
-        ;
+    -fx-border-radius: 70px;
+    -fx-background-color: #B691d2;
     -fx-prompt-text-fill: #000000;
      -fx-background-image: url("search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
       -fx-background-size: 30px;
