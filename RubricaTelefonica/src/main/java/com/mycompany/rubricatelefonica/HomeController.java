@@ -199,7 +199,9 @@ public class HomeController implements Initializable{
     private TextField serchBar;
      public static FilteredList<Contatto> listaFiltrata;
      public static SortedList<Contatto> listaOrdinata;
-     private boolean listenerAdded = false;
+     private boolean listenerAdded = false; /*Serve  a inizializzare i checkbox in modo da farli funzionare da subito,
+    altrimenti alla prima selezione e deselezione non verranno rispettivamente selezionati e deselezionati
+    tutti i checkbox dei contatti in rubrica.*/
     @FXML
     private CheckBox selezionaTutti;
     @FXML
