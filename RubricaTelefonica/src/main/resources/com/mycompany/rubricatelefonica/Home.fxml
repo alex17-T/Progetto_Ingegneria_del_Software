@@ -99,10 +99,6 @@
          <children>
             <HBox fx:id="ToolBar" alignment="CENTER" layoutX="247.0" opacity="0.9" prefHeight="30.0" prefWidth="558.0" spacing="3.0" style="-fx-background-color: cbaed7; -fx-background-radius: 0 0 20px 20px;" styleClass="selectionBar" stylesheets="@selBar.css" visible="false">
                <children>
-                  <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#AnnullaOperazione" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-background-radius: 30px; -fx-border-radius: 30px; -fx-border-width: 3px;" text="Annulla">
-                     <font>
-                        <Font name="Calibri Bold" size="14.0" />
-                     </font></Button>
                   <CheckBox fx:id="selezionaTutti" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#SelezionaTuttoCheckBox" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: B691d2; -fx-border-color: B691d2; -fx-background-radius: 30px; -fx-border-radius: 30px; -fx-border-width: 3px;" styleClass="checkBox" stylesheets="@checkbox.css" text="Seleziona tutto  " textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
