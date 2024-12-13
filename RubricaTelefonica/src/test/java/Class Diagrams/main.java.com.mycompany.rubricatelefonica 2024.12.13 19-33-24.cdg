@@ -14,6 +14,9 @@
         <Method name="setRoot" returnType="void" visibility="package" isStatic="true">
           <Argument type="String" name="fxml"/>
         </Method>
+        <Method name="ImportaListaDefault" returnType="void" visibility="private">
+          <Argument type="String" name="filePath"/>
+        </Method>
         <Method name="loadFXML" returnType="Parent" visibility="private" isStatic="true">
           <Argument type="String" name="fxml"/>
         </Method>
@@ -22,8 +25,9 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Contatto" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="333.0" yPosition="6.0">
+    <Class name="Contatto" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="320.0" yPosition="20.0">
       <Fields>
+        <Field name="creatoreFoto" type="String" visibility="public" isStatic="true"/>
         <Field name="nome" type="StringProperty" visibility="private" isTransient="true"/>
         <Field name="cognome" type="StringProperty" visibility="private" isTransient="true"/>
         <Field name="numTel1" type="StringProperty" visibility="private" isTransient="true"/>
@@ -32,7 +36,7 @@
         <Field name="email1" type="StringProperty" visibility="private" isTransient="true"/>
         <Field name="email2" type="StringProperty" visibility="private" isTransient="true"/>
         <Field name="email3" type="StringProperty" visibility="private" isTransient="true"/>
-        <Field name="fotoprofilo" type="ImageView" visibility="private" isTransient="true"/>
+        <Field name="fotoprofilo" type="Image" visibility="private" isTransient="true"/>
         <Field name="path" type="String" visibility="private"/>
         <Field name="nomeString" type="String" visibility="private"/>
         <Field name="cognomeString" type="String" visibility="private"/>
@@ -42,6 +46,7 @@
         <Field name="email1String" type="String" visibility="private"/>
         <Field name="email2String" type="String" visibility="private"/>
         <Field name="email3String" type="String" visibility="private"/>
+        <Field name="select" type="CheckBox" visibility="private" isTransient="true"/>
       </Fields>
       <Constructors>
         <Constructor visibility="public">
@@ -54,14 +59,32 @@
           <Argument type="StringProperty" name="email2"/>
           <Argument type="StringProperty" name="email3"/>
         </Constructor>
+        <Constructor visibility="public">
+          <Argument type="StringProperty" name="nome"/>
+          <Argument type="StringProperty" name="cognome"/>
+          <Argument type="StringProperty" name="numTel1"/>
+          <Argument type="StringProperty" name="numTel2"/>
+          <Argument type="StringProperty" name="numTel3"/>
+          <Argument type="StringProperty" name="email1"/>
+          <Argument type="StringProperty" name="email2"/>
+          <Argument type="StringProperty" name="email3"/>
+          <Argument type="String" name="nomeString"/>
+          <Argument type="String" name="cognomeString"/>
+          <Argument type="String" name="numTel1String"/>
+          <Argument type="String" name="numTel2String"/>
+          <Argument type="String" name="numTel3String"/>
+          <Argument type="String" name="email1String"/>
+          <Argument type="String" name="email2String"/>
+          <Argument type="String" name="email3String"/>
+        </Constructor>
       </Constructors>
       <Methods>
         <Method name="compareTo" returnType="int" visibility="public">
           <Argument type="Contatto" name="altroContatto"/>
         </Method>
-        <Method name="getFotoprofilo" returnType="ImageView" visibility="public"/>
+        <Method name="getFotoprofilo" returnType="Image" visibility="public"/>
         <Method name="setFotoprofilo" returnType="void" visibility="public">
-          <Argument type="ImageView" name="fotoprofilo"/>
+          <Argument type="String" name="path"/>
         </Method>
         <Method name="getNome" returnType="String" visibility="public"/>
         <Method name="setNome" returnType="void" visibility="public">
@@ -99,9 +122,13 @@
         <Method name="setPath" returnType="void" visibility="public">
           <Argument type="String" name="path"/>
         </Method>
+        <Method name="getSelect" returnType="CheckBox" visibility="public"/>
+        <Method name="setSelect" returnType="void" visibility="public">
+          <Argument type="CheckBox" name="s"/>
+        </Method>
       </Methods>
     </Class>
-    <Class name="HomeController" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="-98.0" yPosition="359.0">
+    <Class name="HomeController" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="620.0" yPosition="20.0">
       <Fields>
         <Field name="ToolBar" type="HBox" visibility="private"/>
         <Field name="contactImage" type="ImageView" visibility="private"/>
@@ -112,7 +139,6 @@
         <Field name="Colonna_email" type="TableColumn&lt;Contatto, StringProperty&gt;" visibility="private"/>
         <Field name="modificaButton" type="Button" visibility="private"/>
         <Field name="Colonna_Spunta" type="TableColumn&lt;Contatto, CheckBox&gt;" visibility="private"/>
-        <Field name="Colonna_fotoProfilo" type="TableColumn&lt;Contatto, ImageView&gt;" visibility="private"/>
         <Field name="nomeInfo" type="TextField" visibility="private"/>
         <Field name="cognomeInfo" type="TextField" visibility="private"/>
         <Field name="numInfo1" type="TextField" visibility="private"/>
@@ -125,10 +151,14 @@
         <Field name="ModificaLista" type="Button" visibility="private"/>
         <Field name="SalvaModificheContatto" type="Button" visibility="private"/>
         <Field name="detailPane" type="Pane" visibility="private"/>
-        <Field name="SearchBox" type="HBox" visibility="private"/>
         <Field name="serchBar" type="TextField" visibility="private"/>
         <Field name="listaFiltrata" type="FilteredList&lt;Contatto&gt;" visibility="public" isStatic="true"/>
         <Field name="listaOrdinata" type="SortedList&lt;Contatto&gt;" visibility="public" isStatic="true"/>
+        <Field name="listenerAdded" type="boolean" visibility="private"/>
+        <Field name="selezionaTutti" type="CheckBox" visibility="private"/>
+        <Field name="mFotobtn" type="Button" visibility="private"/>
+        <Field name="RFotobtn" type="Button" visibility="private"/>
+        <Field name="visibilita" type="boolean" visibility="package"/>
       </Fields>
       <Constructors/>
       <Methods>
@@ -163,12 +193,6 @@
         <Method name="RimuoviContattiSelezionati" returnType="void" visibility="private">
           <Argument type="ActionEvent" name="event"/>
         </Method>
-        <Method name="CercaElemento" returnType="void" visibility="private">
-          <Argument type="ActionEvent" name="event"/>
-        </Method>
-        <Method name="AnnullaOperazione" returnType="void" visibility="private">
-          <Argument type="ActionEvent" name="event"/>
-        </Method>
         <Method name="showContattiDetails" returnType="void" visibility="private">
           <Argument type="Contatto" name="c"/>
         </Method>
@@ -177,7 +201,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="SecondaryController" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="370.0" yPosition="957.0">
+    <Class name="SecondaryController" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="920.0" yPosition="20.0">
       <Fields>
         <Field name="datiObbligatori" type="VBox" visibility="private"/>
         <Field name="nomeField" type="TextField" visibility="private"/>
@@ -207,28 +231,33 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="SuperController" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="1088.0" yPosition="957.0">
+    <Class name="SuperController" package="com.mycompany.rubricatelefonica" visibility="public" xPosition="1220.0" yPosition="20.0">
       <Fields>
         <Field name="lista" type="ObservableList&lt;Contatto&gt;" visibility="public" isStatic="true"/>
-        <Field name="listaFiltrata" type="FilteredList&lt;Contatto&gt;" visibility="public" isStatic="true"/>
       </Fields>
       <Constructors/>
-      <Methods/>
+      <Methods>
+        <Method name="addElemento" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Contatto" name="c"/>
+        </Method>
+        <Method name="rimElement" returnType="void" visibility="public" isStatic="true">
+          <Argument type="ObservableList&lt;Contatto&gt;" name="listaR"/>
+        </Method>
+      </Methods>
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="Colonna_Spunta" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="Tabella_contatti" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="Colonna_email" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="listaOrdinata" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="SortedList&lt;Contatto&gt;"/>
-    <HasRelation name="lista" source="com.mycompany.rubricatelefonica.SuperController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ObservableList&lt;Contatto&gt;"/>
-    <HasRelation name="listaFiltrata" source="com.mycompany.rubricatelefonica.SuperController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="FilteredList&lt;Contatto&gt;"/>
-    <UseRelation source="com.mycompany.rubricatelefonica.Contatto" target="com.mycompany.rubricatelefonica.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="listaFiltrata" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="FilteredList&lt;Contatto&gt;"/>
     <HasRelation name="Colonna_nome" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaOrdinata" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="SortedList&lt;Contatto&gt;"/>
     <HasRelation name="Colonna_telefono" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="Colonna_fotoProfilo" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaFiltrata" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="FilteredList&lt;Contatto&gt;"/>
+    <HasRelation name="Colonna_email" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Tabella_contatti" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.rubricatelefonica.SuperController" target="com.mycompany.rubricatelefonica.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="lista" source="com.mycompany.rubricatelefonica.SuperController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ObservableList&lt;Contatto&gt;"/>
+    <HasRelation name="Colonna_Spunta" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="Colonna_cognome" source="com.mycompany.rubricatelefonica.HomeController" target="com.mycompany.rubricatelefonica.Contatto" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.rubricatelefonica.Contatto" target="com.mycompany.rubricatelefonica.Contatto" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
