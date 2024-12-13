@@ -25,13 +25,22 @@ import javafx.scene.image.ImageView;
  */
 public class ContattoTest {
     
-    public static Contatto c;
+    private Contatto c;
     
     public ContattoTest() {
     }
     
     @BeforeAll
     public static void setUpClass() {
+        
+    }
+    
+    @AfterAll
+    public static void tearDownClass() {
+    }
+    
+    @BeforeEach
+    public void setUp() {
         StringProperty nome = new SimpleStringProperty("");
         StringProperty cognome = new SimpleStringProperty("");
         StringProperty numTel1 = new SimpleStringProperty("");
@@ -41,14 +50,6 @@ public class ContattoTest {
         StringProperty email2 = new SimpleStringProperty("");
         StringProperty email3 = new SimpleStringProperty("");
         c = new Contatto(nome,cognome,numTel1,numTel2,numTel3,email1,email2,email3);
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
     }
     
     @AfterEach
@@ -117,13 +118,11 @@ public class ContattoTest {
     @Test
     public void testSetNome() {
         System.out.println("setNome");
-        String nome = "prova";
-        c.setNome(nome);
+        String nomeString = "prova";
+        c.setNome(nomeString);
+        String nomeStringExpected = c.getNome();
         // TODO review the generated test code and remove the default call to fail.
-        if(assertEquals()){
-            
-        }
-        fail("The test case is a prototype.");
+        assertEquals(nomeStringExpected, nomeString);
     }
 
     /**
