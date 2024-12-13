@@ -50,6 +50,8 @@ public class Contatto implements Comparable<Contatto>, Serializable{
     private String email3String;
     private transient CheckBox select;
     
+    
+    
     /**
      * @brief Compara i contatti prima per nome e, in caso di pareggio, per cognome.
      * 
@@ -161,6 +163,20 @@ public class Contatto implements Comparable<Contatto>, Serializable{
         this.email2String = email2.get();
         this.email3String = email3.get();
     }
+
+    public Contatto(String path, String nomeString, String cognomeString, String numTel1String, String numTel2String, String numTel3String, String email1String, String email2String, String email3String) {
+        this.path = path;
+        this.nomeString = nomeString;
+        this.cognomeString = cognomeString;
+        this.numTel1String = numTel1String;
+        this.numTel2String = numTel2String;
+        this.numTel3String = numTel3String;
+        this.email1String = email1String;
+        this.email2String = email2String;
+        this.email3String = email3String;
+    }
+    
+    
     
 /**
  * Restituisce il nome della persona come String.
