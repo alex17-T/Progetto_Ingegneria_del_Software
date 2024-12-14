@@ -112,6 +112,8 @@ public class App extends Application {
                 String email1 = contatto.getEmail1();
                 String email2 = contatto.getEmail2();
                 String email3 = contatto.getEmail3();
+                String path = contatto.getPath();
+                        
 
                 // Crea un nuovo contatto con le StringProperty
                 Contatto nuovoContatto = new Contatto(
@@ -125,6 +127,7 @@ public class App extends Application {
                         new SimpleStringProperty(email3)
                 );
                 nuovoContatto.setSelect(new CheckBox());
+                nuovoContatto.setPath(path);
                 SuperController.lista.add(nuovoContatto);
             }
             FXCollections.sort(SuperController.lista);
