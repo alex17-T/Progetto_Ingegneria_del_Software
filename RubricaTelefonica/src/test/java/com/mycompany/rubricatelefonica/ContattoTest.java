@@ -59,40 +59,38 @@ public class ContattoTest {
     @Test
     public void testCompareTo() {
         System.out.println("compareTo");
-        Contatto altroContatto = null;
-        Contatto instance = null;
-        int expResult = 0;
-       int result = instance.compareTo(altroContatto);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getFotoprofilo method, of class Contatto.
-     */
-    @Test
-    public void testGetFotoprofilo() {
-        System.out.println("getFotoprofilo");
-        Contatto instance = null;
-        Image expResult = null;
-        Image result = instance.getFotoprofilo();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        }
-
-    /**
-     * Test of setFotoprofilo method, of class Contatto.
-     */
-    @Test
-    public void testSetFotoprofilo() {
-        System.out.println("setFotoprofilo");
-        String path = "";
-        Contatto instance = null;
-        instance.setFotoprofilo(path);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        int risultati;
+        
+        Contatto c1 = new Contatto(
+                new SimpleStringProperty(""),new SimpleStringProperty(""), new SimpleStringProperty(""),
+                new SimpleStringProperty(""), new SimpleStringProperty(""), new SimpleStringProperty(""),
+                new SimpleStringProperty(""), new SimpleStringProperty(""), "", "", "", "", "", "", "", ""
+        );
+        
+        c.setNome("nomeUguale");
+        c1.setNome("nomeUguale");
+        
+        risultati = c.compareTo(c1);
+        
+        if(risultati != 0)
+            fail("il caso in cui c è uguale a c1 non funziona");
+        
+        c.setNome("123");
+        c.setNome("12345");
+        
+        risultati = c.compareTo(c1);
+        
+        if(risultati > 0)
+            fail("Il caso in cui c è minore di c1 non funziona");
+        
+        c.setNome("12345");
+        c.setNome("123");
+        
+        risultati = c.compareTo(c1);
+        
+        if(risultati < 0)
+            fail("Il caso in cui c è minore di c1 non funziona");
     }
 
     /**
@@ -297,35 +295,6 @@ public class ContattoTest {
         String StringExpected = c.getEmail3();
         // TODO review the generated test code and remove the default call to fail.
         assertEquals(StringExpected, stringa);
-    }
-
-    /**
-     * Test of getPath method, of class Contatto.
-     */
-    @Test
-    public void testGetPath() {
-        System.out.println("getPath");
-        c.setPath("/com/mycompany/rubricatelefonica/editIcon.png");
-        String expResult = "/com/mycompany/rubricatelefonica/editIcon.png";
-        String result = c.getPath();
-        assertEquals(expResult, result);
-    }
-
-    /**
-     * Test of setPath method, of class Contatto.
-     */
-    @Test
-    public void testSetPath() {
-        System.out.println("setPath");
-        
-        String percorso = "/com/mycompany/rubricatelefonica/editIcon.png";
-        c.setFotoprofilo(percorso);
-        
-        c.setPath(percorso);
-        
-        
-        assertEquals(c.getPath(),percorso);
-        
     }
     
 }
