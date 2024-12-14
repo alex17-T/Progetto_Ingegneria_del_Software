@@ -70,13 +70,15 @@ public class ContattoTest {
                 new SimpleStringProperty(""), new SimpleStringProperty(""), "", "", "", "", "", "", "", ""
         );
         
-        c.setNome("nomeUguale");
-        c1.setNome("nomeUguale");
+        c.setNome("123");
+        c1.setNome("123");
         
         risultati = c.compareTo(c1);
         
-        if(risultati != 0)
+        if(risultati == 0) {
+        } else {
             fail("il caso in cui c è uguale a c1 non funziona");
+        }
         
         c.setNome("123");
         c1.setNome("12345");
