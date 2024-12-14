@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @file SuperController.java
+ * @file SuperControllerTest.java
  * @brief Questa classe contiene i test dei metodi della classe SuperController
  * @author Giovanni
  */
