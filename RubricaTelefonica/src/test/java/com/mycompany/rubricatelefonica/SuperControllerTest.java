@@ -15,7 +15,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
+ * @file SuperController.java
+ * @brief Questa classe contiene i test dei metodi della classe SuperController
  * @author Giovanni
  */
 public class SuperControllerTest {
@@ -40,7 +41,7 @@ public class SuperControllerTest {
     }
 
     /**
-     * Test of addElemento method, of class SuperController.
+     * @brief Test of addElemento method, of class SuperController.
      */
     @Test
     public void testAddElemento() {
@@ -66,7 +67,7 @@ public class SuperControllerTest {
     }
 
     /**
-     * Test of rimElement method, of class SuperController.
+     * @brief Test of rimElement method, of class SuperController.
      */
     @Test
     public void testRimElement() {

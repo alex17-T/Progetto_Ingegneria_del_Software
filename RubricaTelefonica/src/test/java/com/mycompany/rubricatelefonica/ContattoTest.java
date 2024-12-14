@@ -21,6 +21,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
+ * @file ContattoTest.java
+ * @brief Questa classe contiene i test dei metodi della classe contatto
  *
  * @author Antonio
  */
@@ -54,7 +56,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of compareTo method, of class Contatto.
+     * @brief Test of compareTo method, of class Contatto.
      */
     @Test
     public void testCompareTo() {
@@ -94,7 +96,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getNome method, of class Contatto.
+     * @brief Test of getNome method, of class Contatto.
      */
     @Test
     public void testGetNome() {
@@ -108,7 +110,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setNome method, of class Contatto.
+     * @brief Test of setNome method, of class Contatto.
      */
     @Test
     public void testSetNome() {
@@ -121,7 +123,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getCognome method, of class Contatto.
+     * @brief Test of getCognome method, of class Contatto.
      */
     @Test
     public void testGetCognome() {
@@ -135,7 +137,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setCognome method, of class Contatto.
+     * @brief Test of setCognome method, of class Contatto.
      */
     @Test
     public void testSetCognome() {
@@ -148,7 +150,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getNumTel1 method, of class Contatto.
+     * @brief Test of getNumTel1 method, of class Contatto.
      */
     @Test
     public void testGetNumTel1() {
@@ -160,7 +162,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setNumTel1 method, of class Contatto.
+     * @brief Test of setNumTel1 method, of class Contatto.
      */
     @Test
     public void testSetNumTel1() {
@@ -173,7 +175,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getNumTel2 method, of class Contatto.
+     * @brief Test of getNumTel2 method, of class Contatto.
      */
     @Test
     public void testGetNumTel2() {
@@ -185,7 +187,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setNumTel2 method, of class Contatto.
+     * @brief Test of setNumTel2 method, of class Contatto.
      */
     @Test
     public void testSetNumTel2() {
@@ -198,7 +200,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getNumTel3 method, of class Contatto.
+     * @brief Test of getNumTel3 method, of class Contatto.
      */
     @Test
     public void testGetNumTel3() {
@@ -210,7 +212,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setNumTel3 method, of class Contatto.
+     * @brief Test of setNumTel3 method, of class Contatto.
      */
     @Test
     public void testSetNumTel3() {
@@ -223,7 +225,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getEmail1 method, of class Contatto.
+     * @brief Test of getEmail1 method, of class Contatto.
      */
     @Test
     public void testGetEmail1() {
@@ -235,7 +237,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setEmail1 method, of class Contatto.
+     * @brief Test of setEmail1 method, of class Contatto.
      */
     @Test
     public void testSetEmail1() {
@@ -248,7 +250,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getEmail2 method, of class Contatto.
+     * @brief Test of getEmail2 method, of class Contatto.
      */
     @Test
     public void testGetEmail2() {
@@ -260,7 +262,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setEmail2 method, of class Contatto.
+     * @brief Test of setEmail2 method, of class Contatto.
      */
     @Test
     public void testSetEmail2() {
@@ -273,7 +275,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of getEmail3 method, of class Contatto.
+     * @brief Test of getEmail3 method, of class Contatto.
      */
     @Test
     public void testGetEmail3() {
@@ -285,7 +287,7 @@ public class ContattoTest {
     }
 
     /**
-     * Test of setEmail3 method, of class Contatto.
+     * @brief Test of setEmail3 method, of class Contatto.
      */
     @Test
     public void testSetEmail3() {
