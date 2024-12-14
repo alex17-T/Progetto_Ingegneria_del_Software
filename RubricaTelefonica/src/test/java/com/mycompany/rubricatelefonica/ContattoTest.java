@@ -77,7 +77,7 @@ public class ContattoTest {
             fail("il caso in cui c è uguale a c1 non funziona");
         
         c.setNome("123");
-        c.setNome("12345");
+        c1.setNome("12345");
         
         risultati = c.compareTo(c1);
         
@@ -85,7 +85,7 @@ public class ContattoTest {
             fail("Il caso in cui c è minore di c1 non funziona");
         
         c.setNome("12345");
-        c.setNome("123");
+        c1.setNome("123");
         
         risultati = c.compareTo(c1);
         
