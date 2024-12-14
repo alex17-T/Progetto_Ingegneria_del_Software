@@ -1,0 +1,99 @@
+\doxysection{com.\+mycompany.\+rubricatelefonica.\+Super\+Controller Class Reference}
+\hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller}{}\label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller}\index{com.mycompany.rubricatelefonica.SuperController@{com.mycompany.rubricatelefonica.SuperController}}
+
+
+Gestisce centralmente una lista di contatti visibili in una tabella.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_a12b2b8f6c463149070bd4eddbc1bbc76}{add\+Elemento}} (\mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}} c)
+\begin{DoxyCompactList}\small\item\em Aggiunge un nuovo contatto alla lista principale e aggiorna il file serializzato. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_a5b5370b3ec196a3cd492a8619697ada5}{rim\+Element}} (Observable\+List$<$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}} $>$ listaR)
+\begin{DoxyCompactList}\small\item\em Rimuove un elenco di contatti dalla lista principale e aggiorna il file serializzato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Observable\+List$<$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}} $>$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_ac86d1af908c2ec2c05399fce210eeb66}{lista}} = FXCollections.\+observable\+Array\+List()
+\begin{DoxyCompactList}\small\item\em Lista centralizzata di contatti da visualizzare in una tabella. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestisce centralmente una lista di contatti visibili in una tabella. 
+
+Questa classe contiene una lista di contatti ({\ttfamily Observable\+List\texorpdfstring{$<$}{<}\doxylink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}\texorpdfstring{$>$}{>}}) che può essere condivisa tra altre classi per visualizzare, aggiungere o modificare contatti nella rubrica. L\textquotesingle{}invariante della classe è che {\ttfamily lista} non può mai essere null, e deve contenere oggetti di tipo {\ttfamily \doxylink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}}.
+
+\begin{DoxyAuthor}{Author}
+Giovanni 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_a12b2b8f6c463149070bd4eddbc1bbc76}\index{com.mycompany.rubricatelefonica.SuperController@{com.mycompany.rubricatelefonica.SuperController}!addElemento@{addElemento}}
+\index{addElemento@{addElemento}!com.mycompany.rubricatelefonica.SuperController@{com.mycompany.rubricatelefonica.SuperController}}
+\doxysubsubsection{\texorpdfstring{addElemento()}{addElemento()}}
+{\footnotesize\ttfamily \label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_a12b2b8f6c463149070bd4eddbc1bbc76} 
+static void com.\+mycompany.\+rubricatelefonica.\+Super\+Controller.\+add\+Elemento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}}}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Aggiunge un nuovo contatto alla lista principale e aggiorna il file serializzato. 
+
+Questo metodo consente di aggiungere un oggetto {\ttfamily \doxylink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}} alla lista principale dei contatti e di aggiornare il file serializzato in cui la lista è salvata.
+
+Il file si trova nel percorso relativo "{}/com/mycompany/rubricatelefonica/default.\+ser"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Il contatto da aggiungere alla lista.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Se il file non è accessibile o non scrivibile, viene stampato uno stack trace. 
+\end{DoxyNote}
+\Hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_a5b5370b3ec196a3cd492a8619697ada5}\index{com.mycompany.rubricatelefonica.SuperController@{com.mycompany.rubricatelefonica.SuperController}!rimElement@{rimElement}}
+\index{rimElement@{rimElement}!com.mycompany.rubricatelefonica.SuperController@{com.mycompany.rubricatelefonica.SuperController}}
+\doxysubsubsection{\texorpdfstring{rimElement()}{rimElement()}}
+{\footnotesize\ttfamily \label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_a5b5370b3ec196a3cd492a8619697ada5} 
+static void com.\+mycompany.\+rubricatelefonica.\+Super\+Controller.\+rim\+Element (\begin{DoxyParamCaption}\item[{Observable\+List$<$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}} $>$}]{listaR}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rimuove un elenco di contatti dalla lista principale e aggiorna il file serializzato. 
+
+Questo metodo consente di eliminare tutti i contatti specificati nella lista {\ttfamily listaR} dalla lista principale e di aggiornare il file serializzato in cui è salvata.
+
+Il file si trova nel percorso relativo "{}/com/mycompany/rubricatelefonica/default.\+ser"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em listaR} & Una lista osservabile contenente i contatti da rimuovere.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Se il file non è accessibile o non scrivibile, viene stampato uno stack trace. 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_ac86d1af908c2ec2c05399fce210eeb66}\index{com.mycompany.rubricatelefonica.SuperController@{com.mycompany.rubricatelefonica.SuperController}!lista@{lista}}
+\index{lista@{lista}!com.mycompany.rubricatelefonica.SuperController@{com.mycompany.rubricatelefonica.SuperController}}
+\doxysubsubsection{\texorpdfstring{lista}{lista}}
+{\footnotesize\ttfamily \label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_ac86d1af908c2ec2c05399fce210eeb66} 
+Observable\+List$<$\mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}}$>$ com.\+mycompany.\+rubricatelefonica.\+Super\+Controller.\+lista = FXCollections.\+observable\+Array\+List()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista centralizzata di contatti da visualizzare in una tabella. 
+
+Questa lista è una {\ttfamily Observable\+List\texorpdfstring{$<$}{<}\doxylink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}\texorpdfstring{$>$}{>}} che viene utilizzata per gestire i contatti.
+
+\begin{DoxyInvariant}{Invariant}
+La lista non può mai essere null e deve contenere oggetti di tipo {\ttfamily \doxylink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}}. 
+\end{DoxyInvariant}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Progetto\+\_\+\+Ingegneria\+\_\+del\+\_\+\+Software/\+Rubrica\+Telefonica/src/main/java/com/mycompany/rubricatelefonica/Super\+Controller.\+java\end{DoxyCompactItemize}

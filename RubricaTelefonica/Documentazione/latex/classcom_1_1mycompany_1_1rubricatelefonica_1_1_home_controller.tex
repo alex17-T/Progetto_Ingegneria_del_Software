@@ -1,0 +1,107 @@
+\doxysection{com.\+mycompany.\+rubricatelefonica.\+Home\+Controller Class Reference}
+\hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller}{}\label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller}\index{com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}}
+
+
+Questa classe gestisce l\textquotesingle{}interfaccia principale della rubrica telefonica.  
+
+
+Inheritance diagram for com.\+mycompany.\+rubricatelefonica.\+Home\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_aef75e3a6b65748b65ad9a8be2163dbf3}{initialize}} (URL url, Resource\+Bundle rb)
+\begin{DoxyCompactList}\small\item\em Il metodo configura la tabella e le sue colonne. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_aabf67c4ecdba4704199150962da97841}{Aggiungi\+Contatto}} (Action\+Event event)  throws IOException 
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Filtered\+List$<$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}} $>$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_ad1e3b3b92619c99f240c5a045ba6ac61}{lista\+Filtrata}}
+\begin{DoxyCompactList}\small\item\em Lista filtrata dei contatti. \end{DoxyCompactList}\item 
+static Sorted\+List$<$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}} $>$ \mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_a2c43327f875776ec2f994dd68f6f3a94}{lista\+Ordinata}}
+\begin{DoxyCompactList}\small\item\em Lista ordinata dei contatti. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Questa classe gestisce l\textquotesingle{}interfaccia principale della rubrica telefonica. 
+
+Questo file contiene la logica dell\textquotesingle{}interfaccia principale. Questo file implementa i metodi che rendono interattiva e correttamente funzionante l\textquotesingle{}interfaccia grafica codificata nel file Home.\+fxml. FXML Controller class
+
+\begin{DoxyAuthor}{Author}
+alessandro 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_aabf67c4ecdba4704199150962da97841}\index{com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}!AggiungiContatto@{AggiungiContatto}}
+\index{AggiungiContatto@{AggiungiContatto}!com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}}
+\doxysubsubsection{\texorpdfstring{AggiungiContatto()}{AggiungiContatto()}}
+{\footnotesize\ttfamily \label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_aabf67c4ecdba4704199150962da97841} 
+void com.\+mycompany.\+rubricatelefonica.\+Home\+Controller.\+Aggiungi\+Contatto (\begin{DoxyParamCaption}\item[{Action\+Event}]{event}{}\end{DoxyParamCaption}) throws IOException}
+
+Il metodo apre una finestra per l’inserimento dei dati del nuovo contatto
+
+Questo metodo viene invocato al clic sul pulsante "{}\+Aggiungi"{}. Viene aperta una nuova finestra per l\textquotesingle{}inserimento nella tabella dei dati\+: nome, cognome, numeri di telefono ed indirizzi email. Dopo l\textquotesingle{}inserimento è possibile vedere il contatto in tabella
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & l\textquotesingle{}evento è generato dall\textquotesingle{}utente tramite interazione con l\textquotesingle{}interfaccia grafica quando desidera aggiungere un contatto.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em IOException} & se il contatto che l\textquotesingle{}utente cerca di aggiungere è già presente in rubrica \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_aef75e3a6b65748b65ad9a8be2163dbf3}\index{com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}!initialize@{initialize}}
+\index{initialize@{initialize}!com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_aef75e3a6b65748b65ad9a8be2163dbf3} 
+void com.\+mycompany.\+rubricatelefonica.\+Home\+Controller.\+initialize (\begin{DoxyParamCaption}\item[{URL}]{url}{, }\item[{Resource\+Bundle}]{rb}{}\end{DoxyParamCaption})}
+
+
+
+Il metodo configura la tabella e le sue colonne. 
+
+Questo metodo inizializza le colonne della tabella riferendole agli attributi nome, cognome, num\+Tel1 e email1 di \doxylink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}. La tabella viene anche settata come "{}senza elementi selezionati"{} e gli viene associato un Change\+Listener per attivarsi se il contatto selezionato cambia. Rende la lista interattiva filtrandola e ordinadola \begin{DoxyPrecond}{Precondition}
+La lista dei contatti (cioè \doxylink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_super_controller_ac86d1af908c2ec2c05399fce210eeb66}{Super\+Controller.\+lista}) è inizializzata. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+La tabella contiene i contatti della lista osservabile.
+\end{DoxyPostcond}
+\begin{DoxySeeAlso}{See also}
+show\+Contatti\+Details() 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_ad1e3b3b92619c99f240c5a045ba6ac61}\index{com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}!listaFiltrata@{listaFiltrata}}
+\index{listaFiltrata@{listaFiltrata}!com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}}
+\doxysubsubsection{\texorpdfstring{listaFiltrata}{listaFiltrata}}
+{\footnotesize\ttfamily \label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_ad1e3b3b92619c99f240c5a045ba6ac61} 
+Filtered\+List$<$\mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}}$>$ com.\+mycompany.\+rubricatelefonica.\+Home\+Controller.\+lista\+Filtrata\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista filtrata dei contatti. 
+
+Utilizzata per applicare filtri dinamici alla lista principale. \Hypertarget{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_a2c43327f875776ec2f994dd68f6f3a94}\index{com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}!listaOrdinata@{listaOrdinata}}
+\index{listaOrdinata@{listaOrdinata}!com.mycompany.rubricatelefonica.HomeController@{com.mycompany.rubricatelefonica.HomeController}}
+\doxysubsubsection{\texorpdfstring{listaOrdinata}{listaOrdinata}}
+{\footnotesize\ttfamily \label{classcom_1_1mycompany_1_1rubricatelefonica_1_1_home_controller_a2c43327f875776ec2f994dd68f6f3a94} 
+Sorted\+List$<$\mbox{\hyperlink{classcom_1_1mycompany_1_1rubricatelefonica_1_1_contatto}{Contatto}}$>$ com.\+mycompany.\+rubricatelefonica.\+Home\+Controller.\+lista\+Ordinata\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lista ordinata dei contatti. 
+
+Basata sulla lista filtrata per mantenere un ordine specifico. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Progetto\+\_\+\+Ingegneria\+\_\+del\+\_\+\+Software/\+Rubrica\+Telefonica/src/main/java/com/mycompany/rubricatelefonica/Home\+Controller.\+java\end{DoxyCompactItemize}
