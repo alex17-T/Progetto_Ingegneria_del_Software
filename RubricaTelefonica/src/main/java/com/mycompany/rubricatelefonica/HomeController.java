@@ -1,10 +1,4 @@
-/**
- * @file HomeController.java
- * @brief Questo file contiene la logica dell'interfaccia principale.
- *
- * Questo file implementa i metodi che rendono interattiva e correttamente
- * funzionante l'interfaccia grafica codificata nel file Home.fxml.
- */
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -64,6 +58,10 @@ import javafx.util.Duration;
  * @brief Questa classe gestisce l'interfaccia principale della rubrica
  * telefonica.
  *
+ * @brief Questo file contiene la logica dell'interfaccia principale.
+ *
+ * @brief Questo file implementa i metodi che rendono interattiva e correttamente
+ * @brief funzionante l'interfaccia grafica codificata nel file Home.fxml.
  * FXML Controller class
  *
  * @author alessandro
@@ -252,7 +250,7 @@ public class HomeController implements Initializable{
      * attributi nome, cognome, numTel1 e email1 di Contatto. La tabella viene
      * anche settata come "senza elementi selezionati" e gli viene associato un
      * ChangeListener per attivarsi se il contatto selezionato cambia.
-     *
+     * Rende la lista interattiva filtrandola e ordinadola 
      * @pre La lista dei contatti (cioè SuperController.lista) è inizializzata.
      * @post La tabella contiene i contatti della lista osservabile.
      *
@@ -274,23 +272,7 @@ public class HomeController implements Initializable{
       
           listaFiltrata = new FilteredList<>(lista, b->true);
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
-            /**
-             * @brief Visualizza i dettagli di un contatto se selezionato.
-             *
-             * Quando cambia il contatto selezionato nella tabella (anche
-             * nessuno), questo metodo si attiva e mostra i dati del contatto
-             * selezionato (tali dati sono tutte stringhe vuote se non è
-             * selezionato nessun contatto).
-             * Inoltre non è possibile cliccare modificaButton
-             * se non è selezionato nessun contatto
-             *
-             * @invariant oldValue e newValue hanno valori differenti.
-             * @param observable La proprietà osservata, in questo caso il
-             * cambio del contatto selezionato.
-             * @param oldValue Il contatto precedentemente selezionato (anche
-             * nessuno).
-             * @param newValue Il nuovo contatto selezionato (anche nessuno).
-             */
+        
             @Override
             public void changed(ObservableValue<? extends Contatto> observable, Contatto oldValue, Contatto newValue) {
                 showContattiDetails(newValue);
@@ -298,12 +280,7 @@ public class HomeController implements Initializable{
             }
         });
         
-        /**
- * @brief Configura la barra di ricerca per filtrare la lista dei contatti.
- * 
- * Aggiunge un listener alla barra di ricerca per aggiornare dinamicamente i risultati
- * in base al testo inserito dall'utente.
- */
+ 
         serchBar.textProperty().addListener((observable ,oldValue , newValue)->{
         listaFiltrata.setPredicate(Contatto -> {
           // Verifica se il filtro è vuoto o nullo, in tal caso mostra tutti i contatti.
@@ -325,19 +302,10 @@ public class HomeController implements Initializable{
             });
         });
         
-/**
- * @brief Crea una lista ordinata basata sulla lista filtrata e la associa alla tabella dei contatti.
- * 
- * Collega la proprietà `comparator` della lista ordinata con quella della tabella per mantenere
- * un ordinamento coerente.
- */
+
         listaOrdinata = new SortedList<>(listaFiltrata);
         listaOrdinata.comparatorProperty().bind(Tabella_contatti.comparatorProperty());
-        /**
- * @brief Gestisce la selezione di un contatto nella tabella.
- * 
- * Quando un contatto è selezionato, aggiorna l'immagine del contatto nel componente `contactImage`.
- */
+
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
             if(newValue !=null){
                 Contatto c = newValue;
@@ -345,9 +313,7 @@ public class HomeController implements Initializable{
             }
         });
         
-/**
- * @brief Imposta la lista ordinata come sorgente dati per la tabella dei contatti.
- */
+
         Tabella_contatti.setItems(listaOrdinata);
     }
 
@@ -366,7 +332,7 @@ public class HomeController implements Initializable{
      * presente in rubrica
      */
     @FXML
-    private void AggiungiContatto(ActionEvent event) throws IOException {
+    public void AggiungiContatto(ActionEvent event) throws IOException {
         App.setRoot("secondary");
     }
 
