@@ -58,6 +58,8 @@ public class ContattoTest {
     /**
      * @brief Test of compareTo method, of class Contatto.
      */
+    
+    
     @Test
     public void testCompareTo() {
         System.out.println("compareTo");

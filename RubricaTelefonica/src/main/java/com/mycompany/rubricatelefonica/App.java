@@ -133,11 +133,7 @@ public class App extends Application {
             }
             FXCollections.sort(SuperController.lista);
             System.out.println("Rubrica importata correttamente.");
-          //  Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            //alert.setTitle("Importazione completata");
-          //  alert.setHeaderText("Rubrica importata");
-          //  alert.setContentText("La rubrica è stata importata correttamente.");
-          //  alert.showAndWait();
+        
         } else {
             System.out.println("Lista di contatti vuota nel file.");
             Alert alert = new Alert(Alert.AlertType.WARNING);
