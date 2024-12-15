@@ -1,7 +1,4 @@
-/**
- * @file App.java
- * @brief Questo file contiene la logica per il lancio dell'applicazione.
- */
+
 package com.mycompany.rubricatelefonica;
 
 import java.io.File;
@@ -25,8 +22,12 @@ import javafx.scene.control.CheckBox;
 import javafx.stage.FileChooser;
 
 /**
- * JavaFX App
+ * 
+ * @file App.java
+ * @brief Questo file contiene la logica per il lancio dell'applicazione.
+ * implementa i metodi per la gestione dei dati salvati in memoria
  */
+ 
 public class App extends Application {
 
     private static Scene scene;

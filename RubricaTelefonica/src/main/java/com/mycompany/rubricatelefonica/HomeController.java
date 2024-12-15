@@ -202,19 +202,8 @@ public class HomeController implements Initializable{
      */
     @FXML
     private TextField serchBar;
-    /**
- * @brief Lista filtrata dei contatti.
- * 
- * Utilizzata per applicare filtri dinamici alla lista principale.
- */
-     public static FilteredList<Contatto> listaFiltrata;
-     /**
- * @brief Lista ordinata dei contatti.
- * 
- * Basata sulla lista filtrata per mantenere un ordine specifico.
- */
-     public static SortedList<Contatto> listaOrdinata;
-
+  
+    
      /**
  * @brief Serve  a inizializzare i checkbox in modo da farli funzionare da subito,
     altrimenti alla prima selezione e deselezione non verranno rispettivamente selezionati e deselezionati
@@ -270,7 +259,7 @@ public class HomeController implements Initializable{
         modificaButton.setDisable(true);
 
       
-          listaFiltrata = new FilteredList<>(lista, b->true);
+       
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Contatto>() {
         
             @Override
@@ -282,7 +271,7 @@ public class HomeController implements Initializable{
         
  
         serchBar.textProperty().addListener((observable ,oldValue , newValue)->{
-        listaFiltrata.setPredicate(Contatto -> {
+        SuperController.listaFiltrata.setPredicate(Contatto -> {
           // Verifica se il filtro è vuoto o nullo, in tal caso mostra tutti i contatti.
           if(newValue == null || newValue.isEmpty()) return true;
         
@@ -303,8 +292,8 @@ public class HomeController implements Initializable{
         });
         
 
-        listaOrdinata = new SortedList<>(listaFiltrata);
-        listaOrdinata.comparatorProperty().bind(Tabella_contatti.comparatorProperty());
+       
+        SuperController.listaOrdinata.comparatorProperty().bind(Tabella_contatti.comparatorProperty());
 
         Tabella_contatti.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
             if(newValue !=null){
@@ -314,7 +303,7 @@ public class HomeController implements Initializable{
         });
         
 
-        Tabella_contatti.setItems(listaOrdinata);
+        Tabella_contatti.setItems(SuperController.listaOrdinata);
     }
 
     /**
@@ -614,7 +603,7 @@ public class HomeController implements Initializable{
         // Dopo che la toolbar è visibile, imposta il listener sul checkbox principale
         if (ToolBar.visibleProperty().get() && !listenerAdded) {
             selezionaTutti.selectedProperty().addListener((obs, oldVal, newVal) -> {
-                for (Contatto c : listaOrdinata) {
+                for (Contatto c : SuperController.listaOrdinata) {
                     c.getSelect().setSelected(newVal); // Imposta il valore di selezione per ogni contatto
                 }
             });
@@ -624,7 +613,7 @@ public class HomeController implements Initializable{
         if(ToolBar.visibleProperty().get()){
             // Inizializza lo stato dei checkbox dei contatti in base al checkbox principale
             boolean initialSelection = selezionaTutti.isSelected();
-            for (Contatto c : listaOrdinata) {
+            for (Contatto c : SuperController.listaOrdinata) {
                 c.getSelect().setSelected(initialSelection); // Imposta lo stato iniziale dei checkbox
             }
         }
@@ -644,7 +633,7 @@ public class HomeController implements Initializable{
         // Aggiungi un listener per il checkbox principale (selezionaTutti)
         selezionaTutti.selectedProperty().addListener((obs, oldVal, newVal) -> {
             // Se il checkbox principale è selezionato, seleziona tutti i contatti
-            for (Contatto c : listaOrdinata) {
+            for (Contatto c : SuperController.listaOrdinata) {
                 c.getSelect().setSelected(newVal); // Propaga la selezione o deselezione
             }
         });

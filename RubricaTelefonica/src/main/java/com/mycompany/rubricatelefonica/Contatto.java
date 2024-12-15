@@ -1,11 +1,3 @@
-/**
- * @file Contatto.java
- * @brief Questo file contiene gli attributi di un contatto e i suoi getter e setter.
- * 
- * La classe `Contatto` rappresenta un contatto nella rubrica, 
- * includendo attributi come nome, cognome, numeri di telefono, email e immagine di profilo.
- * Ogni contatto ha una serie di getter e setter per gestire questi attributi.
- */
 
 package com.mycompany.rubricatelefonica;
 

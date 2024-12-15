@@ -1,10 +1,3 @@
-/**
- * @file SuperController.java
- * @brief Questo file contiene la ObservableList per la tabella.
- * 
- * La classe SuperController contiene una ObservableList di contatti, gestita in modo centralizzato
- * così da poterla visualizzare e gestire senza passaggi di dati superflui.
- */
 
  /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -22,6 +15,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -44,6 +38,8 @@ public class SuperController {
      * @invariant La lista non può mai essere null e deve contenere oggetti di tipo `Contatto`.
      */
     public static ObservableList<Contatto> lista = FXCollections.observableArrayList();
+    public static   FilteredList<Contatto> listaFiltrata = new FilteredList<>(lista, b->true);
+     public static SortedList<Contatto> listaOrdinata = new SortedList<>(listaFiltrata);
  /**
  * @brief Aggiunge un nuovo contatto alla lista principale e aggiorna il file serializzato.
  *

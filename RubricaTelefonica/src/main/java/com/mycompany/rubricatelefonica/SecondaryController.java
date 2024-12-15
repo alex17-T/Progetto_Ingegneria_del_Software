@@ -1,4 +1,5 @@
 
+
 package com.mycompany.rubricatelefonica;
 
 
@@ -22,7 +23,8 @@ import javafx.stage.FileChooser;
 
 /**
  * @file SecondaryController.java
- * @brief Controller della schermata secondaria, utile per creare un nuovo contatto.
+ * @brief Controller della schermata secondaria, utile per         * creare   un nuovo contatto.
+ *  gestisce tutta la logica di creazione di un contatto
  * 
  * @author Giovanni
  */
