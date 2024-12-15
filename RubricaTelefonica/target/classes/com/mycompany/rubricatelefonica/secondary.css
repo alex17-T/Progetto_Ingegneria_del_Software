@@ -1,0 +1,76 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 dic 2024, 16:51:18
+    Author     : Antonio
+*/
+.coloreGridPane{
+    -fx-background-color: #cbaed7;
+    -fx-background-radius: 15px;
+}
+
+.LightBlue{
+    -fx-background-color: #D0E8F2;
+}
+    
+.editButton{
+	/*-fx-background-color: #cbaed7;*/
+        -fx-background-color: #ffc800;
+        -fx-background-image: url("editIcon.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: 15px;
+        -fx-background-radius: 30px;
+	/*-fx-border: none;*/
+        -fx-border-radius: 30px;
+        -fx-border-color: #ffc800;
+        -fx-border-style: solid;
+        -fx-cursor: hand;
+}
+
+.exitbutton{
+    -fx-background-color: #ffa000;
+    -fx-background-size: 20px;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #ffa000;
+    -fx-border-style: solid;
+    -fx-cursor: hand;
+}
+
+.creaContattoButton{
+    /*-fx-background-color: #21b11c;*/
+    -fx-background-color: #ffd900;
+    -fx-background-size: 20px;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-border-color: #ffd900;
+    -fx-border-style: solid;
+    -fx-cursor: hand;
+}
+
+.backgroundButtons{
+    -fx-background-color: #B691d2;
+    -fx-background-radius: 50px 50px 0 0;    
+    -fx-border-top-width: 1px;
+    -fx-border-top-style: solid;
+    -fx-border-top-color: #B691d2;
+    -fx-border-top-radius: 15px;
+}
+
+.editButton:hover{
+    -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
+}
+
+.exitbutton:hover{
+    -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
+}
+
+.creaContattoButton:hover{
+    -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
+}
