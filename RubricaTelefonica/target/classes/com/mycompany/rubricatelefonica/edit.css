@@ -1,0 +1,134 @@
+.editButton{
+	-fx-background-color: #F3D500;
+        -fx-background-image: url("editIcon.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+        -fx-background-radius: 10px;
+	-fx-border: none;
+        -fx-cursor: hand;
+}
+	
+.editButton:hover{
+	-fx-background-color: #fffa00;
+}
+
+.remButton{
+    -fx-background-color: #ff3333;
+        -fx-background-image: url("delete_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+        -fx-background-radius: 10px;
+	-fx-border: none;
+        -fx-cursor: hand;
+}
+
+.remButton:hover{
+    -fx-background-color: #cc0000;
+}
+
+.srcButton{
+    -fx-background-color: lightblue;
+        -fx-background-image: url("search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+        -fx-background-radius: 15px;
+	-fx-border: none;
+        -fx-cursor: hand;
+}
+
+.srcButton:hover{
+    -fx-background-color: #ffffff;
+}
+
+.addButton{
+    -fx-background-color: #d4bda8;
+        -fx-background-image: url("person_add_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+        -fx-background-radius: 5px;
+	-fx-border: none;
+        -fx-cursor: hand;
+}
+
+.addButton:hover{
+    -fx-background-color: #666666;
+}
+
+.impButton{
+    -fx-background-color: #e4e5e0;
+        -fx-background-image: url("file_open_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: 15px;
+        -fx-background-radius: 30px;
+        -fx-background-color: #F8A751;
+        -fx-border-radius: 30px;
+        -fx-border-color: #F8A751;
+        -fx-border-style: solid;
+        -fx-cursor: hand;
+}
+
+.impButton:hover{
+    -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
+}
+
+.expButton{
+    -fx-background-color: #e4e5e0;
+        -fx-background-image: url("file_export_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png");
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: 15px;
+        -fx-background-radius: 30px;
+        -fx-background-color: #F8A751;
+        -fx-border-radius: 30px;
+        -fx-border-color: #F8A751;
+        -fx-border-style: solid;
+        -fx-cursor: hand;
+}
+
+.expButton:hover{
+    -fx-background-color: #fffa00;
+    -fx-border-color: #fffa00;
+}
+
+.ModConButton{
+    -fx-background-color: #e4e5e0;
+        -fx-background-image: url("editIcon.png");
+        -fx-background-size: 25px;
+        -fx-background-repeat: no-repeat;
+        /*-fx-left: 10px;*/
+        -fx-background-position: 5px;
+        -fx-background-radius: 30px;
+        -fx-background-color: #ded4c0;
+        -fx-border-radius: 30px;
+        -fx-cursor: hand;
+
+}
+
+.ModConButton:hover{
+    -fx-color: white;
+    -fx-background-color: #ffffff;
+}
+
+.remSelButton{
+	
+        -fx-background-size: 20px;
+        -fx-background-repeat: no-repeat;
+        -fx-background-position: center;
+        -fx-background-radius: 30px;
+        -fx-background-color: #ffc800;
+        -fx-border-radius: 30px;
+        -fx-border-color: #ffc800;
+        -fx-border-style: solid;
+        -fx-cursor: hand;
+}
+	
+.remSelButton:hover{
+	-fx-background-color: #fffa00;
+        -fx-border-color: #fffa00;
+}

@@ -1,0 +1,34 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 9-dic-2024, 13.49.53
+    Author     : Utente
+*/
+
+.casellaTesto{
+
+    -fx-background-radius: 55px;
+    -fx-border-width: 3px;
+    -fx-border-color: #ffc800;
+    -fx-border-style: solid;
+    -fx-border-radius: 55px;
+}
+
+.allineaTesto{
+    -fx-alignment: center-right;
+    -fx-background-position: 15px;
+}
+
+.casellaTestoHome{
+
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 55px;
+    -fx-border-width: 2px;
+    -fx-border-color: #d6c9b1;
+    -fx-border-style: solid;
+    -fx-border-radius: 55px;
+    -fx-prompt-text-fill: #b8bab0;
+}
