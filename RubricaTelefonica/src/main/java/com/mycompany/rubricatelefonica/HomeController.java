@@ -660,6 +660,7 @@ public class HomeController implements Initializable{
        }
                      
                        SuperController.rimElement(listaDaRimovere);
+                       
      
     }
 
@@ -752,6 +753,8 @@ public class HomeController implements Initializable{
         Tabella_contatti.refresh();
         // Inverte la proprietà `mouseTransparent` del pannello dei dettagli per renderli non selezionabili
         DettagliContatto.mouseTransparentProperty().set(!DettagliContatto.mouseTransparentProperty().get());
+         mFotobtn.mouseTransparentProperty().set(!mFotobtn.mouseTransparentProperty().get());
+        RFotobtn.mouseTransparentProperty().set(!RFotobtn.mouseTransparentProperty().get());
         SalvaModificheContatto.visibleProperty().set(false);
           String filepath = SuperController.class.getResource("/com/mycompany/rubricatelefonica/default.ser").getPath();
      
