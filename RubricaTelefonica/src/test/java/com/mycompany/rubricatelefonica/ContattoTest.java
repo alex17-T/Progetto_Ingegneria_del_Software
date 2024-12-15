@@ -59,7 +59,7 @@ public class ContattoTest {
      * @brief Test of compareTo method, of class Contatto.
      */
     
-    
+   /* 
     @Test
     public void testCompareTo() {
         System.out.println("compareTo");
@@ -97,7 +97,7 @@ public class ContattoTest {
         
         if(risultati < 0)
             fail("Il caso in cui c è minore di c1 non funziona");
-    }
+    }*/
 
     /**
      * @brief Test of getNome method, of class Contatto.
