@@ -3,6 +3,7 @@ package com.mycompany.rubricatelefonica;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -31,6 +35,7 @@ import javafx.stage.FileChooser;
 public class App extends Application {
 
     private static Scene scene;
+    public static String nameP=System.getProperty("user.home");
 
     /**
      * @brief Setta l'interfaccia grafica iniziale e la mostra a schermo.
@@ -45,7 +50,9 @@ public class App extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        ImportaListaDefault("/com/mycompany/rubricatelefonica/default.ser");
+        
+        
+        ImportaListaDefault(nameP+File.separator+"default.ser");
         scene = new Scene(loadFXML("Home"));
         stage.setScene(scene);
         stage.show();
@@ -72,9 +79,33 @@ public class App extends Application {
      */
     private void ImportaListaDefault(String filePath) {
         // Carica il file dal classpath come InputStream
-        InputStream inputStream = getClass().getResourceAsStream(filePath);
+      //  InputStream inputStream = getClass().getResourceAsStream(filePath);
+        File externalFile = new File(filePath);
         
-        if (inputStream == null) {
+        if (externalFile.exists()) {
+            System.out.println("Il file esiste già: " + externalFile);
+           
+        }else{
+
+        // Se il file non esiste, prova a crearlo copiandolo dal JAR
+        try (InputStream inputStream =App.class.getResourceAsStream("/com/mycompany/rubricatelefonica/default.ser")) {
+            if (inputStream == null) {
+                throw new FileNotFoundException("Il file default.ser"  + " non è stato trovato nel JAR.");
+            }
+
+            Files.copy(inputStream, Paths.get(filePath), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("Il file è stato creato nella posizione esterna: " + filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Errore durante la creazione del file esterno.");
+        }
+        
+        
+        }
+        
+        
+        
+        if (externalFile == null) {
             System.out.println("File non trovato nel classpath.");
             return;
         }
@@ -82,7 +113,7 @@ public class App extends Application {
         ArrayList<Contatto> listaContatti = null;
 
         // Procedi con la deserializzazione del file
-        try (ObjectInputStream objIn = new ObjectInputStream(inputStream)) {
+        try (ObjectInputStream objIn = new ObjectInputStream(new FileInputStream(externalFile))) {
             // Deserializza la lista di contatti dal file
             listaContatti = (ArrayList<Contatto>) objIn.readObject();
             System.out.println("Contatti caricati da: " + filePath);

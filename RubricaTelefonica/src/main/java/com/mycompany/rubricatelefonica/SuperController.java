@@ -5,6 +5,7 @@
  */
 package com.mycompany.rubricatelefonica;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,8 +56,7 @@ public class SuperController {
   public static void addElemento (Contatto c){
       lista.add(c);
       
-       String filepath = SuperController.class.getResource("/com/mycompany/rubricatelefonica/default.ser").getPath();
-     
+       String filepath = App.nameP+File.separator+"default.ser";     
        ArrayList<Contatto> listaContattiSalvati = new ArrayList<>(lista);
        try(ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(filepath))){
             objOut.writeObject(listaContattiSalvati);
@@ -82,7 +82,7 @@ public class SuperController {
  */
   public static void rimElement( ObservableList<Contatto> listaR){
   lista.removeAll(listaR);
-  String filepath = SuperController.class.getResource("/com/mycompany/rubricatelefonica/default.ser").getPath();
+  String filepath = App.nameP+File.separator+"default.ser";
      
        ArrayList<Contatto> listaContattiSalvati = new ArrayList<>(lista);
        try(ObjectOutputStream objOut = new ObjectOutputStream(new FileOutputStream(filepath))){
